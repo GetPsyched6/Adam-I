@@ -15,7 +15,7 @@
 
 # Configuration files
 /.eslintrc.js
-/ci.yml
+/.github/workflows/ci.yml
 /.gitignore
 /.env
 /.nvrmc

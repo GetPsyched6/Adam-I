@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['airbnb', 'plugin:prettier/recommended'],
+  extends: ['airbnb', 'prettier','plugin:prettier/recommended'],
   overrides: [
     {
       env: {
@@ -27,7 +27,18 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-    indent: ['error', 2, { SwitchCase: 1 }]
+    indent: ['error', 2, { SwitchCase: 1 }],
+    'prettier/prettier': [
+      'error',
+      {
+        trailingComma: 'es5',
+        singleQuote: true,
+        printWidth: 100,
+        tabWidth: 2,
+        semi: true,
+        arrowParens: 'avoid',
+      },
+    ],
   },
   settings: {
     react: {
