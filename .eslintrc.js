@@ -2,17 +2,15 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true, // Add this line for Jest testing globals
+    jest: true,
   },
-  extends: 'airbnb',
+  extends: ['airbnb', 'plugin:prettier/recommended'],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [
-        '.eslintrc.{js,cjs}',
-      ],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script',
       },
@@ -26,12 +24,16 @@ module.exports = {
     },
   },
   rules: {
-    'react/react-in-jsx-scope': 'off', // Disable the rule requiring React in scope for JSX
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }], // Allow JSX in .js files
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+    indent: ['error', 2, { SwitchCase: 1 }]
   },
   settings: {
     react: {
-      version: 'detect', // Automatically detect the React version
+      version: 'detect',
     },
   },
+  // Add this if you're using ESLint plugins for React Hooks
+  plugins: ['react', 'prettier'],
 };

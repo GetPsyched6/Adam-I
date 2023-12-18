@@ -1,0 +1,21 @@
+# Dependency directories
+/node_modules
+
+# Build output directories
+/build
+/dist
+
+# Hidden system files
+.*.swp
+.DS_Store
+
+# Misc
+# Add other directories or files that don't need formatting
+# such as images, design files, etc.
+
+# Configuration files
+/.eslintrc.js
+/ci.yml
+/.gitignore
+/.env
+/.nvrmc
