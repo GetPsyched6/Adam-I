@@ -1,0 +1,42 @@
+.Login{
+    display: flex;
+    flex-direction: column;
+    width: 300px; 
+    margin: 150px auto;
+
+}
+input{
+    padding: 10px;
+}
+input:focus{
+    outline: none;
+}
+.Remember{
+    font-size: 13px;
+    display: flex;
+    font-weight: 600;
+    gap: 4px;
+}
+.Login-btn{
+    background-color: lightgreen;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.Other-Options{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.Other-Options a{
+    color: black;
+    text-decoration: none;
+}.Register-color{
+    color: rgb(20, 148, 80);
+}
