@@ -19,7 +19,7 @@ const login = () => {
       <div className="Other-Options">
         <a href="/forgot-password">FORGOT PASSWORD?</a>
         <a href="/register">
-          NEW USER? <span className="Register-color">REGISTER</span>
+          NEW USER?<span className="Register-color">REGISTER</span>
         </a>
       </div>
     </div>
