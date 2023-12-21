@@ -4,7 +4,7 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.Container {
+.Login-Container {
     background-image: url('../../assets/login.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -30,8 +30,8 @@ body {
     margin-top: 0;
 }
 
-.email,
-.password {
+.login-email,
+.login-password {
     padding: 8px;
     font-size: 12px;
     border: none;
