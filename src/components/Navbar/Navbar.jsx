@@ -4,14 +4,14 @@ import './Navbar.css';
 const navStyles = {
   backgroundColor: 'white',
   color: 'black',
-  padding: '10px 20px',
+  padding: '20px 20px',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
 };
 
 const logoStyles = {
-  fontSize: '15px',
+  fontSize: '25px',
   fontWeight: '600',
 };
 
@@ -24,7 +24,7 @@ const linkStyles = {
   color: 'black',
   margin: '0 15px',
   fontWeight: '600',
-  fontSize: '15px',
+  fontSize: '25px',
 };
 
 function NavBar() {

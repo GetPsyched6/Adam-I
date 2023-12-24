@@ -1,23 +1,19 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-.Container {
+.login-container {
     background-image: url('../../assets/login.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     height: 100vh;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
 }
 
 .Login {
-    padding-top: 30px;
-    padding-left: 10px;
+    padding-top: 100px;
+    padding-left: 20px;
     width: 40%;
+    max-width: 400px; 
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
@@ -28,29 +24,34 @@ body {
 .Login h1 {
     color: white;
     margin-top: 0;
+    font-size: 50px;
 }
 
-.email,
-.password {
-    padding: 8px;
-    font-size: 12px;
+.login-email,
+.login-password {
+    padding: 10px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 0px 2px rgb(55, 54, 54);
     background-color: rgba(255, 255, 255, 0.826);
     width: 75%;
-    margin-bottom: 10px;
+    
+}
+.login-email{
+    margin-bottom: 30px;
 }
 
-.email:focus,
-.password:focus {
+.login-email:focus,
+.login-password:focus {
     outline: none;
 }
 
 .Register {
-    font-size: 9px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.826);
     margin: 10px 0;
+    letter-spacing: 1px;
 }
 
 .Register a {
@@ -62,8 +63,8 @@ body {
     display: flex;
     align-items: center;
     color: white;
-    font-size: 10px;
-    margin: 20px 0;
+    font-size: 14px;
+    margin: 30px 0;
     gap: 8px;
 }
 
@@ -74,7 +75,7 @@ body {
 .login-btn {
     border-radius: 60px;
     border: none;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 600;
     width: 30%;
     padding: 8px 24px;
@@ -84,7 +85,7 @@ body {
 
 .aboutus {
     color: white;
-    font-size: 10px;
+    font-size: 15px;
     padding: 10px;
     bottom: 0;
     position: absolute;
@@ -93,7 +94,7 @@ body {
 
 .invast {
     color: white;
-    font-size: 9px;
+    font-size: 15px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -103,4 +104,4 @@ body {
 
 .Register a:hover {
     text-decoration: underline;
-}
+} 
