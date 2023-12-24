@@ -1,0 +1,107 @@
+.login-container {
+    background-image: url('../../assets/login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.Login {
+    padding-top: 100px;
+    padding-left: 20px;
+    width: 40%;
+    max-width: 400px; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+}
+
+.Login h1 {
+    color: white;
+    margin-top: 0;
+    font-size: 50px;
+}
+
+.login-email,
+.login-password {
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px rgb(55, 54, 54);
+    background-color: rgba(255, 255, 255, 0.826);
+    width: 75%;
+    
+}
+.login-email{
+    margin-bottom: 30px;
+}
+
+.login-email:focus,
+.login-password:focus {
+    outline: none;
+}
+
+.Register {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.826);
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.Register a {
+    color: white;
+    text-decoration: none;
+}
+
+.Remember-check {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    margin: 30px 0;
+    gap: 8px;
+}
+
+.Remember-check input {
+    margin: 0;
+}
+
+.login-btn {
+    border-radius: 60px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    width: 30%;
+    padding: 8px 24px;
+    background-color: rgba(255, 255, 255, 0.826);
+    cursor: pointer;
+}
+
+.aboutus {
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.invast {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+
+.Register a:hover {
+    text-decoration: underline;
+} 
