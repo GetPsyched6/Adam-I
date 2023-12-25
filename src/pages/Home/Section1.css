@@ -1,0 +1,108 @@
+.s1-img {
+    background-image: url("../../assets/home-section-1.png");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    height: calc(100dvh - 75px);
+    width: 100%;
+}
+
+.s1-text {
+    padding-top: 10vmin;
+    padding-left: 20px;
+}
+
+.s1-text .h1,
+.s1-text .h2 {
+    color: white;
+    margin: 0%;
+}
+
+.s1-text .h1 {
+    font-size: 14vmin;
+    padding-bottom: 1%;
+    letter-spacing: 3px;
+    opacity: 0.95;
+}
+
+.s1-text .h2 {
+    font-size: 6vmin;
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 992px) {
+    .s1-img {
+        background-size: cover;
+        background-position: -10vmin center;
+        height: calc(100dvh - 0px);
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+    .s1-text {
+        padding-top: 30vmin;
+        padding-left: 7%;
+    }
+
+    .s1-text .h1,
+    .s1-text .h2 {
+        color: white;
+        margin: 0%;
+        padding-right: 5%;
+    }
+
+    .s1-text .h1 {
+        font-size: 13.5vmin;
+        padding-bottom: 7.5%;
+        opacity: 0.95;
+        letter-spacing: 2.5px;
+        line-height: 1.35;
+    }
+
+    .s1-text .h2 {
+        font-size: 6vmin;
+        padding-bottom: 20%;
+        opacity: 0.85;
+        letter-spacing: 2px;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .s1-img {
+        background-size: cover;
+        background-position: -60vw center;
+        height: 100dvh;
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+    .s1-text {
+        padding-top: 30vmin;
+        padding-left: 7%;
+    }
+
+    .s1-text .h1,
+    .s1-text .h2 {
+        color: white;
+        margin: 0%;
+    }
+
+    .s1-text .h1 {
+        font-size: 18vmin;
+        padding-bottom: 7%;
+        opacity: 0.95;
+        letter-spacing: 2.5px;
+        line-height: 1.35;
+    }
+
+    .s1-text .h2 {
+        font-size: 8vmin;
+        padding-bottom: 20%;
+        opacity: 0.85;
+        letter-spacing: 2px;
+        line-height: 1.5;
+    }
+}

@@ -1,9 +1,6 @@
 name: React CI/CD Pipeline
 
-on:
-  pull_request:
-    branches: [ main, dev ]
-    types: [opened, synchronize, reopened]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -23,8 +20,8 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      # - name: Run tests
-      #   run: npm test
+      - name: Run tests
+        run: npm test
 
       - name: Build
         run: npm run build
