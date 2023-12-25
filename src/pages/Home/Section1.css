@@ -3,33 +3,35 @@
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
-    height: calc(100dvh - 75px);
     width: 100%;
+    height: calc(100dvh - 12dvh);
+    margin: 0px;
+    padding: 0px;
 }
 
 .s1-text {
-    padding-top: 10vmin;
-    padding-left: 20px;
+    padding: 12.5vmin 5vmin 5vmax 7vmin;
 }
 
 .s1-text .h1,
 .s1-text .h2 {
     color: white;
-    margin: 0%;
+    margin: 0;
 }
 
 .s1-text .h1 {
     font-size: 14vmin;
-    padding-bottom: 1%;
-    letter-spacing: 3px;
+    line-height: 1.25;
+    padding-bottom: 5vh;
     opacity: 0.95;
+    font-weight: 600;
 }
 
 .s1-text .h2 {
     font-size: 6vmin;
     opacity: 0.8;
-    letter-spacing: 1.5px;
     line-height: 1.5;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 992px) {
@@ -42,8 +44,7 @@
     }
 
     .s1-text {
-        padding-top: 30vmin;
-        padding-left: 7%;
+        padding-top: 20vmin;
     }
 
     .s1-text .h1,
@@ -57,7 +58,6 @@
         font-size: 13.5vmin;
         padding-bottom: 7.5%;
         opacity: 0.95;
-        letter-spacing: 2.5px;
         line-height: 1.35;
     }
 
@@ -65,7 +65,6 @@
         font-size: 6vmin;
         padding-bottom: 20%;
         opacity: 0.85;
-        letter-spacing: 2px;
         line-height: 1.6;
     }
 }
@@ -81,7 +80,6 @@
 
     .s1-text {
         padding-top: 30vmin;
-        padding-left: 7%;
     }
 
     .s1-text .h1,
@@ -94,7 +92,6 @@
         font-size: 18vmin;
         padding-bottom: 7%;
         opacity: 0.95;
-        letter-spacing: 2.5px;
         line-height: 1.35;
     }
 
@@ -102,7 +99,6 @@
         font-size: 8vmin;
         padding-bottom: 20%;
         opacity: 0.85;
-        letter-spacing: 2px;
         line-height: 1.5;
     }
 }
