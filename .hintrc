@@ -6,10 +6,17 @@
     "compat-api/css": [
       "default",
       {
-        "ignore": [
-          "backdrop-filter"
-        ]
+        "ignore": []
       }
     ]
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not firefox <= 115",
+    "not safari <= 16.5",
+    "not and_ff <= 116",
+    "not firefox <= 116",
+    "not opera <= 101"
+  ]
 }
