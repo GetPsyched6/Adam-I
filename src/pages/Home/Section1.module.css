@@ -1,0 +1,104 @@
+.s1_img {
+    background-image: url("../../assets/images/Home/home-section-1.png");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100dvh - 12dvh);
+    margin: 0px;
+    padding: 0px;
+}
+
+.s1_text {
+    padding: 12.5vmin 5vmin 5vmax 7vmin;
+}
+
+.s1_text .h1,
+.s1_text .h2 {
+    color: white;
+    margin: 0;
+}
+
+.s1_text .h1 {
+    font-size: 14vmin;
+    line-height: 1.25;
+    padding-bottom: 5vh;
+    opacity: 0.95;
+    font-weight: 600;
+}
+
+.s1_text .h2 {
+    font-size: 6vmin;
+    opacity: 0.8;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .s1_img {
+        background-size: cover;
+        background-position: -10vmin center;
+        height: calc(100dvh - 0px);
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+    .s1_text {
+        padding-top: 20vmin;
+    }
+
+    .s1_text .h1,
+    .s1_text .h2 {
+        color: white;
+        margin: 0%;
+        padding-right: 5%;
+    }
+
+    .s1_text .h1 {
+        font-size: 13.5vmin;
+        padding-bottom: 7.5%;
+        opacity: 0.95;
+        line-height: 1.35;
+    }
+
+    .s1_text .h2 {
+        font-size: 6vmin;
+        padding-bottom: 20%;
+        opacity: 0.85;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 600px) {
+    .s1_img {
+        background-size: cover;
+        background-position: -60vw center;
+        height: 100dvh;
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+    .s1_text {
+        padding-top: 30vmin;
+    }
+
+    .s1_text .h1,
+    .s1_text .h2 {
+        color: white;
+        margin: 0%;
+    }
+
+    .s1_text .h1 {
+        font-size: 18vmin;
+        padding-bottom: 7%;
+        opacity: 0.95;
+        line-height: 1.35;
+    }
+
+    .s1_text .h2 {
+        font-size: 8vmin;
+        padding-bottom: 20%;
+        opacity: 0.85;
+        line-height: 1.5;
+    }
+}
