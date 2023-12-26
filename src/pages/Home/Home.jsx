@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../../components/Navbar/Navbar';
 import Country from '../../components/CountryBanner/CountryBanner';
 import morocco from '../../assets/morocco.jpg';
@@ -13,10 +14,18 @@ function Home() {
       <NavBar />
       <div className={styles.selectCountryContainer}>
         <div className={styles.selectCountry}>
-          <Country countryName="MOROCCO" countryImageSrc={morocco} />
-          <Country countryName="NIGERIA" countryImageSrc={nigeria} />
-          <Country countryName="KENYA" countryImageSrc={kenya} />
-          <Country countryName="NAMIBIA" countryImageSrc={namibia} />
+          <Link to="/morocco">
+            <Country countryName="MOROCCO" countryImageSrc={morocco} />
+          </Link>
+          <Link to="/nigeria">
+            <Country countryName="NIGERIA" countryImageSrc={nigeria} />
+          </Link>
+          <Link to="/kenya">
+            <Country countryName="KENYA" countryImageSrc={kenya} />
+          </Link>
+          <Link to="/namibia">
+            <Country countryName="NAMIBIA" countryImageSrc={namibia} />
+          </Link>
         </div>
       </div>
     </div>
