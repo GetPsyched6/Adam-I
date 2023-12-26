@@ -1,0 +1,11 @@
+.textbox {
+  border-radius: 12px;
+  border: 0;
+  height: 2.8rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding-inline: 1rem;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.6)
+}
