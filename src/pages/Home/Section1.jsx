@@ -1,13 +1,13 @@
 import React from 'react';
-import './Section1.css';
+import styles from './Section1.module.css';
 
 function Section1() {
   return (
-    <div className="home-sec1">
-      <div className="s1-img">
-        <div className="s1-text">
-          <p className="h1">Invest in Africa</p>
-          <p className="h2">
+    <div className={styles.home_sec1}>
+      <div className={styles.s1_img}>
+        <div className={styles.s1_text}>
+          <p className={styles.h1}>Invest in Africa</p>
+          <p className={styles.h2}>
             Shaping Tomorrow Together,
             <br />
             Invest in Africa&apos;s Potential.
