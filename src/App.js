@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login/Login';
 import Home from './pages/Home/Home';
-import ForgotPassword from './components/Forgotpassword/ForgotPassword';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Register from './components/Register/Register';
 
 function App() {
