@@ -12,15 +12,9 @@ function Login() {
         <div className="Login">
           <h1>Login</h1>
           <input type="text" className="email" id="email" placeholder="Email" />
-<<<<<<< Updated upstream
           <input type="password" className="password" id="password" placeholder="Password" />
-=======
-<<<<<<< HEAD
           <input type="password" className="email" id="password" placeholder="Password" />
-=======
           <input type="password" className="password" id="password" placeholder="Password" />
->>>>>>> dev
->>>>>>> Stashed changes
           <p className="Register">
             Dont have account? <a href="/register">Register</a>
           </p>
