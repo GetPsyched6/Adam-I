@@ -33,6 +33,11 @@
   --clr-lyellow: #ffe990;
   --clr-green: #006239;
   --clr-lgreen: #18b231;
+
+  --fw-regular: 500;
+  --fw-medium: 600;
+  --fw-semibold: 700;
+  --fw-bold: 800;
 }
 
 html {
