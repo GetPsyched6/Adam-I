@@ -4,7 +4,6 @@ import Login from './components/Login/Login';
 import Home from './pages/Home/Home';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Register from './components/Register/Register';
-
 function App() {
   return (
     <div className="App">
@@ -14,6 +13,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
