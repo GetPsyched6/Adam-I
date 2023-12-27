@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SectionOne.module.css';
 
-function Section1() {
+function SectionOne() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -16,4 +16,4 @@ function Section1() {
   );
 }
 
-export default Section1;
+export default SectionOne;
