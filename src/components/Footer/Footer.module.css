@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Medium';
+  src: url('../../assets/fonts/Poppins-Medium.ttf') format('truetype');
+  /* Add more formats (woff, woff2) if needed */
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('../../assets/fonts/Poppins-Regular.ttf') format('truetype');
+  /* Add more formats (woff, woff2) if needed */
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: url('../../assets/fonts/Poppins-Bold.ttf') format('truetype');
+  /* Add more formats (woff, woff2) if needed */
+}
+
+.footer {
+  background-color: var(--clr-green);
+  color: var(--clr-bg-lgray);
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.socialmedia a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--clr-lyellow);
+  font-family: 'Medium', sans-serif;
+  margin: 1rem;
+  font-size: 1rem;
+  margin-left: 4rem;
+}
+
+.socialmedia :hover {
+  font-size: 1.2rem;
+  transition: all 0.5s ease;
+}
+
+.socialmedia {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.divider {
+  border-left: 0.13rem solid var(--clr-lyellow);
+  margin: 0.5rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactinfo {
+  margin-left: auto;
+  margin-right: 3rem;
+  color: var(--clr-lyellow);
+  font-family: 'Regular', sans-serif;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+.contactinfo p {
+  margin: 0.4rem;
+}
+.copyright {
+  margin-left: auto;
+  margin-top: 2rem;
+  color: var(--clr-yellow);
+  font-size: 1.4rem;
+}
+
+.AdamInnovations {
+  font-family: 'Bold', sans-serif;
+
+  font-size: 1.2rem;
+}
+
+.icon {
+  height: 1.6rem;
+  width: 1.6rem;
+  padding: 0.2rem;
+  text-align: center;
+  background-color: var(--clr-bg-lgray);
+  border-radius: 50%;
+  color: black;
+  margin-right: 1.3rem;
+}
