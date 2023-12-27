@@ -193,6 +193,17 @@ textarea {
   outline: inherit;
 }
 
+ul,
+ol,
+li {
+  font: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+}
+
 select {
   -webkit-appearance: none;
   appearance: none;
