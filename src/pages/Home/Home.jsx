@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Home.module.css';
-// import NavBar from '../../components/Navbar/Navbar';
-import Section1 from './Section1';
+import NavBar from '../../components/Navbar/Navbar';
+import SectionOne from './SectionOne/SectionOne';
 
 function Home() {
   return (
     <div className={styles.home_main}>
-      {/* <NavBar /> */}
-      <Section1 />
+      <NavBar />
+      <SectionOne />
     </div>
   );
 }
