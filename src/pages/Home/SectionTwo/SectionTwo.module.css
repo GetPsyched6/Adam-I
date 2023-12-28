@@ -1,0 +1,15 @@
+.wrapper {
+    background-color: var(--clr-bg-lgray);
+    padding: 4rem 3rem;
+}
+
+.title {
+    font-weight: 700;
+    color: var(--clr-green);
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 3rem 2rem;
+    }
+}
