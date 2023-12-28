@@ -13,6 +13,7 @@
 .image {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .title_container {
@@ -26,7 +27,6 @@
 }
 
 .title {
-  color: var(--clr-yellow);
   text-transform: uppercase;
   font-weight: var(--fw-semibold);
 }

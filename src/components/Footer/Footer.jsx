@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa6';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -7,16 +6,16 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.socialmedia}>
         <a href="https://www.facebook.com/">
-          <FontAwesomeIcon icon={faFacebookF} className={styles.icon} /> Facebook
+          <FaFacebookF className={styles.icon} /> Facebook
         </a>
         <a href="https://www.facebook.com/">
-          <FontAwesomeIcon icon={faInstagram} className={styles.icon} /> Instagram
+          <FaInstagram className={styles.icon} /> Instagram
         </a>
         <a href="https://www.facebook.com/">
-          <FontAwesomeIcon icon={faTwitter} className={styles.icon} /> Twitter
+          <FaTwitter className={styles.icon} /> Twitter
         </a>
         <a href="https://www.facebook.com/">
-          <FontAwesomeIcon icon={faYoutube} className={styles.icon} /> Youtube
+          <FaYoutube className={styles.icon} /> Youtube
         </a>
       </div>
       <div className={styles.divider} />
