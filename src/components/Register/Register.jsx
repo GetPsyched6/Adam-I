@@ -58,9 +58,9 @@ function Register() {
           </form>
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
         </div>
-        <span className={styles.Invest}>
+        <div className={styles.Invest}>
           Shaping tomorrow together, Invest in Africa&apos;s potential.
-        </span>
+        </div>
       </div>
     </div>
   );

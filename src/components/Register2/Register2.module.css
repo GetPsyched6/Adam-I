@@ -1,4 +1,106 @@
-.container{
-    background: url('../../assets/background.jpg');
+.container {
+    background: url('../../assets/background2.png') center center/cover no-repeat;
     height: 100vh;
+    color:rgba(255, 255, 255, 0.9);
 }
+
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.Nav{
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+.heading{
+    margin-top: 0.8rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.part{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+.Form{
+    margin-top: 1rem;
+}
+.sec{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.sec input{
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    box-shadow: 0px 0px 0.125rem rgb(55, 54, 54);
+    background-color: rgba(255, 255, 255, 0.72);
+    box-sizing: border-box;
+    width: 20rem;
+}
+.sec input:focus{
+    outline: none;
+}
+
+.login-link {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.826);
+    margin: 1.5rem 0;
+}
+
+.login-link a {
+    color: white;
+    text-decoration: none;
+}
+.btn{
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+.register-btn {
+    border-radius: 3rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.75rem 2.5rem;
+    background-color: rgba(255, 228, 120, 0.82);
+    cursor: pointer;
+}
+.back-btn{
+    border-radius: 3rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.75rem 2.5rem;
+    background-color: rgba(255, 255, 255, 0.826);
+    cursor: pointer;
+}
+.aboutus {
+    color: white;
+    font-size: 1rem;
+    padding: 0.625rem;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+}
+
+.Invest {
+    color: white;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 0.625rem;
+}
+
+
+.login-link a:hover {
+    text-decoration: underline;
+} 
