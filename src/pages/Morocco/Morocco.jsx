@@ -1,7 +1,7 @@
 function Morocco() {
   return (
     <div>
-      <h1>Maroc</h1>
+      <h1>Marocco</h1>
     </div>
   );
 }

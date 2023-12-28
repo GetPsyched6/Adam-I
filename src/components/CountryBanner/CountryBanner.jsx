@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 import styles from './CountryBanner.module.css';
-import outwardArrow from '../../assets/arrow_outward.svg';
+import outwardArrow from '../../assets/images/Home/SectionThree/arrow_outward.svg';
 
 function Country({ countryName, countryImageSrc }) {
   return (
