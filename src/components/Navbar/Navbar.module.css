@@ -87,6 +87,8 @@
     display: block;
     cursor: pointer;
     z-index: 2;
+    height: 24px;
+    width: 24px;
   }
 
   .icon {
@@ -96,15 +98,16 @@
   .mobile_nav {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -50%;
     bottom: 0;
     width: 50%;
-    padding-block-start: 6rem;
+    padding-block: 6rem 2rem;
     padding-inline-end: 2rem;
     background-color: rgb(255, 255, 255);
     z-index: 1;
+    overflow-y: auto;
     transition: right 0.3s ease-in-out;
   }
 
@@ -114,7 +117,6 @@
   }
 
   .dropdown_content .nav_links {
-    /* display: initial; */
     gap: 2rem;
   }
 
@@ -146,6 +148,10 @@
 }
 
 @media (max-width: 600px) {
+  .nav {
+    padding-inline: 1rem 2rem;
+  }
+
   .mobile_nav {
     right: -75%;
     width: 75%;

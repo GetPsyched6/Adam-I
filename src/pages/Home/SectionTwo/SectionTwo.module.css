@@ -1,0 +1,8 @@
+.wrapper {
+  background-color: var(--clr-bg-lgray);
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}

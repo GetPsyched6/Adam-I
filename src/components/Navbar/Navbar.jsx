@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -26,6 +26,22 @@ function NavBar() {
     }
     return classes;
   };
+
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (!event.target.closest(`.${styles.nav}`) && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    document.body.style.overflow = isOpen ? 'hidden' : 'visible';
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'visible';
+    };
+  }, [isOpen]);
 
   return (
     <nav className={styles.nav}>

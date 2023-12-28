@@ -1,4 +1,3 @@
-/* Default styles for all screen sizes */
 .footer {
     background-color: var(--clr-green);
     color: var(--clr-bg-lgray);
@@ -13,7 +12,6 @@
     align-items: center;
     text-decoration: none;
     color: var(--clr-lyellow);
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     margin: 1rem;
     font-size: 1rem;
@@ -42,10 +40,7 @@
     margin-left: auto;
     margin-right: 3rem;
     color: var(--clr-lyellow);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
     text-align: right;
-    font-size: 1.2rem;
   }
   
   .contactinfo p {
@@ -56,13 +51,10 @@
     margin-left: auto;
     margin-top: 2rem;
     color: var(--clr-yellow);
-    font-size: 1.4rem;
   }
   
   .AdamInnovations {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
   }
   
   .icon {
@@ -76,9 +68,7 @@
     margin-right: 1.3rem;
   }
   
-  /* Media Queries */
-  @media only screen and (max-width: 992px) {
-    /* Styles for Tablets and Desktops (Width <= 992px) */
+  @media (max-width: 992px) {
     .footer {
       flex-direction: column;
       align-items: center;
@@ -101,14 +91,15 @@
     }
   }
   
-  @media only screen and (max-width: 600px) {
-    /* Styles for Mobiles/iPhones (Width <= 600px) */
+  @media (max-width: 600px) {
     .footer {
-      padding: 1rem 0.5rem; /* Adjust padding for smaller screens */
+      padding: 1rem 0.5rem;
     }
   
     .socialmedia {
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   
     .socialmedia a {
