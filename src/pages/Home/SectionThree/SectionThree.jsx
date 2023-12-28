@@ -6,7 +6,7 @@ import kenya from '../../../assets/images/Home/SectionThree/kenya.jpeg';
 import namibia from '../../../assets/images/Home/SectionThree/namibia.jpeg';
 import Styles from './SectionThree.module.css';
 import CountryDescription from '../../../components/CountryDescription/CountryDescription';
-import content from './countryContent';
+import content from '../../../data/countryContent';
 import map from '../../../assets/images/Home/SectionThree/map.png';
 
 const countries = [
