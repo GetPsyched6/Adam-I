@@ -1,0 +1,84 @@
+.container {
+  background-color: #f4f4f4;
+  padding: 2rem;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #1b5a25;
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.96px;
+}
+
+.countriesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5.6rem;
+}
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  gap: 2rem;
+}
+
+.horizontalLine {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 3.5rem;
+}
+
+.contentContainer {
+  margin-right: 5rem;
+}
+
+.contentAndMapContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  width: 30.43rem;
+  height: 32.5 rem;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .countriesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5.6rem;
+  }
+
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .contentAndMapContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
