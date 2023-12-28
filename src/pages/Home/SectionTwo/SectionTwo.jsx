@@ -6,15 +6,18 @@ import investData from '../../../data/whyinvest';
 function SectionTwo() {
   return (
     <div className={styles.wrapper}>
-      {investData.map(data => (
-        <Cards
-          key={data.id}
-          title={data.title}
-          image={data.image}
-          alt={data.alt}
-          body={data.body}
-        />
-      ))}
+      <h1 className={`${styles.text} ${styles.title}`}>Why Invest in Africa?</h1>
+      <div className={styles.container}>
+        {investData.map(data => (
+          <Cards
+            key={data.id}
+            title={data.title}
+            image={data.image}
+            alt={data.alt}
+            body={data.body}
+          />
+        ))}
+      </div>
     </div>
   );
 }
