@@ -14,6 +14,7 @@
 .title {
     font-weight: 700;
     color: var(--clr-green);
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 600px) {

@@ -6,7 +6,7 @@ import investData from '../../../data/whyinvest';
 function SectionTwo() {
   return (
     <div className={styles.wrapper}>
-      <h1 className={`${styles.text} ${styles.title}`}>Why Invest in Africa?</h1>
+      <h2 className={`${styles.text} ${styles.title}`}>Why Invest in Africa?</h2>
       <div className={styles.container}>
         {investData.map(data => (
           <Cards
