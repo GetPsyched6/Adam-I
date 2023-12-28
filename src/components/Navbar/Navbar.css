@@ -1,0 +1,124 @@
+.nav{
+    position: sticky;
+    top:0;
+    background:#ffff;
+    padding: 0.625rem 0.125rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:white;
+    z-index:1000;
+}
+.nav ul{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+.Tick{
+    vertical-align:middle;
+}
+
+
+.nav .navbar ul li{
+    list-style-type: none;
+    position:relative;
+    float:left;
+}
+
+.nav .navbar ul li a{
+    font-size:1rem;
+    color:#333;
+    display:block;
+}
+a{
+    text-decoration: none;
+}
+.nav .navbar ul li a:hover{
+    color:#9e7a7a;
+}
+
+.nav .navbar ul li ul{
+    position:absolute;
+    left:0;
+    width:min-content;
+    background:#fff;
+    display: none;
+}
+
+.nav .navbar ul li ul li{
+    width:100%;
+    border-top: 0.1px solid rgb(44, 43, 43)
+}
+
+.nav .navbar ul li ul li ul{
+    left:200px;
+    top:0;
+}
+
+.nav .navbar ul li:focus-within >ul,
+.nav .navbar ul li:hover > ul{
+    display: initial;
+}
+
+.nav .navbar ul li a .j img{
+    height: 2rem;
+    vertical-align: middle;
+}
+
+#menu-bar{
+    display:none;
+}
+
+.nav label{
+    font-size: 20px;
+    color:#333;
+    cursor:pointer;
+    display:none;
+}
+
+@media(max-width:991px){
+
+    .nav{
+        padding:20px;
+    }
+
+    .nav label{
+        display:initial;
+    }
+
+    .nav .navbar{
+        position: absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:#fff;
+        border-top:1px solid rgba(0,0,0,1);
+        display:none;
+    }
+
+    .nav .navbar ul li{
+        width :100%;
+    }
+
+    .nav .navbar ul li ul{
+        position:relative;
+        width:100%;
+    }
+
+    .nav .navbar ul li ul li{
+        background:#eee;
+    }
+    .nav .navbar ul{
+        display: flex;
+        align-items: center;
+    }
+    .nav .navbar ul li ul li ul{
+        width:100%;
+        left:0;
+    }
+
+    #menu-bar:checked ~ .navbar{
+        display:initial;
+    }
+}
+

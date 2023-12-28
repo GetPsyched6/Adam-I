@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Home.module.css';
 // import NavBar from '../../components/Navbar/Navbar';
-import Section1 from './Section1';
+import Section1 from '../../components/Section1/Section1';
 
 function Home() {
   return (

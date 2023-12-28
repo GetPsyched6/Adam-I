@@ -97,3 +97,23 @@
 .login-link a:hover {
     text-decoration: underline;
 } 
+
+
+/* css for tablet */
+@media (max-width: 992px) and (min-width:600px){
+    .invast {
+        color: red;
+    }
+    .login-email{
+        background-color: red;
+    }
+}
+/* css for mobile */
+@media (max-width: 600px){
+    .invast {
+        color: red;
+    }
+    .login-email{
+        background-color: red;
+    }
+}
