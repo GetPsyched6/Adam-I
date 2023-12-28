@@ -10,7 +10,7 @@ function Cards(props) {
         <div className={styles.card}>
           <img src={image} alt={alt} className={styles.image} />
           <div className={styles.title_container}>
-            <h3 className={styles.title}>{title}</h3>
+            <h4 className={styles.title}>{title}</h4>
           </div>
         </div>
         {body && <p className={styles.body}>{body}</p>}
