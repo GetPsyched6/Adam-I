@@ -4,6 +4,7 @@ import NavBar from '../../components/Navbar/Navbar';
 import SectionOne from './SectionOne/SectionOne';
 import SectionTwo from './SectionTwo/SectionTwo';
 import Footer from '../../components/Footer/Footer';
+import SectionTwo from './SectionTwo/SectionTwo';
 
 function Home() {
   return (
