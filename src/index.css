@@ -45,8 +45,9 @@
   --fw-bold: 800;
 
   --fs-h1: clamp(0.8rem, 8vw + 0.8rem, 5.4rem);
-  --fs-h2: clamp(0.6rem, 6vw, 2.6rem);
-  --fs-h3: clamp(0.4rem, 3vw + 0.4rem, 1.5rem);
+  --fs-h2: clamp(0.8rem, 8vw, 4rem);
+  --fs-h3: clamp(0.6rem, 6vw, 2.6rem);
+  --fs-h4: clamp(0.4rem, 3vw + 0.4rem, 1.5rem);
   --fs-p: clamp(0.3rem, 3vw + 0.3rem, 1.25rem);
   --fs-small: clamp(0.2rem, 3vw + 0.3rem, 1rem);
 }
@@ -98,6 +99,11 @@ h2 {
 h3 {
   font-size: var(--fs-h3);
   letter-spacing: -0.48px;
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  letter-spacing: -0.2px;
 }
 
 p {

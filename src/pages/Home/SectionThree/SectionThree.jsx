@@ -20,7 +20,7 @@ function SectionThree() {
   return (
     <div className={Styles.container}>
       <div className={Styles.titleContainer}>
-        <p className={Styles.title}>Choose a Country</p>
+        <h2 className={Styles.title}>Choose a Country</h2>
       </div>
 
       <div className={Styles.countriesContainer}>

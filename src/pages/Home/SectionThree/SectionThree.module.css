@@ -1,5 +1,5 @@
 .container {
-  background-color: #f4f4f4;
+  background-color: var(--clr-bg-lgray);
   padding: 2rem;
 }
 
@@ -11,13 +11,8 @@
 }
 
 .title {
-  color: #1b5a25;
-  font-family: Poppins;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.96px;
+  color: var(--clr-green);
+  font-weight: var(--fw-semibold);
 }
 
 .countriesContainer {
