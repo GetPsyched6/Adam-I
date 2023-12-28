@@ -1,0 +1,124 @@
+/* Default styles for all screen sizes */
+.footer {
+    background-color: var(--clr-green);
+    color: var(--clr-bg-lgray);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .socialmedia a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--clr-lyellow);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 1rem;
+    font-size: 1rem;
+  }
+  
+  .socialmedia :hover {
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+  }
+  
+  .socialmedia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .divider {
+    border-left: 0.13rem solid var(--clr-lyellow);
+    margin: 0.5rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .contactinfo {
+    margin-left: auto;
+    margin-right: 3rem;
+    color: var(--clr-lyellow);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-align: right;
+    font-size: 1.2rem;
+  }
+  
+  .contactinfo p {
+    margin: 0.4rem;
+  }
+  
+  .copyright {
+    margin-left: auto;
+    margin-top: 2rem;
+    color: var(--clr-yellow);
+    font-size: 1.4rem;
+  }
+  
+  .AdamInnovations {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+  }
+  
+  .icon {
+    height: 1.6rem;
+    width: 1.6rem;
+    padding: 0.2rem;
+    text-align: center;
+    background-color: var(--clr-bg-lgray);
+    border-radius: 50%;
+    color: black;
+    margin-right: 1.3rem;
+  }
+  
+  /* Media Queries */
+  @media only screen and (max-width: 992px) {
+    /* Styles for Tablets and Desktops (Width <= 992px) */
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .socialmedia {
+      flex-direction: row;
+      margin-left: 0;
+    }
+  
+    .socialmedia a {
+      margin-left: 0;
+    }
+  
+    .contactinfo {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    /* Styles for Mobiles/iPhones (Width <= 600px) */
+    .footer {
+      padding: 1rem 0.5rem; /* Adjust padding for smaller screens */
+    }
+  
+    .socialmedia {
+      align-items: center;
+    }
+  
+    .socialmedia a {
+      margin: 0.5rem;
+    }
+  
+    .contactinfo {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+    }
+  }
+  
