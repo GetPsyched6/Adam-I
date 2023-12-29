@@ -1,23 +1,24 @@
 import propTypes from 'prop-types';
-import Styles from './CountryDescription.module.css';
+import styles from './CountryDescription.module.css';
 
 function CountryDescription({ countryName, countryDesc, color }) {
-  const countryNameStyles = { color, fontSize: '1.5rem', fontWeight: 900, fontStyle: 'bold' };
-  const bulletStyles = {
+  const fwBold = '800';
+  const countryNamestyles = { color, fontWeight: fwBold };
+  const bulletstyles = {
     backgroundColor: color,
     width: '0.625rem',
     height: '1.9rem',
   };
 
   return (
-    <div className={Styles.mainContainer}>
-      <div className={Styles.container}>
-        <div style={bulletStyles} />
-        <div className={Styles.title}>
-          <p style={countryNameStyles}>{countryName}</p>
+    <div className={styles.wrapper}>
+      <div className={styles.content}>
+        <div style={bulletstyles} />
+        <div className={styles.title}>
+          <h4 style={countryNamestyles}>{countryName}</h4>
         </div>
       </div>
-      <div className={Styles.description}>
+      <div className={styles.description}>
         <p>{countryDesc}</p>
       </div>
     </div>

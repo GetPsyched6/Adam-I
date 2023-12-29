@@ -16,6 +16,14 @@
   object-fit: cover;
 }
 
+.border {
+  outline: solid 6px var(--clr-green);
+}
+
+.link {
+  cursor: pointer;
+}
+
 .title_container {
   display: flex;
   position: absolute;
@@ -29,6 +37,12 @@
 .title {
   text-transform: uppercase;
   font-weight: var(--fw-semibold);
+}
+
+.arrow_icon {
+  color: var(--clr-lgreen);
+  font-size: var(--fs-h3);
+  stroke-width: 0.5px;
 }
 
 .body {

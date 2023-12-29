@@ -13,6 +13,9 @@ function SectionTwo() {
           image={data.image}
           alt={data.alt}
           body={data.body}
+          color="yellow"
+          hasArrow={false}
+          hasBorder={false}
         />
       ))}
     </div>
