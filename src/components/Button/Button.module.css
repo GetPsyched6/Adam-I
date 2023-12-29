@@ -1,0 +1,32 @@
+.button {
+  padding: 1rem 3rem;
+  background-color: var(--clr-white70);
+  border-radius: 500px;
+  transition: background-color 0.1s linear;
+}
+
+.button:hover {
+  background-color: var(--clr-white90);
+  transition: background-color 0.1s linear;
+}
+
+.button:active {
+  background-color: var(--clr-white70);
+}
+
+.text {
+  font-weight: var(--fw-semibold);
+}
+
+.action {
+  background-color: var(--clr-lyellow);
+}
+
+.action:hover {
+  background-color: var(--clr-yellow);
+  transition: background-color 0.1s linear;
+}
+
+.action:active {
+  background-color: var(--clr-lyellow);
+}
