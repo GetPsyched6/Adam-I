@@ -1,6 +1,6 @@
 .wrapper {
-    background-color: var(--clr-bg-lgray);
-    padding: 4rem 3rem;
+    background-color: white;
+    padding: 3rem;
 }
 
 .container {
@@ -19,6 +19,6 @@
 
 @media (max-width: 600px) {
     .wrapper {
-        padding: 3rem 2rem;
+        padding: 2rem;
     }
 }
