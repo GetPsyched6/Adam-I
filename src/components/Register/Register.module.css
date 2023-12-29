@@ -10,8 +10,7 @@
 }
 
 .register {
-    padding-top: 2rem;
-    padding-left: 1.25rem;
+    padding-left: 1rem;
     width: 40%; 
     height: 100%;
     background-color: rgba(17, 17, 17, 0.466);
@@ -22,14 +21,20 @@
 
 .register h1 {
     color: white;
-    margin-top: 0;
     font-size: 3.2rem;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+.register_form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
 }
 .register-input{
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    margin: 1.25rem 0px;
 }
 .register-email,
 .register-password,
@@ -50,29 +55,16 @@
 .register-password:focus,
 .register-username:focus {
     outline: none;
-}
+} 
 
 .login-link {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.826);
-    margin: 0.625rem 0;
 }
 
 .login-link a {
     color: white;
     text-decoration: none;
-}
-
-.register-btn {
-    border-radius: 3rem;
-    border: none;
-    font-size: 1rem;
-    font-weight: 600;
-    width: 30%;
-    margin-top: 1.5rem;
-    padding: 0.75rem 0.4rem;
-    background-color: rgba(255, 255, 255, 0.826);
-    cursor: pointer;
 }
 
 .aboutus {

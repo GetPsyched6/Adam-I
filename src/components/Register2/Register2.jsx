@@ -2,12 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Register2.module.css';
 import NavBar from '../Navbar/Navbar';
+import Button from '../Button/Button';
 
 function Register2() {
   const Navigate = useNavigate();
   const handlesubmit = e => {
     e.preventDefault();
     Navigate('/login');
+  };
+  const handleback = () => {
+    Navigate('/');
   };
 
   return (
@@ -17,8 +21,8 @@ function Register2() {
       </div>
       <div className={styles.coloring}>
         <div className={styles['sub-container']}>
-          <span className={styles.heading}>Company Registration</span>
-          <span className={styles.part}>Contact Information (2 of 2)</span>
+          <h1 className={styles.heading}>Company Registration</h1>
+          <h3 className={styles.part}>Contact Information (2 of 2)</h3>
           <form className={styles.Form} onSubmit={handlesubmit}>
             <div className={styles.sec}>
               <label htmlFor="contact">
@@ -79,18 +83,13 @@ function Register2() {
             </div>
 
             <div className={styles.btn}>
-              <button className={styles['register-btn']} type="submit">
-                Register
-              </button>
-              <button
-                className={styles['back-btn']}
+              <Button type="submit" Name="Register" backgroundColor="rgba(255, 228, 120, 0.82)" />
+              <Button
+                Name="Back"
                 onClick={() => {
-                  Navigate('/');
+                  handleback();
                 }}
-                type="button"
-              >
-                Back
-              </button>
+              />
             </div>
           </form>
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>

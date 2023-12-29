@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
 import NavBar from '../Navbar/Navbar';
+import Button from '../Button/Button';
 
 function Register() {
   const Navigate = useNavigate();
@@ -14,7 +15,7 @@ function Register() {
       <div className={styles['register-container']}>
         <NavBar />
         <div className={styles.register}>
-          <form action="" onSubmit={handlesubmit}>
+          <form action="" className={styles.register_form} onSubmit={handlesubmit}>
             <h1>Register</h1>
             <div className={styles['register-input']}>
               <label htmlFor="username">
@@ -52,9 +53,7 @@ function Register() {
             <div className={styles['login-link']}>
               have an account? <a href="/login">Login</a>
             </div>
-            <button type="submit" className={styles['register-btn']}>
-              Register
-            </button>
+            <Button Name="Register" type="submit" />
           </form>
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
         </div>

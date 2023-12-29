@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import NavBar from '../Navbar/Navbar';
+import Button from '../Button/Button';
 
 function Login() {
   const Navigate = useNavigate();
@@ -14,7 +15,7 @@ function Login() {
       <div className={styles['login-container']}>
         <NavBar />
         <div className={styles.Login}>
-          <form action="" onSubmit={handlesubmit}>
+          <form action="" className={styles.login_form} id="loginForm" onSubmit={handlesubmit}>
             <div className={styles['login-input']}>
               <h1>Login</h1>
               <label htmlFor="email">
@@ -49,10 +50,7 @@ function Login() {
                 Remember Me
               </label>
             </div>
-            <br />
-            <button type="submit" className={styles['login-btn']}>
-              Login
-            </button>
+            <Button type="submit" Name="Login" />
           </form>
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
         </div>
