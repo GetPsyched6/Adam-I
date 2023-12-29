@@ -29,6 +29,7 @@ function SectionThree() {
             title={country.name}
             image={country.imageSrc}
             alt={country.name}
+            isGreen
             linkUrl={`/${country.name}`}
           />
         ))}
