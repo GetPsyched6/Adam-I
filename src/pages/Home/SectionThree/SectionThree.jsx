@@ -1,13 +1,12 @@
-import { Link } from 'react-router-dom';
-import CountryBanner from '../../../components/CountryBanner/CountryBanner';
+import CountryDescription from '../../../components/CountryDescription/CountryDescription';
 import morocco from '../../../assets/images/Home/SectionThree/morocco.jpg';
 import nigeria from '../../../assets/images/Home/SectionThree/nigeria.jpeg';
 import kenya from '../../../assets/images/Home/SectionThree/kenya.jpeg';
 import namibia from '../../../assets/images/Home/SectionThree/namibia.jpeg';
-import Styles from './SectionThree.module.css';
-import CountryDescription from '../../../components/CountryDescription/CountryDescription';
+import styles from './SectionThree.module.css';
 import content from '../../../data/countryContent';
 import map from '../../../assets/images/Home/SectionThree/map.png';
+import Cards from '../../../components/Cards/Cards';
 
 const countries = [
   { name: 'Morocco', imageSrc: morocco },
@@ -18,26 +17,30 @@ const countries = [
 
 function SectionThree() {
   return (
-    <div className={Styles.container}>
-      <div className={Styles.titleContainer}>
-        <h2 className={Styles.title}>Choose a Country</h2>
+    <div className={styles.wrapper}>
+      <div className={styles.title_wrapper}>
+        <h2 className={styles.title}>Choose a Country</h2>
       </div>
 
-      <div className={Styles.countriesContainer}>
-        <div className={Styles.countries}>
-          {countries.map(country => (
-            <Link key={country} to={`/${country.name}`}>
-              <CountryBanner countryName={country.name} countryImageSrc={country.imageSrc} />
-            </Link>
-          ))}
-        </div>
+      <div className={styles.card_wrapper}>
+        {countries.map(country => (
+          <Cards
+            key={country}
+            title={country.name}
+            image={country.imageSrc}
+            alt={country.name}
+            isGreen
+            linkUrl={`/${country.name}`}
+          />
+        ))}
       </div>
-      <div className={Styles.horizontalLine}>
+
+      <div className={styles.horizontal_line}>
         <br />
       </div>
 
-      <div className={Styles.contentAndMapContainer}>
-        <div className={Styles.content}>
+      <div className={styles.content_map_wrapper}>
+        <div className={styles.content}>
           {content.map(country => (
             <CountryDescription
               key={country.countryName}
@@ -48,7 +51,7 @@ function SectionThree() {
           ))}
         </div>
         <div>
-          <img className={Styles.map} src={map} alt="African Map" />
+          <img className={styles.map} src={map} alt="African Map" />
         </div>
       </div>
     </div>

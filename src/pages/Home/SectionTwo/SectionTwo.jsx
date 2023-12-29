@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SectionTwo.module.css';
 import Cards from '../../../components/Cards/Cards';
-import investData from '../../../data/whyinvest';
+import investData from '../../../data/whyInvest';
 
 function SectionTwo() {
   return (

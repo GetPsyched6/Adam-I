@@ -1,10 +1,6 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
+import { FaChevronDown } from 'react-icons/fa6';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-unresolved
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// eslint-disable-next-line import/no-unresolved
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './DropdownBox.module.css';
 
 function DropdownBox(props) {
@@ -32,7 +28,7 @@ function DropdownBox(props) {
         </option>
         {children}
       </select>
-      <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
+      <FaChevronDown className={styles.icon} />
     </div>
   );
 }

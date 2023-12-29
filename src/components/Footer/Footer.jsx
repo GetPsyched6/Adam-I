@@ -1,36 +1,46 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa6';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.wrapper}>
       <div className={styles.socialmedia}>
-        <a href="https://www.facebook.com/">
-          <FaFacebookF className={styles.icon} /> Facebook
-        </a>
-        <a href="https://www.facebook.com/">
-          <FaInstagram className={styles.icon} /> Instagram
-        </a>
-        <a href="https://www.facebook.com/">
-          <FaTwitter className={styles.icon} /> Twitter
-        </a>
-        <a href="https://www.facebook.com/">
-          <FaYoutube className={styles.icon} /> Youtube
-        </a>
+        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+          <FaFacebookF className={styles.icon} />
+          <p>Facebook</p>
+        </Link>
+        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+          <FaInstagram className={styles.icon} />
+          <p>Instagram</p>
+        </Link>
+        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+          <FaTwitter className={styles.icon} />
+          <p>Twitter</p>
+        </Link>
+        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+          <FaYoutube className={styles.icon} />
+          <p>Youtube</p>
+        </Link>
       </div>
       <div className={styles.divider} />
-      <div className={styles.contactinfo}>
-        <p className={styles.AdamInnovations}>Adam Innovations Co., Ltd</p>
-        <p>
+      <div>
+        <p className={styles.contactinfo}>
+          <span className={styles.title}>Adam Innovations Co., Ltd</span>
+          <br />
           Global IT Park1188-2, Urasa, Minami
-          <p>UonumaNiigata 9497302 Japan</p>
-        </p>
-        <p>Tel: (+81)25-788-0665</p>
-        <p>
+          <br />
+          UonumaNiigata 9497302 Japan
+          <br />
+          Tel: (+81)25-788-0665
+          <br />
           Email: <u>info@adam-i.jp</u>
+          <br />
+          <span className={styles.subtitle}>
+            Copyright ©2023 Invest Africa. All rights reserved.
+          </span>
         </p>
-
-        <div className={styles.copyright}>Copyright ©2023 Invest Africa. All rights reserved.</div>
       </div>
     </footer>
   );
