@@ -1,0 +1,20 @@
+.wrapper {
+  background-color: white;
+  padding: 3rem;
+}
+
+.card_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.title_wrapper {
+  margin-block-end: 4rem;
+}
+
+.title {
+  color: var(--clr-green);
+  font-weight: var(--fw-semibold);
+}

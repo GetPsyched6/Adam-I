@@ -27,7 +27,7 @@ export default function Footer() {
       <div className={styles.divider} />
       <div>
         <p className={styles.contactinfo}>
-          <span className={styles.title}>Adam Innovations Co., Ltd</span>
+          <span className={styles.title}>Adam Innovations Co. Ltd</span>
           <br />
           Global IT Park1188-2, Urasa, Minami
           <br />
