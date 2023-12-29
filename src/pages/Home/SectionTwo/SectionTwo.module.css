@@ -1,8 +1,24 @@
 .wrapper {
-  background-color: var(--clr-bg-lgray);
-  padding: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+    background-color: white;
+    padding: 3rem;
+}
+
+.container {
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.title {
+    font-weight: var(--fw-semibold);
+    color: var(--clr-green);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 2rem;
+    }
 }
