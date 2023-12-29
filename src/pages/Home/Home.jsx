@@ -1,12 +1,12 @@
 import React from 'react';
-import NavBar from '../../components/Navbar/Navbar';
 import styles from './Home.module.css';
+import NavBar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 import SectionOne from './SectionOne/SectionOne';
 import SectionTwo from './SectionTwo/SectionTwo';
 import SectionThree from './SectionThree/SectionThree';
-import Footer from '../../components/Footer/Footer';
-import SectionTwo from './SectionTwo/SectionTwo';
 import SectionFive from './SectionFive/SectionFive';
+import SectionSeven from './SectionSeven/SectionSeven';
 
 function Home() {
   return (
@@ -16,6 +16,7 @@ function Home() {
       <SectionTwo />
       <SectionThree />
       <SectionFive />
+      <SectionSeven />
       <Footer />
     </div>
   );
