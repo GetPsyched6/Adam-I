@@ -29,9 +29,6 @@ function SectionThree() {
             title={country.name}
             image={country.imageSrc}
             alt={country.name}
-            color="lgreen"
-            hasArrow
-            hasBorder
             linkUrl={`/${country.name}`}
           />
         ))}
