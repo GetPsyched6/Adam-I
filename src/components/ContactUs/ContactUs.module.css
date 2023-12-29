@@ -1,0 +1,22 @@
+.content {
+    padding-bottom: 1rem;
+}
+
+.btn {
+    border-width: 7px;
+    border-style: solid;
+    padding: 1rem 3rem;
+    width: 50%;
+    max-width: 300px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-h4);
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .btn {
+        width: 100%;
+    }
+}
