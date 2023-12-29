@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SectionTwo.module.css';
 import Cards from '../../../components/Cards/Cards';
-import investData from '../../../data/whyinvest';
+import investData from '../../../data/whyInvest';
 
 function SectionTwo() {
   return (
@@ -13,9 +13,6 @@ function SectionTwo() {
           image={data.image}
           alt={data.alt}
           body={data.body}
-          color="yellow"
-          hasArrow={false}
-          hasBorder={false}
         />
       ))}
     </div>
