@@ -14,7 +14,11 @@ function Cards(props) {
   const content = (
     <div className={styles.content}>
       <div className={`${styles.card} ${isGreen ? styles.border : ''}`}>
-        <img src={image} alt={alt} className={styles.image} />
+        <img
+          src={image}
+          alt={alt}
+          className={`${styles.image} ${linkUrl ? styles.image_hover : ''}`}
+        />
         <div className={styles.title_container}>
           <h4 className={styles.title} style={style}>
             {title}

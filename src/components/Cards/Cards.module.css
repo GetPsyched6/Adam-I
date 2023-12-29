@@ -15,6 +15,12 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: filter 0.3s linear;
+}
+
+.card:hover .image_hover {
+  filter: saturate(1.5) contrast(1.5) brightness(1.1);
+  transition: filter 0.3s linear;
 }
 
 .border {

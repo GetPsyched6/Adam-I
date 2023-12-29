@@ -5,6 +5,8 @@ import SectionOne from './SectionOne/SectionOne';
 import SectionTwo from './SectionTwo/SectionTwo';
 import SectionThree from './SectionThree/SectionThree';
 import Footer from '../../components/Footer/Footer';
+import SectionTwo from './SectionTwo/SectionTwo';
+import SectionFive from './SectionFive/SectionFive';
 
 function Home() {
   return (
@@ -13,6 +15,7 @@ function Home() {
       <SectionOne />
       <SectionTwo />
       <SectionThree />
+      <SectionFive />
       <Footer />
     </div>
   );

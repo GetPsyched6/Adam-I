@@ -50,11 +50,6 @@
 }
 
 @media (max-width: 600px) {
-  .title {
-    font-size: 2rem;
-    text-align: center;
-  }
-
   .content_map_wrapper {
     display: flex;
   }
