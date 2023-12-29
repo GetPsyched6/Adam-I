@@ -1,7 +1,9 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-unresolved
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// eslint-disable-next-line import/no-unresolved
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './DropdownBox.module.css';
 

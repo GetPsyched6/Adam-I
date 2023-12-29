@@ -14,6 +14,7 @@ function SectionTwo() {
             title={data.title}
             image={data.image}
             alt={data.alt}
+            color="yellow"
             body={data.body}
           />
         ))}
