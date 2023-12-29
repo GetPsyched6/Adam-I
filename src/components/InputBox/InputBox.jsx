@@ -39,7 +39,10 @@ function InputBox(props) {
     <div className={styles.wrapper}>
       <label className={styles.label} htmlFor={id}>
         {label}
-        <div className={`${styles.input_wrapper} ${wrapperClass}`}>
+        <div
+          className={`${styles.input_wrapper} ${wrapperClass}`}
+          style={{ height: addressHeight }}
+        >
           {!isDropdown ? (
             <input
               type="text"
