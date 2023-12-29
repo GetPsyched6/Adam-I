@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 1rem;
   width: 24rem;
+  justify-content: center;
 }
 
 .card {
@@ -51,8 +52,12 @@
 }
 
 @media (max-width: 600px) {
+  .content {
+    width: 75vw;
+  }
+
   .card {
-    height: 12rem;
+    height: 14rem;
   }
   .title_container {
     height: 3rem;
