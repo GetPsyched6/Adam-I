@@ -1,0 +1,10 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto eol=lf
+
+# Treat .jpg, .png, and .gif files as binary, so Git won't try to change them.
+*.jpg binary
+*.png binary
+*.gif binary
+
+# Indicate that files in the scripts directory should be treated as shell scripts.
+scripts/** eol=lf
