@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faBars } from '@fortawesome/free-solid-svg-icons';
+import { FaChevronDown, FaBars } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import japanFlag from '../../assets/flag-japan.png';
 import logo from '../../assets/invest_africa.png';
@@ -55,7 +54,7 @@ function NavBar() {
         <li className={styles.dropdown_container}>
           <button type="button" className={`${styles.dropdown_button} ${styles.nav_link}`}>
             About
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
+            <FaChevronDown className={styles.icon} />
           </button>
           <div className={styles.dropdown_content}>
             <ul className={styles.nav_links}>
@@ -77,7 +76,7 @@ function NavBar() {
         <li className={styles.dropdown_container}>
           <button type="button" className={`${styles.dropdown_button} ${styles.nav_link}`}>
             Countries
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
+            <FaChevronDown className={styles.icon} />
           </button>
           <div className={styles.dropdown_content}>
             <ul className={styles.nav_links}>
@@ -108,7 +107,7 @@ function NavBar() {
         <li className={styles.dropdown_container}>
           <button type="button" className={`${styles.dropdown_button} ${styles.nav_link}`}>
             Login
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
+            <FaChevronDown className={styles.icon} />
           </button>
           <div className={styles.dropdown_content}>
             <ul className={styles.nav_links}>
@@ -125,9 +124,8 @@ function NavBar() {
           </div>
         </li>
       </ul>
-      <FontAwesomeIcon
+      <FaBars
         className={styles.menu_icon}
-        icon={faBars}
         onClick={() => {
           toggleNav();
         }}
