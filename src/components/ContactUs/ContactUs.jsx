@@ -11,7 +11,7 @@ function ContactUs(props) {
   return (
     <div className={styles.content}>
       <Link to="/contactus">
-        <div className={styles.btn} style={style}>
+        <div className={styles.button} style={style}>
           Contact us
         </div>
       </Link>
@@ -24,7 +24,7 @@ ContactUs.propTypes = {
 };
 
 ContactUs.defaultProps = {
-  color: 'white90',
+  color: 'white',
 };
 
 export default ContactUs;
