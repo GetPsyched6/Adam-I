@@ -8,7 +8,7 @@
 .content {
   display: flex;
   align-items: center;
-  gap: 0.5rem
+  gap: 0.5rem;
 }
 
 .description {
@@ -19,4 +19,16 @@
   color: black;
   font-size: var(--fs-small);
   line-height: normal;
+}
+
+@media (max-width: 992px) {
+  .description p {
+    max-width: 60vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .description p {
+    max-width: 80vw;
+  }
 }

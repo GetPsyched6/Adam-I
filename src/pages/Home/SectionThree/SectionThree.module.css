@@ -29,6 +29,7 @@
 }
 
 .content_map_wrapper {
+  min-height: 700px; /* ?To stop the map jumping around */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -36,7 +37,14 @@
 }
 
 .map {
-  width: 30.5rem;
+  width: 32.5rem;
+}
+
+.highlight {
+  position: absolute;
+  display: none;
+  border: 2px solid red;
+  pointer-events: none;
 }
 
 @media (max-width: 992px) {
