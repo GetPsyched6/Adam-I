@@ -4,12 +4,10 @@ import styles from './ContactUs.module.css';
 
 function ContactUs(props) {
   const { color, onClick } = props;
-  const style = {
-    color: `var(--clr-${color})`,
-  };
+  const colorClass = color === 'white' ? styles.white_color : styles.black_color;
   return (
     <div className={styles.wrapper}>
-      <button type="button" className={styles.button} style={style} onClick={onClick}>
+      <button type="button" className={`${styles.button} ${colorClass}`} onClick={onClick}>
         Contact us
       </button>
     </div>
@@ -17,12 +15,12 @@ function ContactUs(props) {
 }
 
 ContactUs.propTypes = {
-  color: PropTypes.oneOf(['white90', 'black90']),
+  color: PropTypes.oneOf(['white', 'black']),
   onClick: PropTypes.func.isRequired,
 };
 
 ContactUs.defaultProps = {
-  color: 'white90',
+  color: 'white',
 };
 
 export default ContactUs;

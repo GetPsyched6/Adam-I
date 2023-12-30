@@ -7,6 +7,22 @@
   font-weight: var(--fw-medium);
   font-size: var(--fs-p);
   cursor: pointer;
+  transition: opacity 0.3s linear;
+}
+
+.white_color {
+  border-color: var(--clr-white90);
+  color:  var(--clr-white90);
+}
+
+.black_color {
+  border-color: var(--clr-black90);
+  color:  var(--clr-black90);
+}
+
+.button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s linear;
 }
 
 @media (max-width: 600px) {
