@@ -7,7 +7,7 @@ function SectionSeven() {
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <ContactUs />
-        <h2 className={`${styles.text} ${styles.title}`}>
+        <h2 className={styles.title}>
           Partner with us to build
           <br />
           Prosperity for Africa.

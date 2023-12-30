@@ -1,22 +1,17 @@
-.content {
-    padding-bottom: 1rem;
-}
-
 .button {
-    border-width: 7px;
-    border-style: solid;
-    padding: 1rem 3rem;
-    width: 50%;
-    max-width: 300px;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: var(--fw-medium);
-    font-size: var(--fs-h4);
-    cursor: pointer;
+  border-width: 5px;
+  border-style: solid;
+  padding: 1rem 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-p);
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
-    .btn {
-        width: 100%;
-    }
+  .button {
+    padding: 1rem 2rem;
+    width: 75vw;
+  }
 }
