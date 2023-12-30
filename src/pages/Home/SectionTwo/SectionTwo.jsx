@@ -7,7 +7,7 @@ function SectionTwo() {
   return (
     <div className={styles.wrapper}>
       <h2 className={`${styles.text} ${styles.title}`}>Why Invest in Africa?</h2>
-      <div className={styles.container}>
+      <div className={styles.card_wrapper}>
         {investData.map(data => (
           <Cards
             key={data.id}

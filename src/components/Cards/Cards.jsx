@@ -46,13 +46,14 @@ Cards.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+  body: PropTypes.string,
   isGreen: PropTypes.bool,
   linkUrl: PropTypes.string,
 };
 
 Cards.defaultProps = {
   isGreen: false,
+  body: '',
   linkUrl: '',
 };
 

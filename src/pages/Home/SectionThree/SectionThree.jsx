@@ -9,10 +9,10 @@ import map from '../../../assets/images/Home/SectionThree/map.png';
 import Cards from '../../../components/Cards/Cards';
 
 const countries = [
-  { name: 'Morocco', imageSrc: morocco },
-  { name: 'Nigeria', imageSrc: nigeria },
-  { name: 'Kenya', imageSrc: kenya },
-  { name: 'Namibia', imageSrc: namibia },
+  { id: 1, name: 'Morocco', imageSrc: morocco },
+  { id: 2, name: 'Nigeria', imageSrc: nigeria },
+  { id: 3, name: 'Kenya', imageSrc: kenya },
+  { id: 4, name: 'Namibia', imageSrc: namibia },
 ];
 
 function SectionThree() {
@@ -25,7 +25,7 @@ function SectionThree() {
       <div className={styles.card_wrapper}>
         {countries.map(country => (
           <Cards
-            key={country}
+            key={country.id}
             title={country.name}
             image={country.imageSrc}
             alt={country.name}
@@ -43,7 +43,7 @@ function SectionThree() {
         <div className={styles.content}>
           {content.map(country => (
             <CountryDescription
-              key={country.countryName}
+              key={country.id}
               countryName={country.countryName}
               countryDesc={country.countryDesc}
               color={country.color}

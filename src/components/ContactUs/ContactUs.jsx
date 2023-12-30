@@ -1,30 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ContactUs.module.css';
 
 function ContactUs(props) {
-  const { color } = props;
-  const style = {
-    color: `var(--clr-${color})`,
-  };
+  const { color, onClick } = props;
+  const colorClass = color === 'white' ? styles.white_color : styles.black_color;
   return (
-    <div className={styles.content}>
-      <Link to="/contactus">
-        <div className={styles.btn} style={style}>
-          Contact us
-        </div>
-      </Link>
+    <div className={styles.wrapper}>
+      <button type="button" className={`${styles.button} ${colorClass}`} onClick={onClick}>
+        Contact us
+      </button>
     </div>
   );
 }
 
 ContactUs.propTypes = {
-  color: PropTypes.oneOf(['lgreen', 'lyellow', 'green', 'yellow', 'white']),
+  color: PropTypes.oneOf(['white', 'black']),
+  onClick: PropTypes.func.isRequired,
 };
 
 ContactUs.defaultProps = {
-  color: 'white90',
+  color: 'white',
 };
 
 export default ContactUs;

@@ -1,43 +1,37 @@
 .wrapper {
-    position: relative;
-    background-image: url('../../../assets/images/Home/SectionSeven/home_contactus.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    width: 100%;
-    height: 50rem;
+  position: relative;
+  background-image: url('../../../assets/images/Home/SectionSeven/home_contactus.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 75vh;
 }
 
 .content {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 3rem;
-}
-
-.text {
-    color: var(--clr-white90);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 3rem;
 }
 
 .title {
-    font-weight: var(--fw-semibold);
-    padding-block-end: 1rem;
+  margin-block-start: 1rem;
+  color: var(--clr-white90);
+  font-weight: var(--fw-semibold);
+  padding-block-end: 1rem;
 }
 
 @media (max-width: 992px) {
-    .wrapper {
-        height: 35rem;
-    }
-    .content {
-        padding: 3rem 2rem;
-    }
+  .wrapper {
+    height: 60vh;
+  }
+  .content {
+    padding: 3rem 2rem;
+  }
 }
 
 @media (max-width: 600px) {
-    .wrapper {
-        height: 25rem;
-    }
-    .content {
-        padding: 3rem 2rem;
-    }
+  .content {
+    padding: 3rem 2rem;
+  }
 }

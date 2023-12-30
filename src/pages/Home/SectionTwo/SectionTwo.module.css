@@ -1,24 +1,24 @@
 .wrapper {
-    background-color: white;
-    padding: 3rem;
+  background-color: white;
+  padding: 3rem;
 }
 
-.container {
-    padding: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem;
+.card_wrapper {
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
 }
 
 .title {
-    font-weight: var(--fw-semibold);
-    color: var(--clr-green);
-    margin-bottom: 1rem;
+  font-weight: var(--fw-semibold);
+  color: var(--clr-green);
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 600px) {
-    .wrapper {
-        padding: 2rem;
-    }
+  .wrapper {
+    padding: 2rem;
+  }
 }

@@ -1,17 +1,32 @@
-.button{
-    background-color: rgba(255, 255, 255, 0.72);
-    font-size: 0.9rem;
-    font-weight: 800;
-    width: fit-content;
-    padding: 0.8rem 3rem;
-    border-radius: 3rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-    cursor: pointer;
-    width: fit-content;
-    border: none;
-  }
-  
-  .button:hover {
-    transform: scale(1.05); 
-  }
+.button {
+  padding: 1rem 3rem;
+  background-color: var(--clr-white70);
+  border-radius: 500px;
+  transition: background-color 0.1s linear;
+}
+
+.button:hover {
+  background-color: var(--clr-white90);
+  transition: background-color 0.1s linear;
+}
+
+.button:active {
+  background-color: var(--clr-white70);
+}
+
+.text {
+  font-weight: var(--fw-semibold);
+}
+
+.action {
+  background-color: var(--clr-lyellow);
+}
+
+.action:hover {
+  background-color: var(--clr-yellow);
+  transition: background-color 0.1s linear;
+}
+
+.action:active {
+  background-color: var(--clr-lyellow);
+}

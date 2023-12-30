@@ -2,29 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.module.css';
 
-function Button({ Name, backgroundColor, buttontype, onClick }) {
-  const buttonStyle = {
-    backgroundColor: backgroundColor || 'rgba(255, 255, 255, 0.72)',
-  };
-
+function Button(props) {
+  const { isAction, text, isSubmit, onClick } = props;
   return (
-    // eslint-disable-next-line react/button-has-type
-    <button type={buttontype} onClick={onClick} className={styles.button} style={buttonStyle}>
-      {Name}
-    </button>
+    <div className={styles.wrapper}>
+      <button
+        type={isSubmit ? 'submit' : 'button'}
+        className={`${styles.button} ${isAction ? styles.action : ''}`}
+        onClick={onClick}
+      >
+        <span className={styles.text}>{text}</span>
+      </button>
+    </div>
   );
 }
 
 Button.propTypes = {
-  Name: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string,
-  buttontype: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  text: PropTypes.string.isRequired,
+  isSubmit: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  isAction: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  backgroundColor: 'rgba(255, 255, 255, 0.72)',
-  onClick: null,
+  isSubmit: 'button',
+  isAction: false,
 };
 
 export default Button;
