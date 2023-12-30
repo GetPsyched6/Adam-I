@@ -1,7 +1,7 @@
 .input_wrapper {
   position: relative;
   color: var(--clr-black70);
-  margin-block-start: 1rem;
+  margin-block-start: 0.5rem;
 }
 
 .label {

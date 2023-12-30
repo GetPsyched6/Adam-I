@@ -1,113 +1,85 @@
 import React from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 import { FaChevronDown } from 'react-icons/fa6';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './InputBox.module.css';
+import TextBox from './TextBox';
+import DropdownBox from './DropdownBox';
 
-function getContainerClass(size) {
+function getResponsiveClassName(size, isAddress, isTablet, isMobile) {
+  if (isAddress) {
+    // ?If isAddress is true, always use the largest size for the respective media query
+    if (isMobile) {
+      return styles.size_mobile_large;
+    }
+    if (isTablet) {
+      return styles.size_tablet_xlarge;
+    }
+    return styles.size_xlarge;
+  }
+  // ?Regular size handling
+  if (isMobile) {
+    return classNames({
+      [styles.size_mobile_large]: size === 'large',
+      [styles.size_mobile_small]: size === 'small',
+    });
+  }
+  if (isTablet) {
+    return classNames({
+      [styles.size_tablet_large]: size === 'large',
+      [styles.size_tablet_small]: size === 'small',
+    });
+  }
   return classNames({
-    [styles.size_xlarge]: size === 'xlarge',
     [styles.size_large]: size === 'large',
     [styles.size_small]: size === 'small',
-    [styles.size_tablet_xlarge]: size === 'tablet_xlarge',
-    [styles.size_tablet_large]: size === 'tablet_large',
-    [styles.size_tablet_small]: size === 'tablet_small',
-    [styles.size_mobile_large]: size === 'mobile_large',
-    [styles.size_mobile_small]: size === 'mobile_small',
   });
 }
 
 function InputBox(props) {
-  const {
-    isDropdown,
-    value,
-    name,
-    onChange,
-    label,
-    id,
-    disabled,
-    required,
-    size,
-    hasAddress,
-    children,
-  } = props;
+  const { isDropdown, label, id, size, isAddress, children } = props;
+  const options = children;
 
-  const wrapperClass = getContainerClass(size);
-  const addressHeight = hasAddress ? '10rem' : '';
+  const isTablet = useMediaQuery('(max-width: 992px)');
+  const isMobile = useMediaQuery('(max-width: 600px)');
+  const wrapperClass = getResponsiveClassName(size, isAddress, isTablet, isMobile);
+  const addressHeight = isAddress ? '10rem' : '';
 
   return (
     <div className={styles.wrapper}>
       <label className={styles.label} htmlFor={id}>
         {label}
-        <div
-          className={`${styles.input_wrapper} ${wrapperClass}`}
-          style={{ height: addressHeight }}
-        >
-          {!isDropdown ? (
-            <input
-              type="text"
-              className={`${styles.input} ${wrapperClass}`}
-              value={value}
-              onChange={onChange}
-              id={id}
-              disabled={disabled}
-              required={required}
-              style={{ height: addressHeight }}
-            />
-          ) : (
-            <select
-              className={`${styles.input} ${wrapperClass}`}
-              name={name}
-              id={id}
-              value={value}
-              disabled={disabled}
-              required={required}
-              onChange={onChange}
-              style={{ height: addressHeight }}
-            >
-              <option value="" disabled hidden>
-                Select...
-              </option>
-              {children}
-            </select>
-          )}
-          {isDropdown && <FaChevronDown className={styles.icon} />}
-        </div>
       </label>
+      <div className={`${styles.input_wrapper} ${wrapperClass}`} style={{ height: addressHeight }}>
+        {!isDropdown ? (
+          <TextBox props={props} wrapperClass={wrapperClass} addressHeight={addressHeight} />
+        ) : (
+          <DropdownBox
+            props={props}
+            wrapperClass={wrapperClass}
+            addressHeight={addressHeight}
+            options={options}
+          />
+        )}
+        {isDropdown && <FaChevronDown className={styles.icon} />}
+      </div>
     </div>
   );
 }
 
 InputBox.propTypes = {
-  onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   isDropdown: PropTypes.bool,
-  name: PropTypes.string,
-  value: PropTypes.string,
-  disabled: PropTypes.bool,
-  required: PropTypes.bool,
-  hasAddress: PropTypes.bool,
-  size: PropTypes.oneOf([
-    'large',
-    'xlarge',
-    'small',
-    'tablet_xlarge',
-    'tablet_large',
-    'tablet_small',
-    'mobile_large',
-    'mobile_small',
-  ]),
+  isAddress: PropTypes.bool,
+  size: PropTypes.oneOf(['large', 'small']),
   children: PropTypes.node,
 };
 
 InputBox.defaultProps = {
   isDropdown: false,
-  name: '',
-  value: '',
-  disabled: false,
-  required: false,
-  hasAddress: false,
+  isAddress: false,
   size: 'large',
   children: '',
 };
