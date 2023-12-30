@@ -6,11 +6,11 @@ function SectionOne() {
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <h1 className={`${styles.text} ${styles.title}`}>Invest in Africa</h1>
-        <h3 className={`${styles.text} ${styles.subtitle}`}>
+        <h4 className={`${styles.text} ${styles.subtitle}`}>
           Shaping Tomorrow Together,
           <br />
           Invest in Africa&apos;s Potential.
-        </h3>
+        </h4>
       </div>
     </div>
   );

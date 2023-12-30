@@ -31,6 +31,9 @@
 }
 
 @media (max-width: 600px) {
+  .title {
+    font-size: var(--fs-h4);
+  }
   .content {
     padding: 3rem 2rem;
   }

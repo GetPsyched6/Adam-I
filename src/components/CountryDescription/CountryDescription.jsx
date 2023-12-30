@@ -15,7 +15,7 @@ function CountryDescription({ title, body, color }) {
       <div className={styles.content}>
         <div style={bulletstyles} />
         <div className={styles.title}>
-          <h4 style={countryNamestyles}>{title}</h4>
+          <h5 style={countryNamestyles}>{title}</h5>
         </div>
       </div>
       <div className={styles.description}>
