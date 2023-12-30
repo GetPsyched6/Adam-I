@@ -21,22 +21,6 @@ const countries = [
 function SectionThree() {
   const [activeCountry, setActiveCountry] = useState(content);
   const [countryName, setCountryName] = useState('Map of Africa');
-  const [highlightStyle, setHighlightStyle] = useState({});
-  const highlightArea = coords => {
-    const [left, top, right, bottom] = coords.split(',').map(coord => parseInt(coord, 10));
-    setHighlightStyle({
-      left: `${left}px`,
-      top: `${top}px`,
-      width: `${right - left}px`,
-      height: `${bottom - top}px`,
-      display: 'block',
-    });
-  };
-  const removeHighlight = () => {
-    setHighlightStyle({
-      display: 'none',
-    });
-  };
   useImgMapArea();
 
   return (
@@ -88,7 +72,6 @@ function SectionThree() {
               onFocus={() => {
                 setActiveCountry(morocco);
                 setCountryName('Morocco');
-                highlightArea('295,14,1037,553');
               }}
               onMouseLeave={() => {
                 setActiveCountry(content);
@@ -97,7 +80,6 @@ function SectionThree() {
               onBlur={() => {
                 setActiveCountry(content);
                 setCountryName('Map of Africa');
-                removeHighlight();
               }}
               tabIndex="0"
               alt="Morocco"
@@ -113,7 +95,6 @@ function SectionThree() {
               onFocus={() => {
                 setActiveCountry(nigeria);
                 setCountryName('Nigeria');
-                highlightArea('980,1278,1861,1936');
               }}
               onMouseLeave={() => {
                 setActiveCountry(content);
@@ -122,7 +103,6 @@ function SectionThree() {
               onBlur={() => {
                 setActiveCountry(content);
                 setCountryName('Map of Africa');
-                removeHighlight();
               }}
               tabIndex="0"
               alt="Nigeria"
@@ -138,7 +118,6 @@ function SectionThree() {
               onFocus={() => {
                 setActiveCountry(kenya);
                 setCountryName('Kenya');
-                highlightArea('2797,1774,3414,2425');
               }}
               onMouseLeave={() => {
                 setActiveCountry(content);
@@ -147,7 +126,6 @@ function SectionThree() {
               onBlur={() => {
                 setActiveCountry(content);
                 setCountryName('Map of Africa');
-                removeHighlight();
               }}
               tabIndex="0"
               alt="Kenya"
@@ -163,7 +141,6 @@ function SectionThree() {
               onFocus={() => {
                 setActiveCountry(namibia);
                 setCountryName('Namibia');
-                highlightArea('1456,3016,2400,3830');
               }}
               onMouseLeave={() => {
                 setActiveCountry(content);
@@ -172,7 +149,6 @@ function SectionThree() {
               onBlur={() => {
                 setActiveCountry(content);
                 setCountryName('Map of Africa');
-                removeHighlight();
               }}
               tabIndex="0"
               alt="Namibia"
@@ -181,7 +157,6 @@ function SectionThree() {
               shape="rect"
             />
           </map>
-          <div id="highlight" style={highlightStyle} className={styles.highlight} />
         </div>
       </div>
     </div>
