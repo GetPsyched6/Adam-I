@@ -4,6 +4,7 @@ import styles from './InputBox.module.css';
 
 function TextBox(props) {
   const { value, name, onChange, id, disabled, required, wrapperClass, addressHeight } = props;
+  // ? addressHeight is true if isAddress is true.
   return (
     <div className={styles.textbox_wrapper}>
       {addressHeight ? (

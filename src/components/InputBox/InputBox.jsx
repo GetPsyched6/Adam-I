@@ -55,12 +55,7 @@ function InputBox(props) {
         {!isDropdown ? (
           <TextBox props={props} wrapperClass={wrapperClass} addressHeight={addressHeight} />
         ) : (
-          <DropdownBox
-            props={props}
-            wrapperClass={wrapperClass}
-            addressHeight={addressHeight}
-            options={options}
-          />
+          <DropdownBox props={props} wrapperClass={wrapperClass} options={options} />
         )}
         {isDropdown && <FaChevronDown className={styles.icon} />}
       </div>

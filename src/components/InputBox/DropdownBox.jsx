@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './InputBox.module.css';
 
 function DropdownBox(props) {
-  const { value, name, onChange, id, disabled, required, options, wrapperClass, addressHeight } =
-    props;
+  const { value, name, onChange, id, disabled, required, options, wrapperClass } = props;
   return (
     <div className={styles.dropdownbox_wrapper}>
       <select
@@ -15,7 +14,6 @@ function DropdownBox(props) {
         disabled={disabled}
         required={required}
         onChange={onChange}
-        style={{ height: addressHeight }}
       >
         <option value="" disabled hidden>
           Select...
@@ -31,7 +29,6 @@ DropdownBox.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   wrapperClass: PropTypes.string.isRequired,
-  addressHeight: PropTypes.string.isRequired,
   options: PropTypes.node.isRequired,
   value: PropTypes.string,
   disabled: PropTypes.bool,
