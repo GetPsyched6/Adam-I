@@ -10,7 +10,7 @@
 }
 
 .register {
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-left: 1rem;
     width: 40%; 
     height: 100%;
@@ -23,13 +23,13 @@
 .register h1 {
     color: white;
     font-size: 3.2rem;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     font-weight: 700;
 }
 .register_form{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 
 }
 .register-input{
@@ -37,30 +37,11 @@
     flex-direction: column;
     gap: 1.25rem;
 }
-.register-email,
-.register-password,
-.register-username {
-    padding: 0.8rem;
-    font-size: 1.25rem;
-    border: none;
-    box-sizing: border-box;
-    border-radius: 0.75rem;
-    box-shadow: 0px 0px 0.125rem rgb(55, 54, 54);
-    background-color: rgba(255, 255, 255, 0.826);
-    width: 75%;
-}
-
-
-
-.register-email:focus,
-.register-password:focus,
-.register-username:focus {
-    outline: none;
-} 
 
 .login-link {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.826);
+    margin-bottom: 1rem;
 }
 
 .login-link a {

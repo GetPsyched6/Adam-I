@@ -3,40 +3,58 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import NavBar from '../Navbar/Navbar';
 import Button from '../Button/Button';
+import InputBox from '../InputBox/InputBox';
 
 function Login() {
-  const Navigate = useNavigate();
-  const handlesubmit = e => {
-    e.preventDefault();
-    Navigate('/');
+  const navigate = useNavigate();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    navigate('/');
   };
+
+  const [formData, setFormData] = React.useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className={styles['login-container']}>
       <NavBar />
       <div className={styles.Login}>
-        <form action="" className={styles.login_form} id="loginForm" onSubmit={handlesubmit}>
+        <form action="" className={styles.login_form} id="loginForm" onSubmit={handleSubmit}>
           <div className={styles['login-input']}>
             <h1>Login</h1>
-            <label htmlFor="email">
-              {' '}
-              <input
-                type="text"
-                id="email"
-                className={styles['login-email']}
-                placeholder="Email"
-                autoComplete="username"
-              />
-            </label>
-            <label htmlFor="password">
-              {' '}
-              <input
-                type="password"
-                id="password"
-                className={styles['login-password']}
-                placeholder="Password"
-                autoComplete="current-password"
-              />
-            </label>
+            <InputBox
+              id="email"
+              label="Email"
+              Required
+              name="email"
+              onChange={event => {
+                handleChange(event);
+              }}
+              value={formData.email}
+              size="large"
+            />
+            <InputBox
+              id="password"
+              label="Password"
+              Required
+              name="password"
+              onChange={event => {
+                handleChange(event);
+              }}
+              value={formData.password}
+              size="large"
+            />
           </div>
 
           <div className={styles['register-link']}>
@@ -49,7 +67,7 @@ function Login() {
               Remember Me
             </label>
           </div>
-          <Button type="submit" Name="Login" />
+          <Button isSubmit text="Login" />
         </form>
         <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
       </div>

@@ -28,7 +28,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleClickOutside = event => {
-      if (!event.target.closest(`.${styles.nav}`) && isOpen) {
+      if (!event.target.closest(`.${styles.Navbar_nav__Vf5f}`) && isOpen) {
         setIsOpen(false);
       }
     };
