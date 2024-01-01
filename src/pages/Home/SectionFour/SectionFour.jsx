@@ -12,7 +12,7 @@ function SectionFour() {
         <div className={styles.body_wrapper}>
           {oppurtunities.map(data => {
             return (
-              <p className={`${styles.text} ${styles.text_wrapper}`}>
+              <p key={data.id} className={`${styles.text} ${styles.text_wrapper}`}>
                 <span className={styles.mini_title}>{data.title}</span>
                 {data.body}
               </p>

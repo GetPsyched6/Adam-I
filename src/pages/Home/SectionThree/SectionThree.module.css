@@ -38,7 +38,7 @@
 
 .map {
   -webkit-tap-highlight-color: transparent;
-  width: 32.5rem;
+  width: 520px;
 }
 
 @media (max-width: 992px) {
