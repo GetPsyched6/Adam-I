@@ -29,11 +29,9 @@
 }
 
 .content_map_wrapper {
-  min-height: 700px; /* ?To stop the map jumping around */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .map {

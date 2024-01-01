@@ -60,7 +60,7 @@ function SectionThree() {
             />
           ))}
         </div>
-        <div>
+        <div className={styles.map_wrapper}>
           <img className={styles.map} src={map} alt="African Map" useMap="#image-map" />
 
           <map name="image-map">
