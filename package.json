@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-hook/media-query": "^1.1.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-img-map-area": "^1.0.0",
+    "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -17,7 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\" --fix",
-    "prettier": "prettier --write \"src/**/*.{js,jsx}\""
+    "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
+    "postinstall": "npm run lint && npm run prettier"
   },
   "eslintConfig": {
     "extends": [

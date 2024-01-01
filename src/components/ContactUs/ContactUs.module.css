@@ -1,0 +1,34 @@
+.button {
+  border-width: 5px;
+  border-style: solid;
+  padding: 1rem 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-p);
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+}
+
+.white_color {
+  border-color: var(--clr-white90);
+  color:  var(--clr-white90);
+}
+
+.black_color {
+  border-color: var(--clr-black90);
+  color:  var(--clr-black90);
+}
+
+.button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s linear;
+}
+
+@media (max-width: 600px) {
+  .button {
+    border-width: 3px;
+    font-size: var(--fs-small);
+    padding: 0.75rem 2rem;
+  }
+}
