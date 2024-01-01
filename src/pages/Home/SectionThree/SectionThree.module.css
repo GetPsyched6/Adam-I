@@ -23,7 +23,7 @@
 .horizontal_line {
   width: 95%;
   margin: 0 auto;
-  height: 2px;
+  height: 3px;
   background-color: black;
   margin-block: 6rem;
 }
