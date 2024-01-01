@@ -1,0 +1,43 @@
+.wrapper {
+  background-image: url('../../../assets/images/Home/SectionFour/sectionfour.jpg');
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+}
+
+.text {
+  color: var(--clr-white90);
+}
+
+.title {
+  font-weight: var(--fw-semibold);
+  padding-block-end: 3rem;
+  max-width: 20ch;
+}
+
+.body_wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 80ch;
+  gap: 2rem;
+  line-height: 1.2;
+}
+
+.mini_title {
+  color: var(--clr-yellow);
+  font-weight: var(--fw-medium);
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 5rem 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

@@ -29,6 +29,7 @@
 }
 
 .content_map_wrapper {
+  padding-block-end: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -36,6 +37,7 @@
 }
 
 .map {
+  -webkit-tap-highlight-color: transparent;
   width: 32.5rem;
 }
 
@@ -55,6 +57,7 @@
   }
 
   .map {
+    padding-block-start: 2rem;
     width: 80vw;
   }
 }
