@@ -1,9 +1,9 @@
 import propTypes from 'prop-types';
 import styles from './CountryDescription.module.css';
 
-function CountryDescription({ countryName, countryDesc, color }) {
+function CountryDescription({ title, body, color }) {
   const fwBold = '800';
-  const countryNamestyles = { color, fontWeight: fwBold };
+  const countryNamestyles = { color, fontWeight: fwBold, textTransform: 'uppercase' };
   const bulletstyles = {
     backgroundColor: color,
     width: '0.625rem',
@@ -15,19 +15,19 @@ function CountryDescription({ countryName, countryDesc, color }) {
       <div className={styles.content}>
         <div style={bulletstyles} />
         <div className={styles.title}>
-          <h4 style={countryNamestyles}>{countryName}</h4>
+          <h5 style={countryNamestyles}>{title}</h5>
         </div>
       </div>
       <div className={styles.description}>
-        <p>{countryDesc}</p>
+        <p>{body}</p>
       </div>
     </div>
   );
 }
 
 CountryDescription.propTypes = {
-  countryName: propTypes.string.isRequired,
-  countryDesc: propTypes.string.isRequired,
+  title: propTypes.string.isRequired,
+  body: propTypes.string.isRequired,
   color: propTypes.string.isRequired,
 };
 

@@ -8,15 +8,32 @@
 .content {
   display: flex;
   align-items: center;
-  gap: 0.5rem
+  gap: 0.5rem;
 }
 
 .description {
   width: 100%;
+  height: 70px; /* ?Prevent map jumping around on hover */
 }
 
 .description p {
   color: black;
   font-size: var(--fs-small);
   line-height: normal;
+}
+
+@media (max-width: 992px) {
+  .description p {
+    max-width: 60vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .description {
+    height: 110px; /* ?Prevent map jumping around on tap */
+  }
+
+  .description p {
+    max-width: 80vw;
+  }
 }

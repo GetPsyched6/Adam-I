@@ -22,15 +22,15 @@
 }
 
 @media (max-width: 992px) {
-  .wrapper {
-    height: 60vh;
-  }
   .content {
     padding: 3rem 2rem;
   }
 }
 
 @media (max-width: 600px) {
+  .title {
+    font-size: var(--fs-h4);
+  }
   .content {
     padding: 3rem 2rem;
   }

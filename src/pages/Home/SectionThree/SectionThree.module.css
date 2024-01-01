@@ -23,12 +23,13 @@
 .horizontal_line {
   width: 95%;
   margin: 0 auto;
-  height: 2px;
+  height: 3px;
   background-color: black;
   margin-block: 6rem;
 }
 
 .content_map_wrapper {
+  padding-block-end: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -36,7 +37,8 @@
 }
 
 .map {
-  width: 30.5rem;
+  -webkit-tap-highlight-color: transparent;
+  width: 32.5rem;
 }
 
 @media (max-width: 992px) {
@@ -55,6 +57,7 @@
   }
 
   .map {
+    padding-block-start: 2rem;
     width: 80vw;
   }
 }

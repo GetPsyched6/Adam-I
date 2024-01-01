@@ -20,9 +20,9 @@ function Cards(props) {
           className={`${styles.image} ${linkUrl ? styles.image_hover : ''}`}
         />
         <div className={styles.title_container}>
-          <h4 className={styles.title} style={style}>
+          <h5 className={styles.title} style={style}>
             {title}
-          </h4>
+          </h5>
           {isGreen && <RiArrowRightUpLine className={styles.arrow_icon} />}
         </div>
       </div>

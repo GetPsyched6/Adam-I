@@ -27,7 +27,8 @@
 
 @media (max-width: 600px) {
   .button {
-    padding: 1rem 2rem;
-    width: 75vw;
+    border-width: 3px;
+    font-size: var(--fs-small);
+    padding: 0.75rem 2rem;
   }
 }

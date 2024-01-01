@@ -48,7 +48,7 @@
 
 .arrow_icon {
   color: var(--clr-lgreen);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h4);
   stroke-width: 0.5px;
 }
 
@@ -57,13 +57,23 @@
   font-weight: var(--fw-semibold);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
   .content {
-    width: 75vw;
+    width: 18rem;
   }
 
   .card {
     height: 14rem;
+  }
+  
+  .title {
+    font-size: var(--fs-p);
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    width: 75vw;
   }
   
   .title_container {
