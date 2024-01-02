@@ -15,12 +15,12 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: filter 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .card:hover .image_hover {
-  filter: saturate(1.5) contrast(1.5) brightness(1.1);
-  transition: filter 0.3s linear;
+  opacity: 0.7;
+  transition: opacity 0.3s linear;
 }
 
 .border {
@@ -29,6 +29,11 @@
 
 .link {
   cursor: pointer;
+}
+
+/* ?Accessibilty keyboard navigation */
+.link:focus-within .card, .link:focus-visible .card {
+  outline: solid 6px var(--clr-yellow);
 }
 
 .title_container {

@@ -10,7 +10,7 @@ function SectionSix() {
       <div className={styles.content_wrapper}>
         {stories.map(data => {
           return (
-            <div className={styles.stories_wrapper}>
+            <div key={data.id} className={styles.stories_wrapper}>
               <img src={image} alt="youtube thumbnail" className={styles.thumbnail} />
               <div className={styles.body_wrapper}>
                 <h5 className={styles.body_title}>{data.title}</h5>
