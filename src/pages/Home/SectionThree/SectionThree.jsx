@@ -84,6 +84,8 @@ function SectionThree() {
               tabIndex="0"
               alt="Morocco"
               title="Morocco"
+              role="link"
+              aria-label="Clickable area of the map representing Morocco"
               coords="295,14,1037,553"
               shape="rect"
             />
@@ -107,6 +109,8 @@ function SectionThree() {
               tabIndex="0"
               alt="Nigeria"
               title="Nigeria"
+              role="link"
+              aria-label="Clickable area of the map representing Nigeria"
               coords="980,1278,1861,1936"
               shape="rect"
             />
@@ -130,6 +134,8 @@ function SectionThree() {
               tabIndex="0"
               alt="Kenya"
               title="Kenya"
+              role="link"
+              aria-label="Clickable area of the map representing Kenya"
               coords="2797,1774,3414,2425"
               shape="rect"
             />
@@ -153,6 +159,8 @@ function SectionThree() {
               tabIndex="0"
               alt="Namibia"
               title="Namibia"
+              role="link"
+              aria-label="Clickable area of the map representing Namibia"
               coords="1456,3016,2400,3830"
               shape="rect"
             />

@@ -41,6 +41,10 @@
   width: 520px;
 }
 
+area:focus-within {
+  outline: 3px solid var(--clr-yellow);
+}
+
 @media (max-width: 992px) {
   .card_wrapper {
     column-gap: 4rem;
