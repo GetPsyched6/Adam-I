@@ -24,7 +24,7 @@ function SectionThree() {
   useImgMapArea();
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="main-content" tabIndex="-1">
       <div className={styles.title_wrapper}>
         <h2 className={styles.title}>Choose a Country</h2>
       </div>

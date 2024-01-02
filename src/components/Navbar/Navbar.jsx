@@ -50,9 +50,12 @@ function NavBar() {
 
   return (
     <nav className={styles.nav}>
-      <div>
+      <div className={styles.logo_wrapper}>
         <img src={logo} alt="Website logo" className={styles.logo} />
       </div>
+      <a className={`${styles.skip_nav} ${styles.nav_link}`} href="#main-content">
+        Skip Navigation
+      </a>
       <ul className={getMainNavClasses()}>
         <li className={styles.nav_link}>
           <a href="/">Home</a>
