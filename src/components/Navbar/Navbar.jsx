@@ -13,6 +13,12 @@ function NavBar() {
     setIsOpen(!isOpen);
   };
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   const matches = useMediaQuery('(max-width: 992px)');
 
   const getMainNavClasses = () => {
@@ -49,10 +55,20 @@ function NavBar() {
       </div>
       <ul className={getMainNavClasses()}>
         <li className={styles.nav_link}>
-          <Link to="/home">Home</Link>
+          <a href="/">Home</a>
         </li>
         <li className={styles.dropdown_container}>
-          <button type="button" className={`${styles.dropdown_button} ${styles.nav_link}`}>
+          <button
+            type="button"
+            onMouseOver={toggleDropdown}
+            onMouseLeave={toggleDropdown}
+            onFocus={toggleDropdown}
+            onBlur={toggleDropdown}
+            aria-label="About Us and Investors Matching Platform"
+            aria-haspopup="true"
+            aria-expanded={isDropdownOpen.toString()}
+            className={`${styles.dropdown_button} ${styles.nav_link}`}
+          >
             About
             <FaChevronDown className={styles.icon} />
           </button>
@@ -68,13 +84,23 @@ function NavBar() {
           </div>
         </li>
         <li className={styles.nav_link}>
-          <Link to="/whyafrica">Why Africa</Link>
+          <a href="#whyafrica">Why Africa</a>
         </li>
         <li className={styles.nav_link}>
-          <Link to="/industries">Industires</Link>
+          <a href="#industries">Industires</a>
         </li>
         <li className={styles.dropdown_container}>
-          <button type="button" className={`${styles.dropdown_button} ${styles.nav_link}`}>
+          <button
+            type="button"
+            onMouseOver={toggleDropdown}
+            onMouseLeave={toggleDropdown}
+            onFocus={toggleDropdown}
+            onBlur={toggleDropdown}
+            aria-label="Select Partner Countries"
+            aria-haspopup="true"
+            aria-expanded={isDropdownOpen.toString()}
+            className={`${styles.dropdown_button} ${styles.nav_link}`}
+          >
             Countries
             <FaChevronDown className={styles.icon} />
           </button>
@@ -98,6 +124,7 @@ function NavBar() {
         <li className={styles.nav_link}>
           <button
             type="button"
+            aria-label="Change Language"
             className={`${styles.dropdown_button} ${styles.nav_link} ${styles.lang_button}`}
           >
             JP
@@ -105,7 +132,17 @@ function NavBar() {
           </button>
         </li>
         <li className={styles.dropdown_container}>
-          <button type="button" className={`${styles.dropdown_button} ${styles.nav_link}`}>
+          <button
+            type="button"
+            onMouseOver={toggleDropdown}
+            onMouseLeave={toggleDropdown}
+            onFocus={toggleDropdown}
+            onBlur={toggleDropdown}
+            aria-label="Login or Register"
+            aria-haspopup="true"
+            aria-expanded={isDropdownOpen.toString()}
+            className={`${styles.dropdown_button} ${styles.nav_link}`}
+          >
             Login
             <FaChevronDown className={styles.icon} />
           </button>

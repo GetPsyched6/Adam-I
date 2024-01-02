@@ -32,6 +32,7 @@
   font-weight: var(--fw-semibold);
   font-size: var(--fs-small);
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .nav_link:hover,
