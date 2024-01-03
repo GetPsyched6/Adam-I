@@ -8,6 +8,7 @@
   inset: 0 0 auto 0;
   height: 72px;
   z-index: 1;
+  transition: height 0.3s linear;
 }
 
 .nav::before {
@@ -20,6 +21,11 @@
   z-index: -1;
 }
 
+.scrolled_nav {
+  height: 56px;
+  transition: height 0.3s linear;
+}
+
 .logo_wrapper {
   display: flex;
   align-items: center;
@@ -28,6 +34,10 @@
 .logo {
   width: 92px;
   aspect-ratio: 1 / 0.6;
+}
+
+.scrolled_logo {
+  width: 84px;
 }
 
 .skip_nav {
@@ -74,6 +84,24 @@
   color: var(--clr-lgreen);
 }
 
+/* ?For nav_links with dropdowns */
+
+.dropdown_container {
+  position: relative;
+}
+
+.dropdown_container::before { /* ?extending size of button to allow hover on dropdown */
+  content: '';
+  position: absolute;
+  inset: 0 0 -36px 0;
+  z-index: -1;
+  display: none;
+}
+
+.dropdown_container:hover::before {
+  display: block;
+}
+
 .dropdown_button {
   display: flex;
   gap: 0.5rem;
@@ -82,12 +110,6 @@
 
 .dropdown_button:focus {
   outline: 0; /* ?nav_links are already clearly focusable (FF fix) */
-}
-
-/* ?For nav_links with dropdowns */
-
-.dropdown_container {
-  position: relative;
 }
 
 .dropdown_content {
@@ -117,6 +139,7 @@
   background-color: var(--clr-white70);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
+  transform: translate(-50%, 28px); /* ?28px to match smaller scrolled nav height */
 }
 
 @media (max-width: 992px) {
@@ -186,6 +209,7 @@
     width: initial;
     transform: initial;
     text-align: initial;
+    transition: initial;
   }
 }
 
