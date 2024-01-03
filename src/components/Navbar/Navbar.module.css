@@ -35,7 +35,7 @@
   left: 130px;
   opacity: 0;
   z-index: 5;
-  background-color: var(--clr-bg-gray);
+  background-color: var(--clr-bg-lgray);
   border-radius: 12px;
   font-weight: var(--fw-semibold);
   padding: 1rem;

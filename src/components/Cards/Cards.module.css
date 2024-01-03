@@ -9,18 +9,19 @@
 .card {
   position: relative;
   height: 16rem;
+  overflow: hidden;
 }
 
 .image {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: opacity 0.3s linear;
+  transition: scale 0.3s linear;
 }
 
 .card:hover .image_hover {
-  opacity: 0.7;
-  transition: opacity 0.3s linear;
+  scale: 1.2;
+  transition: scale 0.3s linear;
 }
 
 .border {
@@ -32,8 +33,15 @@
 }
 
 /* ?Accessibilty keyboard navigation */
-.link:focus-within .card, .link:focus-visible .card {
+.link:focus-within .card,
+.link:focus-visible .card {
   outline: solid 6px var(--clr-yellow);
+}
+
+.link:focus-within .image_hover,
+.link:focus-visible .image_hover {
+  scale: 1.2;
+  transition: scale 0.3s linear;
 }
 
 .title_container {
@@ -70,7 +78,7 @@
   .card {
     height: 14rem;
   }
-  
+
   .title {
     font-size: var(--fs-p);
   }
@@ -80,7 +88,7 @@
   .content {
     width: 75vw;
   }
-  
+
   .title_container {
     height: 3rem;
   }
