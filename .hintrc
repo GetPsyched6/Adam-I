@@ -6,7 +6,9 @@
     "compat-api/css": [
       "default",
       {
-        "ignore": []
+        "ignore": [
+          "scale"
+        ]
       }
     ]
   },
