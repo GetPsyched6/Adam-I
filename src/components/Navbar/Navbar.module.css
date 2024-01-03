@@ -84,6 +84,24 @@
   color: var(--clr-lgreen);
 }
 
+/* ?For nav_links with dropdowns */
+
+.dropdown_container {
+  position: relative;
+}
+
+.dropdown_container::before { /* ?extending size of button to allow hover on dropdown */
+  content: '';
+  position: absolute;
+  inset: 0 0 -36px 0;
+  z-index: -1;
+  display: none;
+}
+
+.dropdown_container:hover::before {
+  display: block;
+}
+
 .dropdown_button {
   display: flex;
   gap: 0.5rem;
@@ -92,12 +110,6 @@
 
 .dropdown_button:focus {
   outline: 0; /* ?nav_links are already clearly focusable (FF fix) */
-}
-
-/* ?For nav_links with dropdowns */
-
-.dropdown_container {
-  position: relative;
 }
 
 .dropdown_content {
