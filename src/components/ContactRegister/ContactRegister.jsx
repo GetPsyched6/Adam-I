@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Register2.module.css';
+import styles from './ContactRegister.module.css';
 import NavBar from '../Navbar/Navbar';
 import Button from '../Button/Button';
 import InputBox from '../InputBox/InputBox';
 
-function Register2() {
+function ContactRegister() {
   const navigate = useNavigate();
 
   const handleSubmit = event => {
@@ -29,17 +29,17 @@ function Register2() {
   };
 
   const handleBack = () => {
-    navigate('/register-1');
+    navigate('/companyregister');
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <NavBar />
-      <div className={styles['sub-container']}>
+      <div className={styles.sub_wrapper}>
         <h3>Company Registration</h3>
         <h5>Contact Information (2 of 2)</h5>
-        <form className={styles.Form} onSubmit={handleSubmit}>
-          <div className={styles['input-group']}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.input_group}>
             <InputBox
               id="contact"
               label="Main Person of Contact*"
@@ -64,7 +64,7 @@ function Register2() {
             />
           </div>
 
-          <div className={styles['input-group']}>
+          <div className={styles.input_group}>
             <InputBox
               id="number"
               label="Phone Number*"
@@ -87,7 +87,7 @@ function Register2() {
             />
           </div>
 
-          <div className={styles['input-group']}>
+          <div className={styles.input_group}>
             <InputBox
               id="website"
               label="Company Website*"
@@ -99,7 +99,7 @@ function Register2() {
               value={formData.website}
             />
           </div>
-          <div className={styles['login-link']}>
+          <div className={styles.login_link}>
             Have an account? <a href="/login">Login</a>
           </div>
 
@@ -124,4 +124,4 @@ function Register2() {
   );
 }
 
-export default Register2;
+export default ContactRegister;

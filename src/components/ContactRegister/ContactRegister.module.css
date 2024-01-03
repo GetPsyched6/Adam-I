@@ -1,42 +1,44 @@
-.container {
+.wrapper {
     background: url('../../assets/background2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden; 
 }
-.sub-container{
+.sub_wrapper {
     display: flex;
     flex-direction: column;
     padding: 1rem;
 }
-.sub-container h3{
-    color:rgba(255, 255, 255, 0.9);
-    font-weight: 700;
+.sub_wrapper h3{
+    color:var(--clr-white90);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
 }
-.sub-container h5{
-    font-weight: 600;
+.sub_wrapper h5{
+    font-weight: var(--fw-medium);
     margin-bottom: 1.5rem;
-    color:rgba(255, 255, 255, 0.9);
+    font-size: var(--fs-h5);
+    color:var(--clr-white90);
 }
-.Form{
+.form{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.input-group{
+.input_group{
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.login-link {
+.login_link {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.826);
+    color: var(--clr-white70);
 }
 
-.login-link a {
-    color: white;
+.login_link a {
+    color: var(--clr-white90);
     text-decoration: none;
 }
 .btn{
@@ -46,14 +48,14 @@
     margin-top: 1rem;
 }
 .aboutus{
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--clr-white90);
     font-size: 1rem;
     padding: 10px;
     position:absolute;
     bottom: 0;
 }
 .invest{
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--clr-white90);
     font-size: 1rem;
     padding: 10px;
     position:absolute;
@@ -61,7 +63,7 @@
     right: 0;
 }
 
-.login-link a:hover {
+.login_link a:hover {
     text-decoration: underline;
 } 
 
@@ -80,7 +82,7 @@
 
 }
 @media (min-height: 596px){
-    .container{
+    .wrapper{
         height: 100vh;
     }
 }

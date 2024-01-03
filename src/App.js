@@ -2,14 +2,14 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login/Login';
 import Home from './pages/Home/Home';
-import ForgotPassword from './components/Forgotpassword/ForgotPassword';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Register from './components/Register/Register';
-import Register2 from './components/Register2/Register2';
 import Morocco from './pages/Morocco/Morocco';
 import Kenya from './pages/Kenya/Kenya';
 import Nigeria from './pages/Nigeria/Nigeria';
 import Namibia from './pages/Namibia/Namibia';
-import Register1 from './components/Register1/Register1';
+import Contactregister from './components/ContactRegister/ContactRegister';
+import Companyregister from './components/CompanyRegister/CompanyRegister';
 
 function App() {
   return (
@@ -19,12 +19,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/register-2" element={<Register2 />} />
+        <Route path="/companyregister" element={<Companyregister />} />
+        <Route path="contactregister" element={<Contactregister />} />
         <Route path="/Morocco" element={<Morocco />} />
         <Route path="/Kenya" element={<Kenya />} />
         <Route path="/Nigeria" element={<Nigeria />} />
         <Route path="/Namibia" element={<Namibia />} />
-        <Route path="register-1" element={<Register1 />} />
       </Routes>
     </div>
   );

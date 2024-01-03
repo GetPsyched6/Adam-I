@@ -26,12 +26,12 @@ function Register() {
   };
   return (
     <div>
-      <div className={styles['register-container']}>
+      <div className={styles.wrapper}>
         <NavBar />
-        <div className={styles.register}>
+        <div className={styles.sub_wrapper}>
           <form action="" className={styles.register_form} onSubmit={handleSubmit}>
-            <h1>Register</h1>
-            <div className={styles['register-input']}>
+            <h3>Register</h3>
+            <div className={styles.register_input}>
               <InputBox
                 id="username"
                 label="Username"
@@ -61,7 +61,7 @@ function Register() {
               />
             </div>
 
-            <div className={styles['login-link']}>
+            <div className={styles.login_link}>
               have an account? <a href="/login">Login</a>
             </div>
             <Button isSubmit text="Register" />

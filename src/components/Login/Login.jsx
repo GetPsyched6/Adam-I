@@ -27,12 +27,12 @@ function Login() {
   };
 
   return (
-    <div className={styles['login-container']}>
+    <div className={styles.wrapper}>
       <NavBar />
-      <div className={styles.login}>
+      <div className={styles.sub_wrapper}>
         <form action="" className={styles.login_form} id="loginForm" onSubmit={handleSubmit}>
-          <div className={styles['login-input']}>
-            <h1>Login</h1>
+          <div className={styles.login_input}>
+            <h3>Login</h3>
             <InputBox
               id="email"
               label="Email"
@@ -57,13 +57,13 @@ function Login() {
             />
           </div>
 
-          <div className={styles['register-link']}>
+          <div className={styles.register_link}>
             Don&apos;t have an account? <a href="/register">Register</a>
           </div>
-          <div className={styles['remember-check']}>
+          <div className={styles.remember_check}>
             <label htmlFor="remember" className={styles.remember}>
               <input type="checkbox" name="remember" id="remember" />
-              <span className={styles['checkbox-icon']} />
+              <span className={styles.checkbox_icon} />
               Remember Me
             </label>
           </div>

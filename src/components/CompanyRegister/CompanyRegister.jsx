@@ -1,16 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Register1.module.css';
+import styles from './CompanyRegister.module.css';
 import NavBar from '../Navbar/Navbar';
 import InputBox from '../InputBox/InputBox';
 import Button from '../Button/Button';
 
-function Register1() {
+function CompanyRegister() {
   const navigate = useNavigate();
 
   const handleSubmit = event => {
     event.preventDefault();
-    navigate('/register-2');
+    navigate('/contactregister');
   };
 
   const [formData, setFormData] = React.useState({
@@ -35,13 +35,13 @@ function Register1() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <NavBar />
-      <div className={styles['sub-container']}>
-        <form className={styles.Form} onSubmit={handleSubmit}>
+      <div className={styles.sub_wrapper}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <h3>Company Registration</h3>
           <h5>Basic Information(1 of 2)</h5>
-          <div className={styles['input-group']}>
+          <div className={styles.input_group}>
             <InputBox
               id="companyname"
               label="Company Name*"
@@ -66,7 +66,7 @@ function Register1() {
             />
           </div>
 
-          <div className={styles['input-group']}>
+          <div className={styles.input_group}>
             <InputBox
               id="nofemployees"
               label="Number Of Employees*"
@@ -91,7 +91,7 @@ function Register1() {
             />
           </div>
 
-          <div className={styles['input-group']}>
+          <div className={styles.input_group}>
             <InputBox
               isDropdown
               size="small"
@@ -131,7 +131,7 @@ function Register1() {
             />
           </div>
 
-          <div className={styles['input-group']}>
+          <div className={styles.input_group}>
             <InputBox
               id="industry"
               label="Industry*"
@@ -144,7 +144,7 @@ function Register1() {
               size="large"
             />
           </div>
-          <div className={styles['input-group']}>
+          <div className={styles.input_group}>
             <InputBox
               id="password"
               label="Account Password*"
@@ -158,7 +158,7 @@ function Register1() {
             />
           </div>
 
-          <div className={styles['input-group']} />
+          <div className={styles.input_group} />
           <div>
             <InputBox
               id="address"
@@ -174,7 +174,7 @@ function Register1() {
             />
           </div>
 
-          <div className={styles.Login}>
+          <div className={styles.login_link}>
             Have an account? <a href="/login">Login</a>
           </div>
           <Button isSubmit text="Next" />
@@ -190,4 +190,4 @@ function Register1() {
   );
 }
 
-export default Register1;
+export default CompanyRegister;

@@ -1,4 +1,4 @@
-.login-container {
+.wrapper {
     background-image: url('../../assets/login.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -8,11 +8,11 @@
     flex-direction: column;
 }
 
-.login {
+.sub_wrapper {
     padding: 1rem;
     width: 45%; 
     height: 100%;
-    background-color: rgba(17, 17, 17, 0.466);
+    background-color: var( --clr-black70);
     backdrop-filter: blur(0.5rem);
     display: flex;
     flex-direction: column;
@@ -22,31 +22,31 @@
     flex-direction: column;
     gap: 2rem;
 }
-.login-input{
+.login_input{
     display: flex;
     flex-direction: column;
     gap: 1.9rem;
     justify-content: center;
 }
-.login h1 {
-    color: white;
-    font-size: 3rem;
-    font-weight: 700;
+.sub_wrapper h3 {
+    color: var(--clr-white90);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-h3);
 }
-.register-link {
+.register_link {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.826);
+    color: var(--clr-white70);
     letter-spacing: 1px;
 }
 
-.register-link a {
-    color: white;
+.register_link a {
+    color: var(--clr-white90);
     text-decoration: none;
     cursor: pointer;
 }
 
-.remember-check {
-    color: white;
+.remember_check {
+    color: var(--clr-white90);
     font-size: 1rem;
     gap: 1.5rem;
     display: inline-block;
@@ -55,33 +55,33 @@
     cursor: pointer;
 }
 
-.remember-check input[type="checkbox"]{
+.remember_check input[type="checkbox"]{
     display: none;
 
 }
-.remember-check  .checkbox-icon {
+.remember_check  .checkbox_icon {
     position: absolute;
     top: 0;
     left: 0;
     height: 20px;   
     width: 20px; 
-    background-color: #ccc; 
-    border: 1px solid #888; 
+    background-color: var(--clr-white70); 
+    border: 1px solid var(  --clr-bg-lgray); 
     border-radius: 4px; 
     cursor: pointer;
 } 
-.remember-check input:checked + .checkbox-icon::before {
+.remember_check input:checked + .checkbox_icon::before {
     content: '\2713';
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #020202; 
+    color: var(--clr-black90); 
 } 
 
 .aboutus {
-    color: white;
+    color: var(--clr-white90);
     font-size: 1rem;
     padding: 0.6rem;
     bottom: 0;
@@ -90,7 +90,7 @@
 }
 
 .invest {
-    color: white;
+    color: var(--clr-white90);
     font-size: 1rem;
     position: absolute;
     bottom: 0;
@@ -99,15 +99,15 @@
 }
 
 
-.register-link a:hover {
+.register_link a:hover {
     text-decoration: underline;
 } 
 /* css for tablet */
 @media (max-width: 992px) and (min-width:600px){
-    .login-container{
+    .wrapper{
         background: url('../../assets/background2.png');
     }
-    .login{
+    .sub_wrapper{
         background-color: transparent;
         width: auto;
 
@@ -118,10 +118,10 @@
 }
 /* css for mobile */
 @media (max-width: 600px){
-    .login-container{
+    .wrapper{
         background: url('../../assets/background2.png');
     }
-    .login{
+    .sub_wrapper{
         background-color: transparent;
         width: auto;
 
