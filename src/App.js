@@ -8,6 +8,8 @@ import Morocco from './pages/Morocco/Morocco';
 import Kenya from './pages/Kenya/Kenya';
 import Nigeria from './pages/Nigeria/Nigeria';
 import Namibia from './pages/Namibia/Namibia';
+import Contactregister from './components/ContactRegister/ContactRegister';
+import Companyregister from './components/CompanyRegister/CompanyRegister';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/companyregister" element={<Companyregister />} />
+        <Route path="contactregister" element={<Contactregister />} />
         <Route path="/Morocco" element={<Morocco />} />
         <Route path="/Kenya" element={<Kenya />} />
         <Route path="/Nigeria" element={<Nigeria />} />

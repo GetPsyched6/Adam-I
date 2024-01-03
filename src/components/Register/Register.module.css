@@ -1,0 +1,101 @@
+.wrapper {
+    background-image: url('../../assets/login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub_wrapper {
+    padding: 1rem;
+    width: 45%; 
+    height: 100%;
+    background-color: var(--clr-black70);
+    backdrop-filter: blur(0.5rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.sub_wrapper h3 {
+    color: var(--clr-white90);
+    font-size: 3rem;
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-h3);
+}
+.register_form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+.register_input{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.login_link {
+    font-size: 1rem;
+    color: var(--clr-white70);
+    margin-bottom: 1rem;
+}
+
+.login_link a {
+    color: var(--clr-white90);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.aboutus {
+    color: var(--clr-white90);
+    font-size: 1rem;
+    padding: 0.625rem;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.invest {
+    color: var(--clr-white90);
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.625rem;
+}
+
+
+.login_link a:hover {
+    text-decoration: underline;
+} 
+
+
+/* css for tablet */
+@media (max-width: 992px) and (min-width:600px){
+    .wrapper{
+        background: url('../../assets/background2.png');
+    }
+    .sub_wrapper{
+        background-color: transparent;
+        width: auto;
+    }
+    .invest {
+        display: none;
+    }
+}
+/* css for mobile */
+@media (max-width: 600px){
+    .wrapper{
+        background: url('../../assets/background2.png');
+    }
+    .sub_wrapper{
+        background-color: transparent;
+        width: auto;
+
+    }
+    .invest {
+        display: none;
+    }
+}

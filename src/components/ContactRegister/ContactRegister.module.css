@@ -1,0 +1,88 @@
+.wrapper {
+    background: url('../../assets/background2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden; 
+}
+.sub_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.sub_wrapper h3{
+    color:var(--clr-white90);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+}
+.sub_wrapper h5{
+    font-weight: var(--fw-medium);
+    margin-bottom: 1.5rem;
+    font-size: var(--fs-h5);
+    color:var(--clr-white90);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.input_group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.login_link {
+    font-size: 1rem;
+    color: var(--clr-white70);
+}
+
+.login_link a {
+    color: var(--clr-white90);
+    text-decoration: none;
+}
+.btn{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.aboutus{
+    color: var(--clr-white90);
+    font-size: 1rem;
+    padding: 10px;
+    position:absolute;
+    bottom: 0;
+}
+.invest{
+    color: var(--clr-white90);
+    font-size: 1rem;
+    padding: 10px;
+    position:absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.login_link a:hover {
+    text-decoration: underline;
+} 
+
+
+/* css for tablet */
+@media (max-width: 992px) and (min-width:600px){
+    .invest {
+        display: none;
+    }
+}
+/* css for mobile */
+@media (max-width: 600px){
+    .invest {
+        display: none;
+    }
+
+}
+@media (min-height: 596px){
+    .wrapper{
+        height: 100vh;
+    }
+}

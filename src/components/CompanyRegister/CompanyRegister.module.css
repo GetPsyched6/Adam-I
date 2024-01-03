@@ -1,0 +1,78 @@
+.wrapper {
+    background-image: url('../../assets/background2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+}
+
+.sub_wrapper {
+    padding: 1rem;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sub_wrapper h3 {
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-h3);
+    color:var(--clr-white90);
+}
+
+.sub_wrapper h5 {
+    color:var(--clr-white90);
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-semibold);
+}
+.input_group{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.login_link {
+    font-size: 1rem;
+    color: var(--clr-white70);
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.login_link a {
+     color:var(--clr-white90);
+    text-decoration: none;
+    cursor: pointer;
+}
+.about_company{
+    display: flex;
+    justify-content: space-between;
+    color:var(--clr-white90);
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+.login_link a:hover {
+    text-decoration: underline;
+} 
+
+/* css for tablet */
+@media (max-width: 992px) and (min-width:600px){
+    .invest {
+        display: none;
+    }
+}
+/* css for mobile */
+@media (max-width: 600px){
+    .invest {
+        display: none;
+    }
+}
+
+@media (min-height: 1100px){
+    .wrapper{
+        height: 100vh;
+    }
+}
+

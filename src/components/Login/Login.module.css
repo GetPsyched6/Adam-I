@@ -1,0 +1,132 @@
+.wrapper {
+    background-image: url('../../assets/login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub_wrapper {
+    padding: 1rem;
+    width: 45%; 
+    height: 100%;
+    background-color: var( --clr-black70);
+    backdrop-filter: blur(0.5rem);
+    display: flex;
+    flex-direction: column;
+}
+.login_form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.login_input{
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+    justify-content: center;
+}
+.sub_wrapper h3 {
+    color: var(--clr-white90);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-h3);
+}
+.register_link {
+    font-size: 1rem;
+    color: var(--clr-white70);
+    letter-spacing: 1px;
+}
+
+.register_link a {
+    color: var(--clr-white90);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.remember_check {
+    color: var(--clr-white90);
+    font-size: 1rem;
+    gap: 1.5rem;
+    display: inline-block;
+    position: relative;
+    padding-left: 1.875rem;
+    cursor: pointer;
+}
+
+.remember_check input[type="checkbox"]{
+    display: none;
+
+}
+.remember_check  .checkbox_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;   
+    width: 20px; 
+    background-color: var(--clr-white70); 
+    border: 1px solid var(  --clr-bg-lgray); 
+    border-radius: 4px; 
+    cursor: pointer;
+} 
+.remember_check input:checked + .checkbox_icon::before {
+    content: '\2713';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-black90); 
+} 
+
+.aboutus {
+    color: var(--clr-white90);
+    font-size: 1rem;
+    padding: 0.6rem;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.invest {
+    color: var(--clr-white90);
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.6rem;
+}
+
+
+.register_link a:hover {
+    text-decoration: underline;
+} 
+/* css for tablet */
+@media (max-width: 992px) and (min-width:600px){
+    .wrapper{
+        background: url('../../assets/background2.png');
+    }
+    .sub_wrapper{
+        background-color: transparent;
+        width: auto;
+
+    }
+    .invest {
+        display: none;
+    }
+}
+/* css for mobile */
+@media (max-width: 600px){
+    .wrapper{
+        background: url('../../assets/background2.png');
+    }
+    .sub_wrapper{
+        background-color: transparent;
+        width: auto;
+
+    }
+    .invest {
+        display: none;
+    }
+}
