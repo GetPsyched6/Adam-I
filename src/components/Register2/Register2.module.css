@@ -45,15 +45,6 @@
     flex-wrap: wrap;
     margin-top: 1rem;
 }
-.about_company{
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1rem;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    position:absolute;
-    bottom: 0;
-}
 .aboutus{
     color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
@@ -87,4 +78,9 @@
         display: none;
     }
 
+}
+@media (min-height: 596px){
+    .container{
+        height: 100vh;
+    }
 }
