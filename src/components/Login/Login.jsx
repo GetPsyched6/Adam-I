@@ -29,7 +29,7 @@ function Login() {
   return (
     <div className={styles['login-container']}>
       <NavBar />
-      <div className={styles.Login}>
+      <div className={styles.login}>
         <form action="" className={styles.login_form} id="loginForm" onSubmit={handleSubmit}>
           <div className={styles['login-input']}>
             <h1>Login</h1>
@@ -71,7 +71,7 @@ function Login() {
         </form>
         <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
       </div>
-      <span className={styles.invast}>
+      <span className={styles.invest}>
         Shaping tomorrow together, Invest in Africa&apos;s potential.
       </span>
     </div>

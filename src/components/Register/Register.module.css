@@ -5,14 +5,12 @@
     position: relative;
     height: 100vh;
     display: flex;
-    overflow: hidden;
     flex-direction: column;
 }
 
 .register {
-    padding-top: 1rem;
-    padding-left: 1rem;
-    width: 40%; 
+    padding: 1rem;
+    width: 45%; 
     height: 100%;
     background-color: rgba(17, 17, 17, 0.466);
     backdrop-filter: blur(0.5rem);
@@ -22,8 +20,7 @@
 
 .register h1 {
     color: white;
-    font-size: 3.2rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 .register_form{
@@ -47,6 +44,7 @@
 .login-link a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .aboutus {
@@ -58,7 +56,7 @@
     left: 0;
 }
 
-.Invest {
+.invest {
     color: white;
     font-size: 1rem;
     position: absolute;
@@ -75,19 +73,28 @@
 
 /* css for tablet */
 @media (max-width: 992px) and (min-width:600px){
-    .invast {
-        color: red;
+    .register-container{
+        background: url('../../assets/background2.png');
     }
-    .login-email{
-        background-color: red;
+    .register{
+        background-color: transparent;
+        width: auto;
+    }
+    .invest {
+        display: none;
     }
 }
 /* css for mobile */
 @media (max-width: 600px){
-    .invast {
-        color: red;
+    .register-container{
+        background: url('../../assets/background2.png');
     }
-    .login-email{
-        background-color: red;
+    .register{
+        background-color: transparent;
+        width: auto;
+
+    }
+    .invest {
+        display: none;
     }
 }

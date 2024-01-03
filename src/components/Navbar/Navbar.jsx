@@ -28,7 +28,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleClickOutside = event => {
-      if (!event.target.closest(`.${styles.Navbar_nav__Vf5f}`) && isOpen) {
+      if (!event.target.closest(`.${styles.nav}`) && isOpen) {
         setIsOpen(false);
       }
     };
@@ -118,7 +118,7 @@ function NavBar() {
                 <Link to="/register">User Signup</Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/companyregister">Company Signup</Link>
+                <Link to="/register-1">Company Signup</Link>
               </li>
             </ul>
           </div>

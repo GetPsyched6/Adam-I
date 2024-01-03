@@ -1,38 +1,33 @@
 .container {
-    background: url('../../assets/background2.png') center center/cover no-repeat;
-    height: 100vh;
+    background: url('../../assets/background2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden; 
 }
-
 .sub-container{
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    padding-top: 1rem ;
 }
-.heading{
-    font-size: 2.5rem;
+.sub-container h3{
     color:rgba(255, 255, 255, 0.9);
     font-weight: 700;
-
 }
-.part{
-    font-size: 1.25rem;
+.sub-container h5{
     font-weight: 600;
     margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
     color:rgba(255, 255, 255, 0.9);
 }
 .Form{
-    
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
 }
-.sec{
+.input-group{
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .login-link {
@@ -47,27 +42,49 @@
 .btn{
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
-.aboutus {
-    color: white;
+.about_company{
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
-    padding: 0.625rem;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position:absolute;
     bottom: 0;
-    position: fixed;
-    left: 0;
 }
-
-.Invest {
-    color: white;
+.aboutus{
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
-    position: fixed;
+    padding: 10px;
+    position:absolute;
+    bottom: 0;
+}
+.invest{
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    padding: 10px;
+    position:absolute;
     bottom: 0;
     right: 0;
-    padding: 0.625rem;
 }
-
 
 .login-link a:hover {
     text-decoration: underline;
 } 
+
+
+/* css for tablet */
+@media (max-width: 992px) and (min-width:600px){
+    .invest {
+        display: none;
+    }
+}
+/* css for mobile */
+@media (max-width: 600px){
+    .invest {
+        display: none;
+    }
+
+}
