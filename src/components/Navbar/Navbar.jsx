@@ -183,7 +183,7 @@ function NavBar() {
                 <Link to="/register">User Signup</Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/register-1">Company Signup</Link>
+                <Link to="/companyregister">Company Signup</Link>
               </li>
             </ul>
           </div>
