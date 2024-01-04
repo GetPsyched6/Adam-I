@@ -32,7 +32,7 @@ function Login() {
       <div className={styles.sub_wrapper}>
         <form action="" className={styles.login_form} id="loginForm" onSubmit={handleSubmit}>
           <div className={styles.login_input}>
-            <h3>Login</h3>
+            <h2>Login</h2>
             <InputBox
               id="email"
               label="Email"

@@ -1,3 +1,5 @@
+/* TODO FIX ALL OF THIS */
+
 .wrapper {
     background-image: url('../../assets/login.jpg');
     background-size: cover;
@@ -9,20 +11,20 @@
 }
 
 .sub_wrapper {
-    padding: 1rem;
+    padding: 3rem;
     width: 45%; 
     height: 100%;
-    background-color: var(--clr-black70);
-    backdrop-filter: blur(0.5rem);
+    background-color: #38363485;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     display: flex;
     flex-direction: column;
 }
 
-.sub_wrapper h3 {
+.sub_wrapper h2 {
     color: var(--clr-white90);
-    font-size: 3rem;
     font-weight: var(--fw-semibold);
-    font-size: var(--fs-h3);
+    margin-block-end: 3rem;
 }
 .register_form{
     display: flex;
@@ -54,7 +56,7 @@
     padding: 0.625rem;
     bottom: 0;
     position: absolute;
-    left: 0;
+    left: 1rem;
 }
 
 .invest {
@@ -62,7 +64,7 @@
     font-size: 1rem;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 1rem;
     padding: 0.625rem;
 }
 

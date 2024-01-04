@@ -1,3 +1,5 @@
+/* TODO FIX ALL OF THIS */
+
 .wrapper {
     background-image: url('../../assets/login.jpg');
     background-size: cover;
@@ -9,11 +11,12 @@
 }
 
 .sub_wrapper {
-    padding: 1rem;
+    padding: 3rem;
     width: 45%; 
     height: 100%;
-    background-color: var( --clr-black70);
-    backdrop-filter: blur(0.5rem);
+    background-color: #38363485;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     display: flex;
     flex-direction: column;
 }
@@ -28,15 +31,14 @@
     gap: 1.9rem;
     justify-content: center;
 }
-.sub_wrapper h3 {
+.sub_wrapper h2 {
     color: var(--clr-white90);
     font-weight: var(--fw-semibold);
-    font-size: var(--fs-h3);
+    margin-block-end: 2rem;
 }
 .register_link {
     font-size: 1rem;
     color: var(--clr-white70);
-    letter-spacing: 1px;
 }
 
 .register_link a {
@@ -66,7 +68,6 @@
     height: 20px;   
     width: 20px; 
     background-color: var(--clr-white70); 
-    border: 1px solid var(  --clr-bg-lgray); 
     border-radius: 4px; 
     cursor: pointer;
 } 
@@ -86,7 +87,7 @@
     padding: 0.6rem;
     bottom: 0;
     position: absolute;
-    left: 0;
+    left: 1rem;
 }
 
 .invest {
@@ -94,7 +95,7 @@
     font-size: 1rem;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 1rem;
     padding: 0.6rem;
 }
 

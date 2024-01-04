@@ -30,7 +30,7 @@ function Register() {
         <NavBar />
         <div className={styles.sub_wrapper}>
           <form action="" className={styles.register_form} onSubmit={handleSubmit}>
-            <h3>Register</h3>
+            <h2>Register</h2>
             <div className={styles.register_input}>
               <InputBox
                 id="username"
@@ -62,7 +62,7 @@ function Register() {
             </div>
 
             <div className={styles.login_link}>
-              have an account? <a href="/login">Login</a>
+              Have an account? <a href="/login">Login</a>
             </div>
             <Button isSubmit text="Register" />
           </form>
