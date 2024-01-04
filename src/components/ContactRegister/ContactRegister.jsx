@@ -33,94 +33,96 @@ function ContactRegister() {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <>
       <NavBar />
-      <div className={styles.sub_wrapper}>
-        <h3>Company Registration</h3>
-        <h5>Contact Information (2 of 2)</h5>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.input_group}>
-            <InputBox
-              id="contact"
-              label="Main Person of Contact*"
-              required
-              name="contact"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.contact}
-              size="large"
-            />
-            <InputBox
-              id="position"
-              label="Position*"
-              required
-              name="position"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.position}
-              size="large"
-            />
+      <div className={styles.wrapper}>
+        <div className={styles.image_wrapper}>
+          <div className={styles.title_wrapper}>
+            <h2 className={styles.title}>Company Registration</h2>
+            <h5 className={styles.title}>Contact Information (2 of 2)</h5>
           </div>
-
-          <div className={styles.input_group}>
-            <InputBox
-              id="number"
-              label="Phone Number*"
-              required
-              name="number"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.number}
-            />
-            <InputBox
-              id="email"
-              label="Email"
-              required
-              name="email"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.email}
-            />
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.input_group}>
+              <InputBox
+                id="contact"
+                label="Main Person of Contact*"
+                required
+                name="contact"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.contact}
+                size="large"
+              />
+              <InputBox
+                id="position"
+                label="Position*"
+                required
+                name="position"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.position}
+                size="large"
+              />
+            </div>
+            <div className={styles.input_group}>
+              <InputBox
+                id="number"
+                label="Phone Number*"
+                required
+                name="number"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.number}
+              />
+              <InputBox
+                id="email"
+                label="Email"
+                required
+                name="email"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.email}
+              />
+            </div>
+            <div className={styles.input_group}>
+              <InputBox
+                id="website"
+                label="Company Website*"
+                required
+                name="website"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.website}
+              />
+            </div>
+            <div className={styles.login_link}>
+              Have an account? <a href="/login">Login</a>
+            </div>
+            <div className={styles.btn}>
+              <Button isSubmit isAction text="Register" />
+              <Button
+                isSubmit
+                onClick={() => {
+                  handleBack();
+                }}
+                text="Back"
+              />
+            </div>
+          </form>
+          <div className={styles.about_wrapper}>
+            <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
+            <div className={styles.invest}>
+              Shaping tomorrow together, Invest in Africa&apos;s potential.
+            </div>
           </div>
-
-          <div className={styles.input_group}>
-            <InputBox
-              id="website"
-              label="Company Website*"
-              required
-              name="website"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.website}
-            />
-          </div>
-          <div className={styles.login_link}>
-            Have an account? <a href="/login">Login</a>
-          </div>
-
-          <div className={styles.btn}>
-            <Button isSubmit text="Register" />
-            <Button
-              isSubmit
-              isAction
-              onClick={() => {
-                handleBack();
-              }}
-              text="Back"
-            />
-          </div>
-        </form>
+        </div>
       </div>
-      <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
-      <div className={styles.invest}>
-        Shaping tomorrow together, Invest in Africa&apos;s potential.
-      </div>
-    </div>
+    </>
   );
 }
 
