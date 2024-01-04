@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './SectionSix.module.css';
 import stories from '../../../data/successStories';
-import image from '../../../assets/images/Home/SectionSix/Section6.png';
 
 function SectionSix() {
   return (
@@ -11,7 +10,7 @@ function SectionSix() {
         {stories.map(data => {
           return (
             <div key={data.id} className={styles.stories_wrapper}>
-              <img src={image} alt="youtube thumbnail" className={styles.thumbnail} />
+              <img src={data.image} alt="youtube thumbnail" className={styles.thumbnail} />
               <div className={styles.body_wrapper}>
                 <h5 className={styles.body_title}>{data.title}</h5>
                 <p className={styles.body_description}>&quot;{data.body}&quot;</p>
