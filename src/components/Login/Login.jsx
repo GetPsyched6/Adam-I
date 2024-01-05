@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import NavBar from '../Navbar/Navbar';
 import Button from '../Button/Button';
@@ -29,7 +29,7 @@ function Login() {
   return (
     <div className={styles.wrapper}>
       <NavBar />
-      <div className={styles.sub_wrapper}>
+      <div className={styles.blur_wrapper}>
         <form action="" className={styles.login_form} id="loginForm" onSubmit={handleSubmit}>
           <div className={styles.login_input}>
             <h2>Login</h2>
@@ -58,9 +58,12 @@ function Login() {
           </div>
 
           <div className={styles.register_link}>
-            Don&apos;t have an account? <a href="/register">Register</a>
+            Don&apos;t have an account?{' '}
+            <Link to="/register" className={styles.link}>
+              Register
+            </Link>
           </div>
-          <div className={styles.remember_check}>
+          <div className={styles.checkbox_wrapper}>
             <label htmlFor="remember" className={styles.remember}>
               <input type="checkbox" name="remember" id="remember" />
               <span className={styles.checkbox_icon} />
@@ -71,9 +74,6 @@ function Login() {
         </form>
         <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
       </div>
-      <span className={styles.invest}>
-        Shaping tomorrow together, Invest in Africa&apos;s potential.
-      </span>
     </div>
   );
 }

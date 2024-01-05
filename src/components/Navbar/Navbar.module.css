@@ -41,6 +41,7 @@
 }
 
 .skip_nav {
+  pointer-events: none;
   position: absolute;
   left: 130px;
   opacity: 0;

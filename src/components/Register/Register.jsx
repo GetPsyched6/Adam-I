@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
 import NavBar from '../Navbar/Navbar';
 import Button from '../Button/Button';
@@ -28,7 +28,7 @@ function Register() {
     <div>
       <div className={styles.wrapper}>
         <NavBar />
-        <div className={styles.sub_wrapper}>
+        <div className={styles.blur_wrapper}>
           <form action="" className={styles.register_form} onSubmit={handleSubmit}>
             <h2>Register</h2>
             <div className={styles.register_input}>
@@ -62,14 +62,14 @@ function Register() {
             </div>
 
             <div className={styles.login_link}>
-              Have an account? <a href="/login">Login</a>
+              Have an account?{' '}
+              <Link to="/login" className={styles.link}>
+                Login
+              </Link>
             </div>
             <Button isSubmit text="Register" />
           </form>
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
-        </div>
-        <div className={styles.invest}>
-          Shaping tomorrow together, Invest in Africa&apos;s potential.
         </div>
       </div>
     </div>
