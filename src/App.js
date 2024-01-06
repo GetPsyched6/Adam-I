@@ -1,19 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Login from './components/Login/Login';
+import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
+import ScrollToTop from './ScrolltoTop';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
-import Register from './components/Register/Register';
+import Register from './pages/Register/Register';
 import Morocco from './pages/Morocco/Morocco';
 import Kenya from './pages/Kenya/Kenya';
 import Nigeria from './pages/Nigeria/Nigeria';
 import Namibia from './pages/Namibia/Namibia';
-import Contactregister from './components/ContactRegister/ContactRegister';
-import Companyregister from './components/CompanyRegister/CompanyRegister';
+import Contactregister from './pages/ContactRegister/ContactRegister';
+import Companyregister from './pages/CompanyRegister/CompanyRegister';
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
