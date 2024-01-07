@@ -1,18 +1,18 @@
 .wrapper {
-  background: url('../../assets/login.jpg') no-repeat center center;
+  background: url('../../assets/login.jpg') no-repeat center center fixed;
   background-size: cover;
-  position: relative;
-  min-height: 100vh;
+  min-height: var(--desktop-nav-fullheight);
 }
 
 .blur_wrapper {
   padding: 3rem;
   padding-inline-end: 6rem;
-  position: absolute;
-  inset: 72px auto 0 0;
   background-color: var(--clr-bg-orange50);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
+  min-height: var(--desktop-nav-fullheight);
+  width: fit-content;
+  max-width: 100%;
 }
 
 .blur_wrapper h2 {
@@ -53,15 +53,15 @@
   max-width: 40ch;
 }
 
-@media (max-width: 992px) {
-  .blur_wrapper {
-    right: 0;
-  }
-}
-
 @media (max-width: 600px) {
+  .wrapper {
+    background-attachment: initial;
+    min-height: var(--mobile-nav-fullheight);
+  }
   .blur_wrapper {
-    top: 48px;
+    min-height: var(--mobile-nav-fullheight);
     padding: 2rem;
+    width: 100%;
+
   }
 }

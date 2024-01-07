@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
-import NavBar from '../../components/Navbar/Navbar';
 import Button from '../../components/Button/Button';
 import InputBox from '../../components/InputBox/InputBox';
 
@@ -27,7 +26,6 @@ function Register() {
   return (
     <div>
       <div className={styles.wrapper}>
-        <NavBar />
         <div className={styles.blur_wrapper}>
           <form action="" className={styles.register_form} onSubmit={handleSubmit}>
             <h2>Register</h2>

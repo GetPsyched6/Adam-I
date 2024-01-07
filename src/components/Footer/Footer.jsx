@@ -37,6 +37,7 @@ export default function Footer() {
           <br />
           Email: <u>info@adam-i.jp</u>
           <br />
+          <br className={styles.spacing} />
           <span className={styles.subtitle}>
             Copyright ©2024 Invest Africa. All rights reserved.
           </span>

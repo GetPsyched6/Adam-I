@@ -34,10 +34,12 @@
 .logo {
   width: 92px;
   aspect-ratio: 1 / 0.6;
+  transition: width 0.3s linear;
 }
 
 .scrolled_logo {
   width: 84px;
+  transition: width 0.3s linear;
 }
 
 .skip_nav {

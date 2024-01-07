@@ -49,6 +49,7 @@
 .subtitle {
   color: var(--clr-yellow);
   font-size: var(--fs-h5);
+  line-height: normal;
 }
 
 .title {
@@ -63,6 +64,10 @@
   background-color: var(--clr-bg-lgray);
   border-radius: 50%;
   color: black;
+}
+
+.spacing {
+  display: none;
 }
 
 @media (max-width: 992px) {
@@ -82,6 +87,10 @@
     margin-inline-start: 0;
     margin-inline-end: 0;
     text-align: center;
+  }
+  
+  .spacing {
+    display: block;
   }
 }
 
