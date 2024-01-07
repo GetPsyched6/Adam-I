@@ -10,11 +10,13 @@ import Kenya from './pages/Kenya/Kenya';
 import Nigeria from './pages/Nigeria/Nigeria';
 import Namibia from './pages/Namibia/Namibia';
 import CompanyRegistration from './pages/CompanyRegistration/CompanyRegistration';
+import NavBar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
       <ScrollToTop />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

@@ -55,7 +55,8 @@
 
 .size_mobile_large {
   height: 2.5rem;
-  width: 80vw;
+  width: 100%;
+  max-width: 400px;
 }
 
 .size_mobile_small {

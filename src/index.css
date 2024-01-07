@@ -29,6 +29,10 @@
   --font-stack: 'Poppins', system-ui, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
+  --desktop-nav-fullheight: calc(100vh - 72px);
+  --scrolled-nav-fullheight: calc(100vh - 56px);
+  --mobile-nav-fullheight: calc(100vh - 48px);
+
   --clr-white90: #ffffffe6;
   --clr-white70: #ffffffb3;
 
