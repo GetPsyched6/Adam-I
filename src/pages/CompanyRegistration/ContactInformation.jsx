@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './ContactRegister.module.css';
+import styles from './ContactInformation.module.css';
 import NavBar from '../../components/Navbar/Navbar';
 import Button from '../../components/Button/Button';
 import InputBox from '../../components/InputBox/InputBox';
 
-function ContactRegister() {
+function ContactInformation() {
   const navigate = useNavigate();
 
   const handleSubmit = event => {
@@ -126,4 +126,4 @@ function ContactRegister() {
   );
 }
 
-export default ContactRegister;
+export default ContactInformation;

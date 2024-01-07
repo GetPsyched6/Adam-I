@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './CompanyRegister.module.css';
+import styles from './BasicInformation.module.css';
 import NavBar from '../../components/Navbar/Navbar';
 import InputBox from '../../components/InputBox/InputBox';
 import Button from '../../components/Button/Button';
 
-function CompanyRegister() {
+function BasicInformation() {
   const navigate = useNavigate();
 
   const handleSubmit = event => {
@@ -194,4 +194,4 @@ function CompanyRegister() {
   );
 }
 
-export default CompanyRegister;
+export default BasicInformation;
