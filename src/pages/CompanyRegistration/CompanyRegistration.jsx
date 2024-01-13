@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BasicInformation from './BasicInformation';
-// import ContactInformation from './ContactInformation';
+import ContactInformation from './ContactInformation';
+import styles from './CompanyRegistration.module.css';
 import Button from '../../components/Button/Button';
 
 function CompanyRegistration() {
@@ -32,32 +33,45 @@ function CompanyRegistration() {
   };
 
   // Handle form submission for the entire form
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   // You'll handle form submission here, possibly sending data to a backend
-  // };
+  const handleSubmit = event => {
+    event.preventDefault();
+    // You'll handle form submission here, possibly sending data to a backend
+  };
 
   const goToNextStep = () => {
     setStep(step + 1);
   };
 
-  // const goToPreviousStep = () => {
-  //   setStep(step - 1);
-  // };
+  const goToPreviousStep = () => {
+    setStep(step - 1);
+  };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {step === 1 && (
-        <BasicInformation formData={formData} handleChange={handleChange} nextStep={goToNextStep} />
+        <>
+          <BasicInformation
+            formData={formData}
+            handleChange={handleChange}
+            nextStep={goToNextStep}
+          />
+          <Button text="Next" onClick={goToNextStep} />
+        </>
       )}
-      {/* {step === 2 && (
-        <ContactInformation
-          formData={formData}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          previousStep={goToPreviousStep}
-        />
-      )} */}
+      {step === 2 && (
+        <>
+          <ContactInformation
+            formData={formData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            previousStep={goToPreviousStep}
+          />
+          <div className={styles.button_wrapper}>
+            <Button />
+            <Button />
+          </div>
+        </>
+      )}
     </div>
   );
 }

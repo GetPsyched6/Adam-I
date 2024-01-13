@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './BasicInformation.module.css';
+import PropTypes from 'prop-types';
+import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
 
 function BasicInformation(props) {
@@ -10,5 +11,22 @@ function BasicInformation(props) {
     </div>
   );
 }
+
+BasicInformation.propTypes = {
+  formData: PropTypes.shape({
+    companyName: PropTypes.string.isRequired,
+    businessType: PropTypes.string.isRequired,
+    numberOfEmployees: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    postCode: PropTypes.string,
+    industry: PropTypes.string.isRequired,
+    accountPassword: PropTypes.string.isRequired,
+    companyAddress: PropTypes.string.isRequired,
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  nextStep: PropTypes.func.isRequired,
+};
 
 export default BasicInformation;

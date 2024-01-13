@@ -1,7 +1,6 @@
 import React from 'react';
-import styles from './ContactInformation.module.css';
-import NavBar from '../../components/Navbar/Navbar';
-import Button from '../../components/Button/Button';
+import PropTypes from 'prop-types';
+import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
 
 function ContactInformation(props) {
@@ -13,4 +12,16 @@ function ContactInformation(props) {
   );
 }
 
+ContactInformation.propTypes = {
+  formData: PropTypes.shape({
+    personOfContact: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    companyWebsite: PropTypes.string.isRequired,
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  previousStep: PropTypes.func.isRequired,
+};
 export default ContactInformation;
