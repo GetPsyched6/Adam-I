@@ -89,6 +89,10 @@
     width: 75vw;
   }
 
+  .card {
+    height: 12rem;
+  }
+
   .title_container {
     height: 3rem;
   }

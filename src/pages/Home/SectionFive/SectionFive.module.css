@@ -18,3 +18,9 @@
   color: var(--clr-green);
   font-weight: var(--fw-semibold);
 }
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 2rem;
+  }
+}

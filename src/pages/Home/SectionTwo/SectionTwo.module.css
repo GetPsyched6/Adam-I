@@ -4,7 +4,6 @@
 }
 
 .card_wrapper {
-  padding: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
