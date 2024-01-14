@@ -4,10 +4,67 @@ import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
 
 function ContactInformation(props) {
-  const { formData, handleChange, handleSubmit, previousStep } = props;
+  const { formData, handleChange } = props;
   return (
-    <div>
-      <h2>Cartog</h2>
+    <div className={styles.inputs_wrapper}>
+      <div className={styles.input_group}>
+        <InputBox
+          id="contact"
+          label="Main Person of Contact*"
+          required
+          name="contact"
+          onChange={event => {
+            handleChange(event);
+          }}
+          value={formData.personOfContact}
+          size="large"
+        />
+        <InputBox
+          id="position"
+          label="Position*"
+          required
+          name="position"
+          onChange={event => {
+            handleChange(event);
+          }}
+          value={formData.position}
+          size="large"
+        />
+      </div>
+      <div className={styles.input_group}>
+        <InputBox
+          id="number"
+          label="Phone Number*"
+          required
+          name="number"
+          onChange={event => {
+            handleChange(event);
+          }}
+          value={formData.phoneNumber}
+        />
+        <InputBox
+          id="email"
+          label="Email"
+          required
+          name="email"
+          onChange={event => {
+            handleChange(event);
+          }}
+          value={formData.email}
+        />
+      </div>
+      <div className={styles.input_group}>
+        <InputBox
+          id="website"
+          label="Company Website*"
+          required
+          name="website"
+          onChange={event => {
+            handleChange(event);
+          }}
+          value={formData.companyWebsite}
+        />
+      </div>
     </div>
   );
 }
@@ -21,7 +78,5 @@ ContactInformation.propTypes = {
     companyWebsite: PropTypes.string.isRequired,
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  previousStep: PropTypes.func.isRequired,
 };
 export default ContactInformation;

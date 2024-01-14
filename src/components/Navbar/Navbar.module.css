@@ -75,7 +75,7 @@
 
 .nav_links {
   font-weight: var(--fw-semibold);
-  font-size: var(--fs-small);
+  font-size: var(--fs-smaller);
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -144,6 +144,10 @@
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
   transform: translate(-50%, 28px); /* ?28px to match smaller scrolled nav height */
+}
+
+.hide {
+  display: none;
 }
 
 @media (max-width: 992px) {

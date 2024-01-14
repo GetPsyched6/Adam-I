@@ -12,12 +12,12 @@
 
 .white_color {
   border-color: var(--clr-white90);
-  color:  var(--clr-white90);
+  color: var(--clr-white90);
 }
 
 .black_color {
   border-color: var(--clr-black90);
-  color:  var(--clr-black90);
+  color: var(--clr-black90);
 }
 
 .button:hover {
@@ -28,7 +28,7 @@
 @media (max-width: 600px) {
   .button {
     border-width: 3px;
-    font-size: var(--fs-small);
+    font-size: var(--fs-smaller);
     padding: 0.75rem 2rem;
   }
 }

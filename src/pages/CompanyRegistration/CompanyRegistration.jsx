@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BasicInformation from './BasicInformation';
 import ContactInformation from './ContactInformation';
 import styles from './CompanyRegistration.module.css';
@@ -7,21 +8,22 @@ import Button from '../../components/Button/Button';
 function CompanyRegistration() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    companyname: '',
-    businesstype: '',
-    nofemployees: '',
+    companyName: '',
+    businessType: '',
+    numberOfEmployees: '',
     year: '',
+    country: '',
     city: '',
-    postcode: '',
+    postCode: '',
     industry: '',
-    password: '',
-    Address: '',
-    Country: '',
-    contact: '',
+    accountPassword: '',
+    confirmPassword: '',
+    companyAddress: '',
+    personOfContact: '',
     position: '',
-    number: '',
+    phoneNumber: '',
     email: '',
-    website: '',
+    companyWebsite: '',
   });
 
   const handleChange = event => {
@@ -39,40 +41,65 @@ function CompanyRegistration() {
   };
 
   const goToNextStep = () => {
-    setStep(step + 1);
+    setStep(2);
+    window.scroll(0, 0);
   };
 
   const goToPreviousStep = () => {
-    setStep(step - 1);
+    setStep(1);
+    window.scroll(0, 0);
   };
 
-  return (
-    <div className={styles.wrapper}>
-      {step === 1 && (
-        <>
-          <BasicInformation
-            formData={formData}
-            handleChange={handleChange}
-            nextStep={goToNextStep}
-          />
-          <Button text="Next" onClick={goToNextStep} />
-        </>
-      )}
-      {step === 2 && (
-        <>
-          <ContactInformation
-            formData={formData}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            previousStep={goToPreviousStep}
-          />
-          <div className={styles.button_wrapper}>
-            <Button />
-            <Button />
-          </div>
-        </>
-      )}
+  const loginLink = (
+    <div className={styles.login_link}>
+      Have an account?{' '}
+      <Link to="/login" className={styles.link}>
+        Login
+      </Link>
     </div>
+  );
+
+  return (
+    <form onSubmit={handleSubmit} className={styles.wrapper}>
+      <div className={styles.blur_wrapper}>
+        <h2 className={styles.title}>Company Registration</h2>
+        {step === 1 && (
+          <div className={styles.basic_info_wrapper}>
+            <h5 className={styles.subtitle}>
+              Basic Information <span className={styles.page_indicator}>(1 of 2)</span>
+            </h5>
+            <BasicInformation
+              formData={formData}
+              handleChange={handleChange}
+              nextStep={goToNextStep}
+            />
+            {loginLink}
+            <div className={styles.button_wrapper}>
+              <Button text="Next" onClick={goToNextStep} />
+            </div>
+          </div>
+        )}
+        {step === 2 && (
+          <div className={styles.contact_info_wrapper}>
+            <h5 className={styles.subtitle}>
+              Contact Information <span className={styles.page_indicator}>(2 of 2)</span>
+            </h5>
+            <ContactInformation
+              formData={formData}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              previousStep={goToPreviousStep}
+            />
+            {loginLink}
+            <div className={styles.button_wrapper}>
+              <Button text="Back" onClick={goToPreviousStep} />
+              <Button text="Register" isAction isSubmit />
+            </div>
+          </div>
+        )}
+        <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
+      </div>
+    </form>
   );
 }
 

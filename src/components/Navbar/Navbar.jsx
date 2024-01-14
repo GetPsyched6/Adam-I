@@ -19,6 +19,11 @@ function NavBar() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleDropdownLinkClick = () => {
+    const dropdownContent = document.querySelector(`.${styles.dropdown_content}`);
+    dropdownContent.classList.toggle(styles.hide);
+  };
+
   const matches = useMediaQuery('(max-width: 992px)');
 
   const getMainNavClasses = () => {
@@ -66,11 +71,13 @@ function NavBar() {
   return (
     <nav className={`${styles.nav} ${isScrolled ? styles.scrolled_nav : ''}`}>
       <div className={styles.logo_wrapper}>
-        <img
-          src={logo}
-          alt="Website logo"
-          className={`${styles.logo} ${isScrolled ? styles.scrolled_logo : ''}`}
-        />
+        <Link to="/">
+          <img
+            src={logo}
+            alt="Website logo"
+            className={`${styles.logo} ${isScrolled ? styles.scrolled_logo : ''}`}
+          />
+        </Link>
       </div>
       <a
         className={`${styles.skip_nav} ${styles.nav_link}`}
@@ -81,7 +88,7 @@ function NavBar() {
       </a>
       <ul className={getMainNavClasses()}>
         <li className={styles.nav_link}>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li className={styles.dropdown_container}>
           <button
@@ -103,19 +110,23 @@ function NavBar() {
           >
             <ul className={styles.nav_links}>
               <li className={styles.nav_link}>
-                <Link to="/aboutus">About Us</Link>
+                <Link to="/aboutus" onClick={handleDropdownLinkClick}>
+                  About Us
+                </Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/matching">Matching Platform</Link>
+                <Link to="/matching" onClick={handleDropdownLinkClick}>
+                  Matching Platform
+                </Link>
               </li>
             </ul>
           </div>
         </li>
         <li className={styles.nav_link}>
-          <a href="#whyafrica">Why Africa</a>
+          <a href="/#whyafrica">Why Africa</a>
         </li>
         <li className={styles.nav_link}>
-          <a href="#industries">Industires</a>
+          <a href="/#industries">Industires</a>
         </li>
         <li className={styles.dropdown_container}>
           <button
@@ -137,16 +148,24 @@ function NavBar() {
           >
             <ul className={styles.nav_links}>
               <li className={styles.nav_link}>
-                <Link to="/kenya">Kenya</Link>
+                <Link to="/kenya" onClick={handleDropdownLinkClick}>
+                  Kenya
+                </Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/nigeria">Nigeria</Link>
+                <Link to="/nigeria" onClick={handleDropdownLinkClick}>
+                  Nigeria
+                </Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/morocco">Morocco</Link>
+                <Link to="/morocco" onClick={handleDropdownLinkClick}>
+                  Morocco
+                </Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/namibia">Namibia</Link>
+                <Link to="/namibia" onClick={handleDropdownLinkClick}>
+                  Namibia
+                </Link>
               </li>
             </ul>
           </div>
@@ -181,13 +200,19 @@ function NavBar() {
           >
             <ul className={styles.nav_links}>
               <li className={styles.nav_link}>
-                <Link to="/login">Login</Link>
+                <Link to="/login" onClick={handleDropdownLinkClick}>
+                  Login
+                </Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/register">User Signup</Link>
+                <Link to="/register" onClick={handleDropdownLinkClick}>
+                  User Signup
+                </Link>
               </li>
               <li className={styles.nav_link}>
-                <Link to="/companyregister">Company Signup</Link>
+                <Link to="/companyregister" onClick={handleDropdownLinkClick}>
+                  Company Signup
+                </Link>
               </li>
             </ul>
           </div>
