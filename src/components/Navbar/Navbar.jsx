@@ -69,14 +69,10 @@ function NavBar() {
   }, [isOpen]);
 
   return (
-    <nav className={`${styles.nav} ${isScrolled ? styles.scrolled_nav : ''}`}>
+    <nav className={styles.nav}>
       <div className={styles.logo_wrapper}>
         <Link to="/">
-          <img
-            src={logo}
-            alt="Website logo"
-            className={`${styles.logo} ${isScrolled ? styles.scrolled_logo : ''}`}
-          />
+          <img src={logo} alt="Website logo" className={styles.logo} />
         </Link>
       </div>
       <a
