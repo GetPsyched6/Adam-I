@@ -66,6 +66,7 @@
 }
 
 .body {
+  color: black;
   font-size: var(--fs-smaller);
   font-weight: var(--fw-semibold);
 }

@@ -46,10 +46,6 @@
   margin-block-start: 3rem;
 }
 
-.address_box {
-  margin-block-start: 3rem;
-}
-
 .login_link {
   font-size: 1rem;
   color: var(--clr-white70);
@@ -77,20 +73,21 @@
     background-attachment: initial;
     min-height: var(--mobile-nav-fullheight);
   }
+
   .blur_wrapper {
     min-height: var(--mobile-nav-fullheight);
     padding: 2rem;
   }
+
   .inputs_wrapper {
     gap: 1rem;
   }
+
   .input_group:not(.small_inputs) {
     display: block;
     margin-block-start: 1rem;
   }
-  .address_box {
-    margin-block-start: 0;
-  }
+  
   .button_wrapper {
     justify-content: center;
   }
