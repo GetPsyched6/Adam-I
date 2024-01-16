@@ -45,7 +45,7 @@ function Register() {
                 Required
                 name="email"
                 onChange={handleChange}
-                value={formData.username}
+                value={formData.email}
                 size="large"
               />
               <InputBox
@@ -54,7 +54,7 @@ function Register() {
                 Required
                 name="password"
                 onChange={handleChange}
-                value={formData.username}
+                value={formData.password}
                 size="large"
               />
             </div>

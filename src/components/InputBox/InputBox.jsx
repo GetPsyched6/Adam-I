@@ -53,9 +53,9 @@ function InputBox(props) {
       </label>
       <div className={`${styles.input_wrapper} ${wrapperClass}`} style={{ height: addressHeight }}>
         {!isDropdown ? (
-          <TextBox props={props} wrapperClass={wrapperClass} addressHeight={addressHeight} />
+          <TextBox parentProps={props} wrapperClass={wrapperClass} addressHeight={addressHeight} />
         ) : (
-          <DropdownBox props={props} wrapperClass={wrapperClass} options={options} />
+          <DropdownBox parentProps={props} wrapperClass={wrapperClass} options={options} />
         )}
         {isDropdown && <FaChevronDown className={styles.icon} />}
       </div>

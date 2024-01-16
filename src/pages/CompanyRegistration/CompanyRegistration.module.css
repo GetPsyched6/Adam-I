@@ -84,8 +84,7 @@
   }
 
   .input_group:not(.small_inputs) {
-    display: block;
-    margin-block-start: 1rem;
+    display: grid;
   }
   
   .button_wrapper {

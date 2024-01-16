@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import countryList from 'react-select-country-list';
 import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
 
 function BasicInformation(props) {
   const { formData, handleChange } = props;
+  const countries = countryList().getData();
+
   return (
     <div className={styles.inputs_wrapper}>
       <div className={styles.input_group}>
@@ -52,17 +55,19 @@ function BasicInformation(props) {
       <div className={`${styles.input_group} ${styles.small_inputs}`}>
         <InputBox
           id="Country"
-          isDropdown
-          size="small"
           label="Select Country"
+          isDropdown
+          required
+          name="country"
           onChange={handleChange}
           value={formData.country}
+          size="small"
         >
-          <option value="india">India</option>
-          <option value="america">America</option>
-          <option value="africa">Africa</option>
-          <option value="japan">Japan</option>
-          <option value="italy">Italy</option>
+          {countries.map(country => (
+            <option key={country.value} value={country.value} title={country.value}>
+              {country.label}
+            </option>
+          ))}
         </InputBox>
         <InputBox
           id="city"

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './InputBox.module.css';
 
 function TextBox(props) {
-  const { value, name, onChange, id, disabled, required, wrapperClass, addressHeight } = props;
-  // ? addressHeight is true if isAddress is true.
+  const { parentProps, wrapperClass, addressHeight } = props;
+  const { value, name, onChange, id, disabled, required } = parentProps;
+  // ! addressHeight is true if isAddress is true.
   return (
     <div className={styles.textbox_wrapper}>
       {addressHeight ? (
@@ -35,20 +36,16 @@ function TextBox(props) {
 }
 
 TextBox.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  parentProps: PropTypes.shape({
+    onChange: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    disabled: PropTypes.bool,
+    required: PropTypes.bool,
+  }).isRequired,
   wrapperClass: PropTypes.string.isRequired,
   addressHeight: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  disabled: PropTypes.bool,
-  required: PropTypes.bool,
-};
-
-TextBox.defaultProps = {
-  value: '',
-  disabled: false,
-  required: false,
 };
 
 export default TextBox;

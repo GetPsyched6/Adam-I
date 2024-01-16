@@ -1,6 +1,6 @@
 .input_wrapper {
   position: relative;
-  color: var(--clr-black70);
+  color: var(--clr-black90);
   margin-block-start: 0.5rem;
 }
 
@@ -14,6 +14,10 @@
   border: 0;
   background-color: var(--clr-white70);
   padding-inline: 1rem;
+}
+
+select.input {
+  padding-inline-end: 3rem;
 }
 
 .icon {
