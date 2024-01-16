@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 90vh;
+  min-height: 90vh;
 }
 
 .content {
@@ -23,7 +23,7 @@
 
 @media (max-width: 992px) {
   .wrapper {
-    height: 75vh;
+    min-height: 75vh;
   }
   .content {
     padding: 3rem 2rem;

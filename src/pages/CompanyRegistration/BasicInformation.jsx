@@ -9,24 +9,20 @@ function BasicInformation(props) {
     <div className={styles.inputs_wrapper}>
       <div className={styles.input_group}>
         <InputBox
-          id="companyname"
+          id="companyName"
           label="Company Name*"
           required
-          name="companyname"
-          onChange={event => {
-            handleChange(event.target);
-          }}
+          name="companyName"
+          onChange={handleChange}
           value={formData.companyName}
           size="large"
         />
         <InputBox
-          id="businesstype"
+          id="businessType"
           label="Business Type*"
           required
-          name="businesstype"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="businessType"
+          onChange={handleChange}
           value={formData.businessType}
           size="large"
         />
@@ -34,13 +30,11 @@ function BasicInformation(props) {
 
       <div className={styles.input_group}>
         <InputBox
-          id="nofemployees"
+          id="numberOfEmployees"
           label="Number Of Employees*"
           required
-          name="nofemployees"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="numberOfEmployees"
+          onChange={handleChange}
           value={formData.numberOfEmployees}
           size="large"
         />
@@ -49,9 +43,7 @@ function BasicInformation(props) {
           label="Year of Establishment*"
           required
           name="year"
-          onChange={event => {
-            handleChange(event);
-          }}
+          onChange={handleChange}
           value={formData.year}
           size="large"
         />
@@ -59,13 +51,11 @@ function BasicInformation(props) {
 
       <div className={`${styles.input_group} ${styles.small_inputs}`}>
         <InputBox
+          id="Country"
           isDropdown
           size="small"
-          f
           label="Select Country"
-          onChange={event => {
-            handleChange(event);
-          }}
+          onChange={handleChange}
           value={formData.country}
         >
           <option value="india">India</option>
@@ -79,20 +69,16 @@ function BasicInformation(props) {
           label="City*"
           required
           name="city"
-          onChange={event => {
-            handleChange(event);
-          }}
+          onChange={handleChange}
           value={formData.city}
           size="small"
         />
         <InputBox
-          id="postcode"
+          id="postCode"
           label="Post Code"
           required
-          name="postcode"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="postCode"
+          onChange={handleChange}
           value={formData.postCode}
           size="small"
         />
@@ -104,33 +90,27 @@ function BasicInformation(props) {
           label="Industry*"
           required
           name="industry"
-          onChange={event => {
-            handleChange(event);
-          }}
+          onChange={handleChange}
           value={formData.industry}
           size="large"
         />
       </div>
       <div className={styles.input_group}>
         <InputBox
-          id="password"
+          id="accountPassword"
           label="Account Password*"
           required
-          name="password"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="accountPassword"
+          onChange={handleChange}
           value={formData.accountPassword}
           size="large"
         />
         <InputBox
-          id="confirmpassword"
+          id="confirmPassword"
           label="Confirm Password*"
           required
-          name="confirmpassword"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="confirmPassword"
+          onChange={handleChange}
           value={formData.confirmPassword}
           size="large"
         />
@@ -138,14 +118,12 @@ function BasicInformation(props) {
 
       <div className={`${styles.input_group} ${styles.address_box}`}>
         <InputBox
-          id="address"
+          id="companyAddress"
           label="Company Address*"
           required
           isAddress
-          name="Address"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="companyAddress"
+          onChange={handleChange}
           value={formData.companyAddress}
           size="large"
         />

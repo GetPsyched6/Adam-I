@@ -9,13 +9,11 @@ function ContactInformation(props) {
     <div className={styles.inputs_wrapper}>
       <div className={styles.input_group}>
         <InputBox
-          id="contact"
+          id="personOfContact"
           label="Main Person of Contact*"
           required
-          name="contact"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="personOfContact"
+          onChange={handleChange}
           value={formData.personOfContact}
           size="large"
         />
@@ -24,22 +22,18 @@ function ContactInformation(props) {
           label="Position*"
           required
           name="position"
-          onChange={event => {
-            handleChange(event);
-          }}
+          onChange={handleChange}
           value={formData.position}
           size="large"
         />
       </div>
       <div className={styles.input_group}>
         <InputBox
-          id="number"
+          id="phoneNumber"
           label="Phone Number*"
           required
-          name="number"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="phoneNumber"
+          onChange={handleChange}
           value={formData.phoneNumber}
         />
         <InputBox
@@ -47,21 +41,17 @@ function ContactInformation(props) {
           label="Email"
           required
           name="email"
-          onChange={event => {
-            handleChange(event);
-          }}
+          onChange={handleChange}
           value={formData.email}
         />
       </div>
       <div className={styles.input_group}>
         <InputBox
-          id="website"
+          id="companyWebsite"
           label="Company Website*"
           required
-          name="website"
-          onChange={event => {
-            handleChange(event);
-          }}
+          name="companyWebsite"
+          onChange={handleChange}
           value={formData.companyWebsite}
         />
       </div>

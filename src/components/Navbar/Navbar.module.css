@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.logo_wrapper:focus-within {
+.logo_wrapper:has(:focus-visible) {
   outline: 2px solid var(--clr-lgreen);
 }
 
@@ -46,7 +46,7 @@
   padding: 1rem;
 }
 
-.skip_nav:focus {
+.skip_nav:focus-visible {
   opacity: 1;
 }
 
