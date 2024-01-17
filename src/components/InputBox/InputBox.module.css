@@ -14,10 +14,17 @@
   border: 0;
   background-color: var(--clr-white70);
   padding-inline: 1rem;
+  font-size: var(--fs-smallest);
+  font-weight: var(--fw-medium);
+}
+
+.input:focus-within {
+  outline: 3px solid var(--clr-white90);
+  outline-offset: -3px;
 }
 
 select.input {
-  padding-inline-end: 3rem;
+  padding-inline-end: 2.5rem;
 }
 
 .icon {
@@ -25,6 +32,12 @@ select.input {
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
+}
+
+.message {
+  margin-block-start: 0.25rem;
+  color: var(--clr-lorange);
+  font-size: var(--fs-smallest);
 }
 
 .size_xlarge {
@@ -67,10 +80,4 @@ select.input {
 .size_mobile_small {
   height: 2.5rem;
   width: 9rem;
-}
-
-@media (max-width: 600px) {
-  .input {
-    font-size: var(--fs-smaller);
-  }
 }

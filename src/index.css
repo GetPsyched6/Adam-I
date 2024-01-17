@@ -41,8 +41,9 @@
 
   --clr-bg-gray: #2f2f2f;
   --clr-bg-lgray: #f0f0f0;
-  --clr-bg-orange50: #271c1785;
+  --clr-bg-orange50: #150a0685;
 
+  --clr-lorange: #ffa06d;
   --clr-yellow: #ffcc00;
   --clr-lyellow: #ffe478;
   --clr-green: #006239;
@@ -61,6 +62,7 @@
   --fs-p: clamp(0.3rem, 3vw + 0.3rem, 1.25rem);
   --fs-small: clamp(0.25rem, 3vw + 0.3rem, 1.1rem);
   --fs-smaller: clamp(0.2rem, 3vw + 0.3rem, 1rem);
+  --fs-smallest: clamp(0.2rem, 3vw + 0.3rem, 0.9rem);
 }
 
 html {

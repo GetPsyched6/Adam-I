@@ -58,7 +58,8 @@
   cursor: pointer;
 }
 
-.login_link a:hover {
+.login_link a:hover,
+.login_link a:focus-visible {
   text-decoration: underline;
 }
 
@@ -86,7 +87,7 @@
   .input_group:not(.small_inputs) {
     display: grid;
   }
-  
+
   .button_wrapper {
     justify-content: center;
   }

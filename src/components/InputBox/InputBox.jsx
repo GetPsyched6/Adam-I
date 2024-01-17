@@ -38,7 +38,7 @@ function getResponsiveClassName(size, isAddress, isTablet, isMobile) {
 }
 
 function InputBox(props) {
-  const { isDropdown, label, id, size, isAddress, children } = props;
+  const { message, isDropdown, label, id, size, isAddress, children } = props;
   const options = children;
 
   const isTablet = useMediaQuery('(max-width: 992px)');
@@ -59,6 +59,7 @@ function InputBox(props) {
         )}
         {isDropdown && <FaChevronDown className={styles.icon} />}
       </div>
+      <div className={styles.message}>{message}</div>
     </div>
   );
 }
@@ -66,6 +67,7 @@ function InputBox(props) {
 InputBox.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  message: PropTypes.string,
   isDropdown: PropTypes.bool,
   isAddress: PropTypes.bool,
   size: PropTypes.oneOf(['large', 'small']),
@@ -73,6 +75,7 @@ InputBox.propTypes = {
 };
 
 InputBox.defaultProps = {
+  message: '',
   isDropdown: false,
   isAddress: false,
   size: 'large',
