@@ -6,15 +6,42 @@ import InputBox from '../../components/InputBox/InputBox';
 
 function Register() {
   const Navigate = useNavigate();
-  const handleSubmit = event => {
-    event.preventDefault();
-    Navigate('/');
-  };
+
   const [formData, setFormData] = React.useState({
+    name: '',
     email: '',
-    username: '',
     password: '',
   });
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/api/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        alert('Registration Successful');
+        // Handle success, maybe redirect or clear form
+      } else {
+        console.error('Registration Failed');
+        // Handle error, show message to user
+      }
+    } catch (error) {
+      console.error('Error during submission:', error);
+      // Handle error, show message to user
+    }
+    Navigate('/');
+  };
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -23,6 +50,7 @@ function Register() {
       [name]: value,
     }));
   };
+
   return (
     <div>
       <div className={styles.wrapper}>
@@ -31,12 +59,12 @@ function Register() {
             <h2>Register</h2>
             <div className={styles.register_input}>
               <InputBox
-                id="username"
-                label="Username"
+                id="name"
+                label="Name"
                 Required
-                name="username"
+                name="name"
                 onChange={handleChange}
-                value={formData.username}
+                value={formData.name}
                 size="large"
               />
               <InputBox
@@ -65,7 +93,7 @@ function Register() {
                 Login
               </Link>
             </div>
-            <Button isSubmit text="Register" />
+            <Button isSubmit isAction text="Register" />
           </form>
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
         </div>

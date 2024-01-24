@@ -36,8 +36,10 @@ select.input {
 
 .message {
   margin-block-start: 0.25rem;
-  color: var(--clr-lorange);
+  color: var(--clr-red);
   font-size: var(--fs-smallest);
+  font-weight: var(--fw-medium);
+  max-width: 30ch;
 }
 
 .size_xlarge {
