@@ -117,7 +117,7 @@ function Register() {
                 <div className={styles.tooltip_wrapper}>
                   <p className={styles.tooltip_title}>Password Requirements:</p>
                   <ul className={styles.tooltip_list_wrapper}>
-                    <li>8-60 characters with a mix of letters and numbers</li>
+                    <li>8-128 characters with a mix of letters and numbers</li>
                     <li>Must include both upper and lower case letters</li>
                   </ul>
                 </div>
