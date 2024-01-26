@@ -69,6 +69,20 @@
   max-width: 40ch;
 }
 
+.tooltip_wrapper {
+  max-width: 60vw;
+}
+
+.tooltip_title {
+  margin-block-end: 0.5rem;
+  font-weight: var(--fw-medium);
+}
+
+.tooltip_list_wrapper {
+  display: grid;
+  gap: 0.5rem;
+}
+
 @media (max-width: 600px) {
   .wrapper {
     background-attachment: initial;

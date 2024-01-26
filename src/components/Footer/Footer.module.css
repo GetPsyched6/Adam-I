@@ -46,8 +46,6 @@
 
 .subtitle {
   color: var(--clr-yellow);
-  font-size: var(--fs-h5);
-  line-height: normal;
 }
 
 .title {

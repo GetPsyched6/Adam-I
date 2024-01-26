@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip';
 import styles from './Register.module.css';
 import Button from '../../components/Button/Button';
 import InputBox from '../../components/InputBox/InputBox';
@@ -62,8 +63,8 @@ function Register() {
             <div className={styles.register_input}>
               <InputBox
                 id="name"
-                label="Name"
-                Required
+                label="Full Name"
+                required
                 name="name"
                 type="text"
                 onChange={handleChange}
@@ -73,7 +74,7 @@ function Register() {
               <InputBox
                 id="email"
                 label="Email"
-                Required
+                required
                 name="email"
                 type="email"
                 onChange={handleChange}
@@ -83,7 +84,8 @@ function Register() {
               <InputBox
                 id="accountPassword"
                 label="Password"
-                Required
+                required
+                tooltip="password-tooltip"
                 name="accountPassword"
                 type="password"
                 onChange={handleChange}
@@ -93,13 +95,33 @@ function Register() {
               <InputBox
                 id="confirmPassword"
                 label="Confirm Password"
-                Required
+                required
+                tooltip="password-tooltip"
                 name="confirmPassword"
                 type="password"
                 onChange={handleChange}
                 value={formData.confirmPassword}
                 size="large"
               />
+              <Tooltip
+                id="password-tooltip"
+                style={{
+                  backgroundColor: 'black',
+                  color: '#fff',
+                  padding: '1rem 1.5rem 1.5rem',
+                  borderRadius: '16px',
+                }}
+                opacity={1}
+                role="tooltip"
+              >
+                <div className={styles.tooltip_wrapper}>
+                  <p className={styles.tooltip_title}>Password Requirements:</p>
+                  <ul className={styles.tooltip_list_wrapper}>
+                    <li>8-60 characters with a mix of letters and numbers</li>
+                    <li>Must include both upper and lower case letters</li>
+                  </ul>
+                </div>
+              </Tooltip>
             </div>
 
             <div className={styles.login_link}>

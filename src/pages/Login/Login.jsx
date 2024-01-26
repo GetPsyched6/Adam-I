@@ -34,7 +34,7 @@ function Login() {
             <InputBox
               id="email"
               label="Email"
-              Required
+              required
               name="email"
               type="email"
               onChange={event => {
@@ -46,7 +46,7 @@ function Login() {
             <InputBox
               id="accountPassword"
               label="Password"
-              Required
+              required
               name="accountPassword"
               type="password"
               onChange={event => {

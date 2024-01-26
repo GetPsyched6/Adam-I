@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Tooltip } from 'react-tooltip';
 import countryList from 'react-select-country-list';
 import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
@@ -62,7 +63,7 @@ function BasicInformation(props) {
       <div className={`${styles.input_group} ${styles.small_inputs}`}>
         <InputBox
           id="Country"
-          label="Select Country"
+          label="Country*"
           isDropdown
           required
           name="country"
@@ -89,7 +90,6 @@ function BasicInformation(props) {
         <InputBox
           id="postCode"
           label="Post Code"
-          required
           name="postCode"
           type="text"
           onChange={handleChange}
@@ -117,6 +117,7 @@ function BasicInformation(props) {
           required
           name="accountPassword"
           type="password"
+          tooltip="password-tooltip"
           onChange={handleChange}
           value={formData.accountPassword}
           size="large"
@@ -127,10 +128,30 @@ function BasicInformation(props) {
           required
           name="confirmPassword"
           type="password"
+          tooltip="password-tooltip"
           onChange={handleChange}
           value={formData.confirmPassword}
           size="large"
         />
+        <Tooltip
+          id="password-tooltip"
+          style={{
+            backgroundColor: 'black',
+            color: '#fff',
+            padding: '1rem 1.5rem 1.5rem',
+            borderRadius: '16px',
+          }}
+          opacity={1}
+          role="tooltip"
+        >
+          <div className={styles.tooltip_wrapper}>
+            <p className={styles.tooltip_title}>Password Requirements:</p>
+            <ul className={styles.tooltip_list_wrapper}>
+              <li>8-60 characters with a mix of letters and numbers</li>
+              <li>Must include both upper and lower case letters</li>
+            </ul>
+          </div>
+        </Tooltip>
       </div>
 
       <div className={`${styles.input_group} ${styles.address_box}`}>

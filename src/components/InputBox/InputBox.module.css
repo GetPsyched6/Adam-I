@@ -5,8 +5,15 @@
 }
 
 .label {
+  display: flex;
+  gap: 0.5rem;
   color: var(--clr-white90);
   font-size: var(--fs-small);
+}
+
+.infoButton {
+  display: flex;
+  align-items: center;
 }
 
 .input {
