@@ -13,6 +13,7 @@ function ContactInformation(props) {
           label="Main Person of Contact*"
           required
           name="personOfContact"
+          type="text"
           onChange={handleChange}
           value={formData.personOfContact}
           size="large"
@@ -22,6 +23,7 @@ function ContactInformation(props) {
           label="Position*"
           required
           name="position"
+          type="text"
           onChange={handleChange}
           value={formData.position}
           size="large"
@@ -33,6 +35,7 @@ function ContactInformation(props) {
           label="Phone Number*"
           required
           name="phoneNumber"
+          type="tel"
           onChange={handleChange}
           value={formData.phoneNumber}
         />
@@ -41,6 +44,7 @@ function ContactInformation(props) {
           label="Email"
           required
           name="email"
+          type="email"
           onChange={handleChange}
           value={formData.email}
         />
@@ -51,6 +55,7 @@ function ContactInformation(props) {
           label="Company Website*"
           required
           name="companyWebsite"
+          type="url"
           onChange={handleChange}
           value={formData.companyWebsite}
         />

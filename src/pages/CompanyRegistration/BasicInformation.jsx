@@ -16,6 +16,7 @@ function BasicInformation(props) {
           label="Company Name*"
           required
           name="companyName"
+          type="text"
           onChange={handleChange}
           value={formData.companyName}
           size="large"
@@ -25,6 +26,7 @@ function BasicInformation(props) {
           label="Business Type*"
           required
           name="businessType"
+          type="text"
           onChange={handleChange}
           value={formData.businessType}
           size="large"
@@ -37,17 +39,22 @@ function BasicInformation(props) {
           label="Number Of Employees*"
           required
           name="numberOfEmployees"
+          type="number"
+          min="1"
           onChange={handleChange}
           value={formData.numberOfEmployees}
           size="large"
         />
         <InputBox
-          id="year"
+          id="yearOfEstablishment"
           label="Year of Establishment*"
           required
-          name="year"
+          name="yearOfEstablishment"
+          type="number"
+          min="1500"
+          max={new Date().getFullYear()}
           onChange={handleChange}
-          value={formData.year}
+          value={formData.yearOfEstablishment}
           size="large"
         />
       </div>
@@ -74,6 +81,7 @@ function BasicInformation(props) {
           label="City*"
           required
           name="city"
+          type="text"
           onChange={handleChange}
           value={formData.city}
           size="small"
@@ -83,6 +91,7 @@ function BasicInformation(props) {
           label="Post Code"
           required
           name="postCode"
+          type="text"
           onChange={handleChange}
           value={formData.postCode}
           size="small"
@@ -95,6 +104,7 @@ function BasicInformation(props) {
           label="Industry*"
           required
           name="industry"
+          type="text"
           onChange={handleChange}
           value={formData.industry}
           size="large"
@@ -106,6 +116,7 @@ function BasicInformation(props) {
           label="Account Password*"
           required
           name="accountPassword"
+          type="password"
           onChange={handleChange}
           value={formData.accountPassword}
           size="large"
@@ -115,6 +126,7 @@ function BasicInformation(props) {
           label="Confirm Password*"
           required
           name="confirmPassword"
+          type="password"
           onChange={handleChange}
           value={formData.confirmPassword}
           size="large"
@@ -142,7 +154,7 @@ BasicInformation.propTypes = {
     companyName: PropTypes.string.isRequired,
     businessType: PropTypes.string.isRequired,
     numberOfEmployees: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired,
+    yearOfEstablishment: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     postCode: PropTypes.string,

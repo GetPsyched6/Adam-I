@@ -15,7 +15,7 @@
   background-color: var(--clr-white70);
   padding-inline: 1rem;
   font-size: var(--fs-smallest);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
 }
 
 .input:focus-within {
@@ -38,7 +38,7 @@ select.input {
   margin-block-start: 0.25rem;
   color: var(--clr-red);
   font-size: var(--fs-smallest);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
   max-width: 30ch;
 }
 

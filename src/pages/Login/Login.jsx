@@ -14,7 +14,7 @@ function Login() {
 
   const [formData, setFormData] = React.useState({
     email: '',
-    password: '',
+    accountPassword: '',
   });
 
   const handleChange = event => {
@@ -36,6 +36,7 @@ function Login() {
               label="Email"
               Required
               name="email"
+              type="email"
               onChange={event => {
                 handleChange(event);
               }}
@@ -43,14 +44,15 @@ function Login() {
               size="large"
             />
             <InputBox
-              id="password"
+              id="accountPassword"
               label="Password"
               Required
-              name="password"
+              name="accountPassword"
+              type="password"
               onChange={event => {
                 handleChange(event);
               }}
-              value={formData.password}
+              value={formData.accountPassword}
               size="large"
             />
           </div>

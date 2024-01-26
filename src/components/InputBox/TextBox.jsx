@@ -4,7 +4,7 @@ import styles from './InputBox.module.css';
 
 function TextBox(props) {
   const { parentProps, wrapperClass, addressHeight } = props;
-  const { value, name, onChange, id, disabled, required } = parentProps;
+  const { value, name, type, min, max, onChange, id, disabled, required } = parentProps;
   // ! addressHeight is true if isAddress is true.
   return (
     <div className={styles.textbox_wrapper}>
@@ -21,9 +21,11 @@ function TextBox(props) {
         />
       ) : (
         <input
-          type="text"
           className={`${styles.input} ${wrapperClass}`}
           name={name}
+          type={type}
+          min={min}
+          max={max}
           value={value}
           onChange={onChange}
           id={id}
@@ -40,6 +42,9 @@ TextBox.propTypes = {
     onChange: PropTypes.func.isRequired,
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    min: PropTypes.string,
+    max: PropTypes.string,
     value: PropTypes.string,
     disabled: PropTypes.bool,
     required: PropTypes.bool,

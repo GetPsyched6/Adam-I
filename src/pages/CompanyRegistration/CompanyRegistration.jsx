@@ -11,7 +11,7 @@ function CompanyRegistration() {
     companyName: '',
     businessType: '',
     numberOfEmployees: '',
-    year: '',
+    yearOfEstablishment: '',
     country: '',
     city: '',
     postCode: '',

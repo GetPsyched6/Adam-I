@@ -10,7 +10,8 @@ function Register() {
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
-    password: '',
+    accountPassword: '',
+    confirmPassword: '',
   });
 
   const handleSubmit = async event => {
@@ -18,7 +19,8 @@ function Register() {
     const data = {
       name: formData.name,
       email: formData.email,
-      password: formData.password,
+      accountPassword: formData.accountPassword,
+      confirmPassword: formData.confirmPassword,
     };
 
     try {
@@ -63,6 +65,7 @@ function Register() {
                 label="Name"
                 Required
                 name="name"
+                type="text"
                 onChange={handleChange}
                 value={formData.name}
                 size="large"
@@ -72,17 +75,29 @@ function Register() {
                 label="Email"
                 Required
                 name="email"
+                type="email"
                 onChange={handleChange}
                 value={formData.email}
                 size="large"
               />
               <InputBox
-                id="password"
+                id="accountPassword"
                 label="Password"
                 Required
-                name="password"
+                name="accountPassword"
+                type="password"
                 onChange={handleChange}
-                value={formData.password}
+                value={formData.accountPassword}
+                size="large"
+              />
+              <InputBox
+                id="confirmPassword"
+                label="Confirm Password"
+                Required
+                name="confirmPassword"
+                type="password"
+                onChange={handleChange}
+                value={formData.confirmPassword}
                 size="large"
               />
             </div>
