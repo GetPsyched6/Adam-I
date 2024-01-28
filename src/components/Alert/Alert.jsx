@@ -76,7 +76,7 @@ function Alert(props) {
 
 Alert.propTypes = {
   message: PropTypes.string,
-  state: PropTypes.oneOf(['success', 'neutral', 'error']),
+  state: PropTypes.oneOf(['success', 'neutral', 'error', '']),
   isActive: PropTypes.bool,
 };
 

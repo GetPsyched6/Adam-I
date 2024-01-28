@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
+import { validateUserData } from '../../utils/validateUser';
 import styles from './Register.module.css';
 import Button from '../../components/Button/Button';
 import Alert from '../../components/Alert/Alert';
@@ -10,6 +11,7 @@ function Register() {
   const REGISTRATION_URL = 'http://localhost:9000/userregister';
 
   const Navigate = useNavigate();
+  const [buttonText, setButtonText] = useState('Register');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -17,6 +19,8 @@ function Register() {
     accountPassword: '',
     confirmPassword: '',
   });
+  const [errors, setErrors] = useState({});
+  const [confirmPasswordTouched, setConfirmPasswordTouched] = useState(false);
 
   const alertDuration = 5000;
   const [alert, setAlert] = useState({ message: '', state: '', active: false });
@@ -27,6 +31,23 @@ function Register() {
       active: !prevAlert.active,
     }));
   };
+  useEffect(() => {
+    const validationErrors = validateUserData(formData);
+    setErrors(validationErrors || {});
+  }, [formData]);
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+
+    // *Prevent password must match error until interacted
+    if (name === 'confirmPassword') {
+      setConfirmPasswordTouched(true);
+    }
+  };
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -36,6 +57,7 @@ function Register() {
       accountPassword: formData.accountPassword,
       confirmPassword: formData.confirmPassword,
     };
+    setButtonText('...');
 
     try {
       const response = await fetch(REGISTRATION_URL, {
@@ -55,9 +77,11 @@ function Register() {
         setTimeout(() => {
           Navigate('/');
         }, alertDuration + 1500);
+        setButtonText('Register');
       } else {
         alertMessage = 'Signup failed, please retry.';
         alertState = 'error';
+        setButtonText('Register');
       }
 
       // !Start Alert with set alert-data.
@@ -71,20 +95,13 @@ function Register() {
     } catch (error) {
       setAlert({ message: error.toString(), state: 'error' });
       toggleAlert();
+      setButtonText('Register');
 
       const alertTimeout = setTimeout(() => {
         toggleAlert();
       }, alertDuration);
       return () => clearTimeout(alertTimeout);
     }
-  };
-
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setFormData(prevFormData => ({
-      ...prevFormData,
-      [name]: value,
-    }));
   };
 
   return (
@@ -103,6 +120,7 @@ function Register() {
                 onChange={handleChange}
                 value={formData.name}
                 size="large"
+                message={errors.name}
               />
               <InputBox
                 id="email"
@@ -113,6 +131,7 @@ function Register() {
                 onChange={handleChange}
                 value={formData.email}
                 size="large"
+                message={errors.email}
               />
               <InputBox
                 id="accountPassword"
@@ -124,6 +143,7 @@ function Register() {
                 onChange={handleChange}
                 value={formData.accountPassword}
                 size="large"
+                message={errors.accountPassword}
               />
               <InputBox
                 id="confirmPassword"
@@ -135,6 +155,7 @@ function Register() {
                 onChange={handleChange}
                 value={formData.confirmPassword}
                 size="large"
+                message={confirmPasswordTouched ? errors.confirmPassword : ''}
               />
               <Tooltip
                 id="password-tooltip"
@@ -163,7 +184,7 @@ function Register() {
                 Login
               </Link>
             </div>
-            <Button isSubmit isAction text="Register" />
+            <Button isSubmit isAction text={buttonText} />
           </form>
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
         </div>

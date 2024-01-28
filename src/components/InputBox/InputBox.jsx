@@ -84,7 +84,7 @@ function InputBox(props) {
         )}
         {isDropdown && <FaChevronDown className={styles.icon} />}
       </div>
-      <div className={styles.message}>e{message}</div>
+      <div className={styles.message}>{message}</div>
     </div>
   );
 }

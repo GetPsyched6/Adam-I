@@ -35,7 +35,7 @@
 
 .login_link {
   color: var(--clr-white90);
-  margin-block-end: 1rem;
+  margin-block: 1rem;
 }
 
 .link {

@@ -10,7 +10,6 @@ function CompanyRegistration() {
   const REGISTRATION_URL = 'http://localhost:9000/companyregister';
 
   const Navigate = useNavigate();
-
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     companyName: '',
@@ -99,7 +98,9 @@ function CompanyRegistration() {
       const alertTimeout = setTimeout(() => {
         toggleAlert();
       }, alertDuration);
+
       return () => clearTimeout(alertTimeout);
+      // *catch when unknown error happens
     } catch (error) {
       setAlert({ message: error.toString(), state: 'error' });
       toggleAlert();

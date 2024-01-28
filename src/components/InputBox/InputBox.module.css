@@ -43,9 +43,9 @@ select.input {
 
 .message {
   margin-block-start: 0.25rem;
-  color: var(--clr-red);
+  color: var(--clr-lred);
   font-size: var(--fs-smallest);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
   max-width: 30ch;
 }
 
