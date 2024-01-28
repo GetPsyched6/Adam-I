@@ -16,6 +16,12 @@
   background-color: var(--clr-white70);
 }
 
+.button:disabled,
+.button[disabled]{
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .text {
   font-weight: var(--fw-semibold);
 }
