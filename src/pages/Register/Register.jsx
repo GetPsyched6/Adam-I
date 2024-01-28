@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
 import styles from './Register.module.css';
 import Button from '../../components/Button/Button';
+import Alert from '../../components/Alert/Alert';
 import InputBox from '../../components/InputBox/InputBox';
 
 function Register() {
+  const REGISTRATION_URL = 'http://localhost:9000/userregister';
+
   const Navigate = useNavigate();
 
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     accountPassword: '',
     confirmPassword: '',
   });
+
+  const alertDuration = 5000;
+  const [alert, setAlert] = useState({ message: '', state: '', active: false });
+
+  const toggleAlert = () => {
+    setAlert(prevAlert => ({
+      ...prevAlert,
+      active: !prevAlert.active,
+    }));
+  };
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -25,25 +38,45 @@ function Register() {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/api/register/', {
+      const response = await fetch(REGISTRATION_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
+
+      let alertMessage = '';
+      let alertState = '';
+
       if (response.ok) {
-        alert('Registration Successful');
-        // Handle success, maybe redirect or clear form
+        alertMessage = 'Signup successful. Redirecting...';
+        alertState = 'success';
+        setTimeout(() => {
+          Navigate('/');
+        }, alertDuration + 1500);
       } else {
-        console.error('Registration Failed');
-        // Handle error, show message to user
+        alertMessage = 'Signup failed, please retry.';
+        alertState = 'error';
       }
+
+      // !Start Alert with set alert-data.
+      setAlert({ message: alertMessage, state: alertState });
+      toggleAlert();
+
+      const alertTimeout = setTimeout(() => {
+        toggleAlert();
+      }, alertDuration);
+      return () => clearTimeout(alertTimeout);
     } catch (error) {
-      console.error('Error during submission:', error);
-      // Handle error, show message to user
+      setAlert({ message: error.toString(), state: 'error' });
+      toggleAlert();
+
+      const alertTimeout = setTimeout(() => {
+        toggleAlert();
+      }, alertDuration);
+      return () => clearTimeout(alertTimeout);
     }
-    Navigate('/');
   };
 
   const handleChange = event => {
@@ -135,6 +168,7 @@ function Register() {
           <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
         </div>
       </div>
+      <Alert message={alert.message} state={alert.state} isActive={alert.active} />
     </div>
   );
 }
