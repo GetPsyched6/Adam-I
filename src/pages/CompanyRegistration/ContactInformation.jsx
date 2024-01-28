@@ -20,7 +20,7 @@ function ContactInformation(props) {
         />
         <InputBox
           id="position"
-          label="Position*"
+          label="Their Position*"
           required
           name="position"
           type="text"

@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BasicInformation from './BasicInformation';
 import ContactInformation from './ContactInformation';
 import styles from './CompanyRegistration.module.css';
+import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
 
 function CompanyRegistration() {
+  const REGISTRATION_URL = 'http://localhost:9000/companyregister';
+
+  const Navigate = useNavigate();
+
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     companyName: '',
     businessType: '',
-    numberOfEmployees: '',
-    yearOfEstablishment: '',
+    numberOfEmployees: null,
+    yearOfEstablishment: null,
     country: '',
     city: '',
-    postCode: '',
+    postCode: null,
     industry: '',
     accountPassword: '',
     confirmPassword: '',
@@ -26,6 +31,16 @@ function CompanyRegistration() {
     companyWebsite: '',
   });
 
+  const alertDuration = 5000;
+  const [alert, setAlert] = useState({ message: '', state: '', active: false });
+
+  const toggleAlert = () => {
+    setAlert(prevAlert => ({
+      ...prevAlert,
+      active: !prevAlert.active,
+    }));
+  };
+
   const handleChange = event => {
     const { name, value } = event.target;
     setFormData(prevFormData => ({
@@ -34,10 +49,67 @@ function CompanyRegistration() {
     }));
   };
 
-  // Handle form submission for the entire form
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
-    // You'll handle form submission here, possibly sending data to a backend
+    const data = {
+      companyName: formData.companyName,
+      businessType: formData.businessType,
+      numberOfEmployees: Number(formData.numberOfEmployees),
+      yearOfEstablishment: Number(formData.yearOfEstablishment),
+      country: formData.country,
+      city: formData.city,
+      postCode: formData.postCode,
+      industry: formData.industry,
+      accountPassword: formData.accountPassword,
+      confirmPassword: formData.confirmPassword,
+      companyAddress: formData.companyAddress,
+      personOfContact: formData.personOfContact,
+      position: formData.position,
+      phoneNumber: formData.phoneNumber,
+      email: formData.email,
+      companyWebsite: formData.companyWebsite,
+    };
+    console.log(data);
+    try {
+      const response = await fetch(REGISTRATION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      let alertMessage = '';
+      let alertState = '';
+
+      if (response.ok) {
+        alertMessage = 'Signup successful. Redirecting...';
+        alertState = 'success';
+        setTimeout(() => {
+          Navigate('/');
+        }, alertDuration + 1500);
+      } else {
+        alertMessage = 'Signup failed, please retry.';
+        alertState = 'error';
+      }
+
+      // !Start Alert with set alert-data.
+      setAlert({ message: alertMessage, state: alertState });
+      toggleAlert();
+
+      const alertTimeout = setTimeout(() => {
+        toggleAlert();
+      }, alertDuration);
+      return () => clearTimeout(alertTimeout);
+    } catch (error) {
+      setAlert({ message: error.toString(), state: 'error' });
+      toggleAlert();
+
+      const alertTimeout = setTimeout(() => {
+        toggleAlert();
+      }, alertDuration);
+      return () => clearTimeout(alertTimeout);
+    }
   };
 
   const goToNextStep = () => {
@@ -99,6 +171,7 @@ function CompanyRegistration() {
         )}
         <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
       </div>
+      <Alert message={alert.message} state={alert.state} isActive={alert.active} />
     </form>
   );
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tooltip';
-import countryList from 'react-select-country-list';
+import countryOptions from './sortedCountries';
 import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
 
 function BasicInformation(props) {
   const { formData, handleChange } = props;
-  const countries = countryList().getData();
 
   return (
     <div className={styles.inputs_wrapper}>
@@ -71,7 +70,7 @@ function BasicInformation(props) {
           value={formData.country}
           size="small"
         >
-          {countries.map(country => (
+          {countryOptions.map(country => (
             <option key={country.value} value={country.value} title={country.value}>
               {country.label}
             </option>
@@ -147,7 +146,7 @@ function BasicInformation(props) {
           <div className={styles.tooltip_wrapper}>
             <p className={styles.tooltip_title}>Password Requirements:</p>
             <ul className={styles.tooltip_list_wrapper}>
-              <li>8-60 characters with a mix of letters and numbers</li>
+              <li>8-128 characters with a mix of letters and numbers</li>
               <li>Must include both upper and lower case letters</li>
             </ul>
           </div>
