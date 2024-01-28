@@ -69,7 +69,6 @@ function CompanyRegistration() {
       email: formData.email,
       companyWebsite: formData.companyWebsite,
     };
-    console.log(data);
     try {
       const response = await fetch(REGISTRATION_URL, {
         method: 'POST',
