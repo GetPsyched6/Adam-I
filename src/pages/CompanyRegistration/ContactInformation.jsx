@@ -1,10 +1,11 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
 
 function ContactInformation(props) {
-  const { formData, handleChange } = props;
+  const { formData, errors, handleChange } = props;
   return (
     <div className={styles.inputs_wrapper}>
       <div className={styles.input_group}>
@@ -17,6 +18,7 @@ function ContactInformation(props) {
           onChange={handleChange}
           value={formData.personOfContact}
           size="large"
+          message={errors.personOfContact}
         />
         <InputBox
           id="position"
@@ -27,6 +29,7 @@ function ContactInformation(props) {
           onChange={handleChange}
           value={formData.position}
           size="large"
+          message={errors.position}
         />
       </div>
       <div className={styles.input_group}>
@@ -38,6 +41,8 @@ function ContactInformation(props) {
           type="tel"
           onChange={handleChange}
           value={formData.phoneNumber}
+          size="large"
+          message={errors.phoneNumber}
         />
         <InputBox
           id="email"
@@ -47,6 +52,8 @@ function ContactInformation(props) {
           type="email"
           onChange={handleChange}
           value={formData.email}
+          size="large"
+          message={errors.email}
         />
       </div>
       <div className={styles.input_group}>
@@ -58,6 +65,8 @@ function ContactInformation(props) {
           type="url"
           onChange={handleChange}
           value={formData.companyWebsite}
+          size="large"
+          message={errors.companyWebsite}
         />
       </div>
     </div>
@@ -72,6 +81,7 @@ ContactInformation.propTypes = {
     email: PropTypes.string.isRequired,
     companyWebsite: PropTypes.string.isRequired,
   }).isRequired,
+  errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 export default ContactInformation;

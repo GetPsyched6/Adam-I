@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import BasicInformation from './BasicInformation';
 import ContactInformation from './ContactInformation';
+import { validateCompanyData } from '../../utils/validateCompany';
 import styles from './CompanyRegistration.module.css';
 import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
@@ -14,11 +15,11 @@ function CompanyRegistration() {
   const [formData, setFormData] = useState({
     companyName: '',
     businessType: '',
-    numberOfEmployees: null,
-    yearOfEstablishment: null,
+    numberOfEmployees: '',
+    yearOfEstablishment: '',
     country: '',
     city: '',
-    postCode: null,
+    postCode: '',
     industry: '',
     accountPassword: '',
     confirmPassword: '',
@@ -28,6 +29,12 @@ function CompanyRegistration() {
     phoneNumber: '',
     email: '',
     companyWebsite: '',
+  });
+
+  const [errors, setErrors] = useState({});
+  const [isTouched, setIsTouched] = useState({
+    confirmPassword: false,
+    yearOfEstablishment: false,
   });
 
   const alertDuration = 5000;
@@ -40,12 +47,29 @@ function CompanyRegistration() {
     }));
   };
 
+  useEffect(() => {
+    const validationErrors = validateCompanyData({
+      ...formData,
+      numberOfEmployees: Number(formData.numberOfEmployees),
+      yearOfEstablishment: Number(formData.yearOfEstablishment),
+    });
+    setErrors(validationErrors || {});
+  }, [formData]);
+
   const handleChange = event => {
     const { name, value } = event.target;
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,
     }));
+
+    // *Prevent password or year of establishment errors until interacted
+    if (name === 'confirmPassword') {
+      setIsTouched({ confirmPassword: true });
+    }
+    if (name === 'yearOfEstablishment') {
+      setIsTouched({ yearOfEstablishment: true });
+    }
   };
 
   const handleSubmit = async event => {
@@ -142,8 +166,9 @@ function CompanyRegistration() {
             </h5>
             <BasicInformation
               formData={formData}
+              errors={errors}
+              isTouched={isTouched}
               handleChange={handleChange}
-              nextStep={goToNextStep}
             />
             {loginLink}
             <div className={styles.button_wrapper}>
@@ -156,12 +181,7 @@ function CompanyRegistration() {
             <h5 className={styles.subtitle}>
               Contact Information <span className={styles.page_indicator}>(2 of 2)</span>
             </h5>
-            <ContactInformation
-              formData={formData}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              previousStep={goToPreviousStep}
-            />
+            <ContactInformation formData={formData} errors={errors} handleChange={handleChange} />
             {loginLink}
             <div className={styles.button_wrapper}>
               <Button text="Back" onClick={goToPreviousStep} />

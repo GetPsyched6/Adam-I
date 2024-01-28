@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tooltip';
@@ -6,7 +7,7 @@ import styles from './CompanyRegistration.module.css';
 import InputBox from '../../components/InputBox/InputBox';
 
 function BasicInformation(props) {
-  const { formData, handleChange } = props;
+  const { formData, errors, isTouched, handleChange } = props;
 
   return (
     <div className={styles.inputs_wrapper}>
@@ -20,6 +21,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.companyName}
           size="large"
+          message={errors.companyName}
         />
         <InputBox
           id="businessType"
@@ -30,6 +32,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.businessType}
           size="large"
+          message={errors.businessType}
         />
       </div>
 
@@ -44,6 +47,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.numberOfEmployees}
           size="large"
+          message={errors.numberOfEmployees}
         />
         <InputBox
           id="yearOfEstablishment"
@@ -56,12 +60,13 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.yearOfEstablishment}
           size="large"
+          message={isTouched.yearOfEstablishment ? errors.yearOfEstablishment : ''}
         />
       </div>
 
       <div className={`${styles.input_group} ${styles.small_inputs}`}>
         <InputBox
-          id="Country"
+          id="country"
           label="Country*"
           isDropdown
           required
@@ -69,6 +74,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.country}
           size="small"
+          message={errors.country}
         >
           {countryOptions.map(country => (
             <option key={country.value} value={country.value} title={country.value}>
@@ -85,6 +91,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.city}
           size="small"
+          message={errors.city}
         />
         <InputBox
           id="postCode"
@@ -94,6 +101,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.postCode}
           size="small"
+          message={errors.postCode}
         />
       </div>
 
@@ -107,6 +115,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.industry}
           size="large"
+          message={errors.industry}
         />
       </div>
       <div className={styles.input_group}>
@@ -120,6 +129,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.accountPassword}
           size="large"
+          message={errors.accountPassword}
         />
         <InputBox
           id="confirmPassword"
@@ -131,6 +141,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.confirmPassword}
           size="large"
+          message={isTouched.confirmPassword ? errors.confirmPassword : ''}
         />
         <Tooltip
           id="password-tooltip"
@@ -163,6 +174,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.companyAddress}
           size="large"
+          message={errors.companyAddress}
         />
       </div>
     </div>
@@ -183,6 +195,8 @@ BasicInformation.propTypes = {
     confirmPassword: PropTypes.string.isRequired,
     companyAddress: PropTypes.string.isRequired,
   }).isRequired,
+  errors: PropTypes.object.isRequired,
+  isTouched: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 

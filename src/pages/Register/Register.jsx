@@ -31,6 +31,7 @@ function Register() {
       active: !prevAlert.active,
     }));
   };
+
   useEffect(() => {
     const validationErrors = validateUserData(formData);
     setErrors(validationErrors || {});

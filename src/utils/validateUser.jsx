@@ -2,7 +2,7 @@ import Joi from 'joi';
 
 export const userSchema = Joi.object({
   name: Joi.string().max(255).required().messages({
-    'string.base': 'Name must be a string.',
+    'string.base': 'Name must be text.',
     'string.max': 'Name must not exceed 255 characters.',
   }),
   email: Joi.string()
@@ -22,11 +22,7 @@ export const userSchema = Joi.object({
   confirmPassword: Joi.valid(Joi.ref('accountPassword')).required().messages({
     'any.only': 'Passwords must match.',
   }),
-})
-  .with('accountPassword', 'confirmPassword')
-  .messages({
-    'object.with': 'Passwords must match.',
-  });
+}).with('accountPassword', 'confirmPassword');
 
 export const validateUserData = data => {
   const { error } = userSchema.validate(data, { abortEarly: false });
