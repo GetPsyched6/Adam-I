@@ -72,7 +72,9 @@ function Login() {
           </div>
           <Button isSubmit text="Login" />
         </form>
-        <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
+        <div className={styles.aboutus}>
+          © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
+        </div>
       </div>
     </div>
   );

@@ -77,7 +77,7 @@ function Register() {
         alertState = 'success';
         setTimeout(() => {
           Navigate('/');
-        }, alertDuration + 1500);
+        }, alertDuration + 1000);
         setButtonText('Register');
       } else {
         alertMessage = 'Signup failed, please retry.';
@@ -187,7 +187,9 @@ function Register() {
             </div>
             <Button isSubmit isAction text={buttonText} />
           </form>
-          <div className={styles.aboutus}>© 2023 - Invest Africa :: Powered by Adam-i Japan</div>
+          <div className={styles.aboutus}>
+            © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
+          </div>
         </div>
       </div>
       <Alert message={alert.message} state={alert.state} isActive={alert.active} />

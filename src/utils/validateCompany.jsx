@@ -37,7 +37,7 @@ export const companySchema = Joi.object({
     'string.base': 'Input must be text.',
     'string.max': 'Input must not exceed 255 characters.',
   }),
-  postCode: Joi.string().max(255).allow(null).messages({
+  postCode: Joi.string().max(255).allow('').allow(null).messages({
     'string.max': 'Input must not exceed 255 characters.',
   }),
   industry: Joi.string().max(255).required().messages({

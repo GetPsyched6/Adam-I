@@ -46,7 +46,7 @@ function ContactInformation(props) {
         />
         <InputBox
           id="email"
-          label="Email"
+          label="Email*"
           required
           name="email"
           type="email"
