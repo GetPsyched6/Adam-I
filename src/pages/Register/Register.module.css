@@ -34,17 +34,17 @@
 }
 
 .login_link {
-  color: var(--clr-white90);
+  color: var(--clr-white70);
   margin-block: 1rem;
 }
 
 .link {
-  color: white;
-  text-decoration: underline;
+  color: var(--clr-white90);
 }
 
-.link:hover {
-  color: var(--clr-white90);
+.link:hover,
+.link:focus {
+  color: white;
   text-decoration: underline;
 }
 

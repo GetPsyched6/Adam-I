@@ -18,32 +18,33 @@
 .blur_wrapper h2 {
   color: var(--clr-white90);
   font-weight: var(--fw-semibold);
-  margin-block-end: 2rem;
+  margin-block-end: 1rem;
 }
 
 .login_form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .login_input {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .register_link {
-  color: var(--clr-white90);
+  color: var(--clr-white70);
+  margin-block: 1rem;
 }
 
 .link {
-  color: white;
-  text-decoration: underline;
+  color: var(--clr-white90);
 }
 
-.link:hover {
-  color: var(--clr-white90);
+.link:hover,
+.link:focus {
+  color: white;
   text-decoration: underline;
 }
 
@@ -52,6 +53,15 @@
   position: relative;
   cursor: pointer;
   padding-inline-start: 2rem;
+  margin-block-end: 1rem;
+}
+
+.checkbox_wrapper:focus .checkbox_icon {
+  outline: 3px solid var(--clr-white90);
+}
+
+.checkbox_wrapper:focus {
+  outline: none;
 }
 
 .checkbox_wrapper input[type='checkbox'] {

@@ -10,7 +10,8 @@ import Button from '../../components/Button/Button';
 function CompanyRegistration() {
   const REGISTRATION_URL = 'http://localhost:9000/companyregister';
 
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
+  const [buttonText, setButtonText] = useState('Register');
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     companyName: '',
@@ -34,6 +35,7 @@ function CompanyRegistration() {
   const [errors, setErrors] = useState({});
   const [isTouched, setIsTouched] = useState({
     confirmPassword: false,
+    numberOfEmployees: false,
     yearOfEstablishment: false,
   });
 
@@ -63,9 +65,12 @@ function CompanyRegistration() {
       [name]: value,
     }));
 
-    // *Prevent password or year of establishment errors until interacted
+    // *Prevent password, n.Employees or year.Establishment errors until interacted
     if (name === 'confirmPassword') {
       setIsTouched({ confirmPassword: true });
+    }
+    if (name === 'numberOfEmployees') {
+      setIsTouched({ numberOfEmployees: true });
     }
     if (name === 'yearOfEstablishment') {
       setIsTouched({ yearOfEstablishment: true });
@@ -92,6 +97,8 @@ function CompanyRegistration() {
       email: formData.email,
       companyWebsite: formData.companyWebsite,
     };
+    setButtonText('...');
+
     try {
       const response = await fetch(REGISTRATION_URL, {
         method: 'POST',
@@ -108,15 +115,21 @@ function CompanyRegistration() {
         alertMessage = 'Signup successful. Redirecting...';
         alertState = 'success';
         setTimeout(() => {
-          Navigate('/');
+          navigate('/');
         }, alertDuration + 1000);
+        setButtonText('Register');
       } else {
         alertMessage = 'Signup failed, please retry.';
         alertState = 'error';
+        setButtonText('Register');
       }
 
       // !Start Alert with set alert-data.
-      setAlert({ message: alertMessage, state: alertState });
+      setAlert(prevAlert => ({
+        ...prevAlert,
+        message: alertMessage,
+        state: alertState,
+      }));
       toggleAlert();
 
       const alertTimeout = setTimeout(() => {
@@ -126,7 +139,11 @@ function CompanyRegistration() {
       return () => clearTimeout(alertTimeout);
       // *catch when unknown error happens
     } catch (error) {
-      setAlert({ message: error.toString(), state: 'error' });
+      setAlert(prevAlert => ({
+        ...prevAlert,
+        message: error.toString(),
+        state: 'error',
+      }));
       toggleAlert();
 
       const alertTimeout = setTimeout(() => {
@@ -185,7 +202,7 @@ function CompanyRegistration() {
             {loginLink}
             <div className={styles.button_wrapper}>
               <Button text="Back" onClick={goToPreviousStep} />
-              <Button text="Register" isAction isSubmit />
+              <Button text={buttonText} isAction isSubmit />
             </div>
           </div>
         )}

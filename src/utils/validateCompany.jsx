@@ -12,9 +12,10 @@ export const companySchema = Joi.object({
     'string.base': 'Input must be text.',
     'string.max': 'Input must not exceed 255 characters.',
   }),
-  numberOfEmployees: Joi.required().messages({
+  numberOfEmployees: Joi.number().integer().min(1).max(10000000).required().messages({
     'number.base': 'Input must be an integer.',
-    'number.integer': 'Input must be an integer.',
+    'number.min': 'Input cannot be below 1.',
+    'number.max': 'Input cannot be above 10000000.',
   }),
   yearOfEstablishment: Joi.number()
     .integer()

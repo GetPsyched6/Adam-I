@@ -10,7 +10,7 @@ import InputBox from '../../components/InputBox/InputBox';
 function Register() {
   const REGISTRATION_URL = 'http://localhost:9000/userregister';
 
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Register');
 
   const [formData, setFormData] = useState({
@@ -76,7 +76,7 @@ function Register() {
         alertMessage = 'Signup successful. Redirecting...';
         alertState = 'success';
         setTimeout(() => {
-          Navigate('/');
+          navigate('/');
         }, alertDuration + 1000);
         setButtonText('Register');
       } else {
@@ -86,7 +86,11 @@ function Register() {
       }
 
       // !Start Alert with set alert-data.
-      setAlert({ message: alertMessage, state: alertState });
+      setAlert(prevAlert => ({
+        ...prevAlert,
+        message: alertMessage,
+        state: alertState,
+      }));
       toggleAlert();
 
       const alertTimeout = setTimeout(() => {
@@ -94,7 +98,11 @@ function Register() {
       }, alertDuration);
       return () => clearTimeout(alertTimeout);
     } catch (error) {
-      setAlert({ message: error.toString(), state: 'error' });
+      setAlert(prevAlert => ({
+        ...prevAlert,
+        message: error.toString(),
+        state: 'error',
+      }));
       toggleAlert();
       setButtonText('Register');
 

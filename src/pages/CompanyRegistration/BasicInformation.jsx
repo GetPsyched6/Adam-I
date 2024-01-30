@@ -47,7 +47,7 @@ function BasicInformation(props) {
           onChange={handleChange}
           value={formData.numberOfEmployees}
           size="large"
-          message={errors.numberOfEmployees}
+          message={isTouched.numberOfEmployees ? errors.numberOfEmployees : ''}
         />
         <InputBox
           id="yearOfEstablishment"
