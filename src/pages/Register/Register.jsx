@@ -8,7 +8,7 @@ import Alert from '../../components/Alert/Alert';
 import InputBox from '../../components/InputBox/InputBox';
 
 function Register() {
-  const REGISTRATION_URL = 'http://localhost:9000/userregister';
+  const REGISTRATION_URL = `${process.env.REACT_APP_BACKEND_URL}/userregister`;
 
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Register');

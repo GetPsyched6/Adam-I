@@ -7,7 +7,7 @@ import Alert from '../../components/Alert/Alert';
 import InputBox from '../../components/InputBox/InputBox';
 
 function Login() {
-  const LOGIN_URL = 'http://localhost:9000/login';
+  const LOGIN_URL = `${process.env.REACT_APP_BACKEND_URL}/login`;
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Login');
 
