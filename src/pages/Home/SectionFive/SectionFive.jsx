@@ -5,7 +5,7 @@ import industries from '../../../data/industries';
 
 function SectionFive() {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="industries">
       <div className={styles.title_wrapper}>
         <h2 className={styles.title}>Our leading Industires</h2>
       </div>

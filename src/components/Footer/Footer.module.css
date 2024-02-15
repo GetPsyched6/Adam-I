@@ -13,7 +13,6 @@
   justify-content: center;
   gap: 2rem;
   color: var(--clr-lyellow);
-  
 }
 
 .socialmedia :hover {
@@ -25,11 +24,10 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  
 }
 
 .icon_wrapper p {
-  font-size: var(--fs-small);
+  font-size: var(--fs-smaller);
   font-weight: var(--fw-semibold);
 }
 
@@ -48,7 +46,6 @@
 
 .subtitle {
   color: var(--clr-yellow);
-  font-size: var(--fs-h5);
 }
 
 .title {
@@ -63,6 +60,10 @@
   background-color: var(--clr-bg-lgray);
   border-radius: 50%;
   color: black;
+}
+
+.spacing {
+  display: none;
 }
 
 @media (max-width: 992px) {
@@ -83,10 +84,13 @@
     margin-inline-end: 0;
     text-align: center;
   }
+
+  .spacing {
+    display: block;
+  }
 }
 
 @media (max-width: 600px) {
-
   .socialmedia {
     align-items: center;
     justify-content: center;

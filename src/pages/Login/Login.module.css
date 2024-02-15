@@ -1,0 +1,108 @@
+.wrapper {
+  background: url('../../assets/login.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: var(--desktop-nav-fullheight);
+}
+
+.blur_wrapper {
+  padding: 3rem;
+  padding-inline-end: 6rem;
+  background-color: var(--clr-bg-orange50);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  min-height: var(--desktop-nav-fullheight);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.blur_wrapper h2 {
+  color: var(--clr-white90);
+  font-weight: var(--fw-semibold);
+  margin-block-end: 1rem;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login_input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.register_link {
+  color: var(--clr-white70);
+  margin-block: 1rem;
+}
+
+.link {
+  color: var(--clr-white90);
+}
+
+.link:hover,
+.link:focus {
+  color: white;
+  text-decoration: underline;
+}
+
+.checkbox_wrapper {
+  color: var(--clr-white90);
+  position: relative;
+  cursor: pointer;
+  padding-inline-start: 2rem;
+  margin-block-end: 1rem;
+}
+
+.checkbox_wrapper:focus .checkbox_icon {
+  outline: 3px solid var(--clr-white90);
+}
+
+.checkbox_wrapper:focus {
+  outline: none;
+}
+
+.checkbox_wrapper input[type='checkbox'] {
+  display: none;
+}
+
+.checkbox_wrapper .checkbox_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--clr-white70);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox_wrapper input:checked + .checkbox_icon::before {
+  content: '✔';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--clr-black90);
+}
+
+.aboutus {
+  color: var(--clr-white70);
+  margin-block: 2rem;
+  max-width: 40ch;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    background-attachment: initial;
+    min-height: var(--mobile-nav-fullheight);
+  }
+  .blur_wrapper {
+    min-height: var(--mobile-nav-fullheight);
+    padding: 2rem;
+    width: 100%;
+  }
+}

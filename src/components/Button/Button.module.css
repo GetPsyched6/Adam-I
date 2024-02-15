@@ -1,17 +1,25 @@
 .button {
+  color: black;
   padding: 1rem 3rem;
   background-color: var(--clr-white70);
   border-radius: 500px;
   transition: background-color 0.1s linear;
 }
 
-.button:hover {
+.button:hover,
+.button:focus-visible {
   background-color: var(--clr-white90);
   transition: background-color 0.1s linear;
 }
 
 .button:active {
   background-color: var(--clr-white70);
+}
+
+.button:disabled,
+.button[disabled]{
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .text {
@@ -22,7 +30,8 @@
   background-color: var(--clr-lyellow);
 }
 
-.action:hover {
+.action:hover,
+.action:focus-visible {
   background-color: var(--clr-yellow);
   transition: background-color 0.1s linear;
 }

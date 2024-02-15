@@ -29,17 +29,18 @@ export default function Footer() {
         <p className={styles.contactinfo}>
           <span className={styles.title}>Adam Innovations Co. Ltd</span>
           <br />
-          Global IT Park1188-2, Urasa, Minami
+          Global IT Park, 1188-2, Urasa, Minami Uonuma
           <br />
-          UonumaNiigata 9497302 Japan
+          Niigata 9497302 Japan
           <br />
           Tel: (+81)25-788-0665
           <br />
           Email: <u>info@adam-i.jp</u>
           <br />
-          <span className={styles.subtitle}>
-            Copyright ©2023 Invest Africa. All rights reserved.
-          </span>
+          <br className={styles.spacing} />
+          <h5 className={styles.subtitle}>
+            Copyright ©{new Date().getFullYear()} Invest Africa. All rights reserved.
+          </h5>
         </p>
       </div>
     </footer>

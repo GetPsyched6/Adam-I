@@ -26,8 +26,12 @@
 }
 
 :root {
+  color-scheme: dark;
   --font-stack: 'Poppins', system-ui, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  --desktop-nav-fullheight: calc(100vh - 56px);
+  --mobile-nav-fullheight: calc(100vh - 48px);
 
   --clr-white90: #ffffffe6;
   --clr-white70: #ffffffb3;
@@ -35,12 +39,21 @@
   --clr-black90: #000000e6;
   --clr-black70: #000000b3;
 
-  --clr-bg-gray: #2f2f2f;
-  --clr-bg-lgray: #f4f4f4;
+  --clr-bg-gray: #2f2f33;
+  --clr-bg-lgray: #f0f0f4;
+  --clr-bg-gray90: #2f2f33e6;
+  --clr-bg-lgray90: #f0f0f4e6;
+  --clr-bg-gray70: #2f2f33b3;
+  --clr-bg-lgray70: #f0f0f4b3;
+  --clr-bg-orange50: #150a0685;
+
+  --clr-red: #ff0000;
+  --clr-mred:#ff6767;
+  --clr-lred:#ff7e7e;
   --clr-yellow: #ffcc00;
   --clr-lyellow: #ffe478;
   --clr-green: #006239;
-  --clr-lgreen: #18b231;
+  --clr-lgreen: #23c83e;
 
   --fw-regular: 500;
   --fw-medium: 600;
@@ -53,18 +66,25 @@
   --fs-h4: clamp(0.5rem, 6vw + 0.4rem, 2.6rem);
   --fs-h5: clamp(0.4rem, 5vw + 0.4rem, 1.5rem);
   --fs-p: clamp(0.3rem, 3vw + 0.3rem, 1.25rem);
-  --fs-small: clamp(0.2rem, 3vw + 0.3rem, 1rem);
+  --fs-small: clamp(0.25rem, 3vw + 0.3rem, 1.1rem);
+  --fs-smaller: clamp(0.2rem, 3vw + 0.3rem, 1rem);
+  --fs-smallest: clamp(0.2rem, 3vw + 0.3rem, 0.9rem);
 }
 
 html {
+  background-color: #fff;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scroll-padding-block-start: 3rem;
+  max-width: 1600px;
+  margin-inline: auto;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  min-width: 0;
 }
 
 body {

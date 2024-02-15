@@ -13,12 +13,12 @@
 
 .description {
   width: 100%;
-  height: 70px;
+  height: 70px; /* ?Prevent map jumping around on hover */
 }
 
 .description p {
   color: black;
-  font-size: var(--fs-small);
+  font-size: var(--fs-smaller);
   line-height: normal;
 }
 
@@ -29,6 +29,10 @@
 }
 
 @media (max-width: 600px) {
+  .description {
+    height: 110px; /* ?Prevent map jumping around on tap */
+  }
+
   .description p {
     max-width: 80vw;
   }

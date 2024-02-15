@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import styles from './Button.module.css';
 
 function Button(props) {
-  const { isAction, text, isSubmit, onClick } = props;
+  const { isAction, text, isDisabled, isSubmit, onClick } = props;
   return (
     <div className={styles.wrapper}>
       <button
         type={isSubmit ? 'submit' : 'button'}
         className={`${styles.button} ${isAction ? styles.action : ''}`}
         onClick={onClick}
+        disabled={isDisabled}
       >
         <span className={styles.text}>{text}</span>
       </button>
@@ -19,13 +20,16 @@ function Button(props) {
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
-  isSubmit: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+  isDisabled: PropTypes.bool,
+  isSubmit: PropTypes.bool,
   isAction: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  isSubmit: 'button',
+  onClick: () => {},
+  isDisabled: false,
+  isSubmit: false,
   isAction: false,
 };
 

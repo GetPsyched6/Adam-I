@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 import { FaChevronDown } from 'react-icons/fa6';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './InputBox.module.css';
@@ -38,7 +39,13 @@ function getResponsiveClassName(size, isAddress, isTablet, isMobile) {
 }
 
 function InputBox(props) {
-  const { isDropdown, label, id, size, isAddress, children } = props;
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+
+  const toggleTooltip = () => {
+    setIsTooltipOpen(!isTooltipOpen);
+  };
+
+  const { message, isDropdown, label, id, size, tooltip, isAddress, children } = props;
   const options = children;
 
   const isTablet = useMediaQuery('(max-width: 992px)');
@@ -50,15 +57,34 @@ function InputBox(props) {
     <div className={styles.wrapper}>
       <label className={styles.label} htmlFor={id}>
         {label}
+        {tooltip ? (
+          <button
+            type="button"
+            aria-label="Input field information"
+            aria-haspopup="true"
+            aria-expanded={isTooltipOpen}
+            className={styles.infoButton}
+            onMouseEnter={toggleTooltip}
+            onMouseLeave={toggleTooltip}
+            onFocus={toggleTooltip}
+            onBlur={toggleTooltip}
+            data-tooltip-id={tooltip}
+          >
+            <AiOutlineInfoCircle />
+          </button>
+        ) : (
+          ''
+        )}
       </label>
       <div className={`${styles.input_wrapper} ${wrapperClass}`} style={{ height: addressHeight }}>
         {!isDropdown ? (
-          <TextBox props={props} wrapperClass={wrapperClass} addressHeight={addressHeight} />
+          <TextBox parentProps={props} wrapperClass={wrapperClass} addressHeight={addressHeight} />
         ) : (
-          <DropdownBox props={props} wrapperClass={wrapperClass} options={options} />
+          <DropdownBox parentProps={props} wrapperClass={wrapperClass} options={options} />
         )}
         {isDropdown && <FaChevronDown className={styles.icon} />}
       </div>
+      <div className={styles.message}>{message}</div>
     </div>
   );
 }
@@ -66,6 +92,8 @@ function InputBox(props) {
 InputBox.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  message: PropTypes.string,
+  tooltip: PropTypes.string,
   isDropdown: PropTypes.bool,
   isAddress: PropTypes.bool,
   size: PropTypes.oneOf(['large', 'small']),
@@ -73,6 +101,8 @@ InputBox.propTypes = {
 };
 
 InputBox.defaultProps = {
+  message: '',
+  tooltip: '',
   isDropdown: false,
   isAddress: false,
   size: 'large',

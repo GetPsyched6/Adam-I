@@ -93,7 +93,6 @@ a:active {
   text-decoration: none;
   color: inherit;
   outline: 0;
-  cursor: auto;
 }
 
 /**
@@ -165,7 +164,9 @@ sup {
  */
 
 img {
+  display: block;
   border-style: none;
+  max-width: 100%;
 }
 
 /* Forms
