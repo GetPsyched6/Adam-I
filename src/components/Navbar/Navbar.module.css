@@ -41,9 +41,9 @@
   opacity: 0;
   z-index: 5;
   background-color: var(--clr-bg-lgray);
-  border-radius: 12px;
+  border-radius: 100vw;
   font-weight: var(--fw-semibold);
-  padding: 1rem;
+  padding: 0.75rem 1.5rem;
 }
 
 .skip_nav:focus-visible {
@@ -72,10 +72,14 @@
   cursor: pointer;
 }
 
+.nav_link {
+  transition: all 0.3s ease;
+}
+
 .nav_link:hover,
 .nav_link:focus-within {
-  transition: 0.2s ease;
-  text-decoration: underline;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
   color: var(--clr-lgreen);
 }
 
