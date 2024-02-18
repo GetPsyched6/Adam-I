@@ -1,50 +1,46 @@
-/* TODO please refactor this */
+.wrapper {
+  --height: 75vh;
 
-/* .wrapper { 
-  background-image: url('../../../assets/images/Home/home-section-1.png');
-  background-size: cover;
-  background-position: center center;
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 75vh;
-} */
+  height: var(--height);
+}
 
-.backgroundImage1, .backgroundImage2, .backgroundImage3 {
-  /* Styles for background image and size */
+.background {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center center;
-  transition: opacity 1s ease-in-out;
+}
+
+/* *Start CSS for react-transition-group */
+.enter {
   opacity: 0;
 }
 
-.backgroundImage1 {
-  background-image: url('../../../assets/images/Home/home-section-1.png');
+.enterActive {
+  opacity: 1;
+  transition: opacity 500ms ease;
 }
 
-.backgroundImage2 {
-  background-image: url('../../../assets/images/Home/home-section-2.webp');
+.exit {
+  opacity: 1;
 }
 
-.backgroundImage3 {
-  background-image: url('../../../assets/images/Home/home-section-3.webp');
+.exitActive {
+  opacity: 0;
+  transition: opacity 500ms ease;
 }
-
-.carousel {
-  width: 100%;
-  height: 75vh;
-  transition: opacity 1s ease-in-out; /* Ensure this is on the .carousel class */
-  opacity: 0; /* Start with the carousel hidden */
-}
-
-.carousel.active {
-  opacity: 1; /* Make the active carousel visible */
-  transition: opacity 1s ease-in-out; /* Ensure this is on the .carousel class */
-
-}
+/* *End CSS for react-transition-group */
 
 .content {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding-block: calc(var(--height) / 4);
+  padding-inline: 3rem;
 }
 
 .text {
@@ -61,8 +57,13 @@
 }
 
 @media (max-width: 600px) {
+  .wrapper {
+    --height: 60vh;
+
+    height: var(--height);
+  }
   .content {
-    padding: 3rem 2rem;
+    padding-inline: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
