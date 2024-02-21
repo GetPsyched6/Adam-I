@@ -7,7 +7,8 @@
   position: sticky;
   inset: 0 0 auto 0;
   height: 56px; /* !Desktop Navbar height */
-  z-index: 1;
+  z-index: 9999;
+  isolation: isolate;
 }
 
 .nav::before {
