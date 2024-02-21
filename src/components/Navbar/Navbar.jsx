@@ -3,7 +3,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 import { FaChevronDown, FaBars } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import japanFlag from '../../assets/flag-japan.png';
-import logo from '../../assets/invest_africa.png';
+import logo from '../../assets/invest_africa.webp';
 import styles from './Navbar.module.css';
 
 function NavBar() {

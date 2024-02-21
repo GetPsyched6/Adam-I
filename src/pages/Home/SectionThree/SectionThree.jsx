@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import useImgMapArea from 'react-img-map-area';
 import CountryDescription from '../../../components/CountryDescription/CountryDescription';
-import moroccoImg from '../../../assets/images/Home/SectionThree/morocco.jpg';
-import nigeriaImg from '../../../assets/images/Home/SectionThree/nigeria.jpeg';
-import kenyaImg from '../../../assets/images/Home/SectionThree/kenya.jpeg';
-import namibiaImg from '../../../assets/images/Home/SectionThree/namibia.jpeg';
+import moroccoImg from '../../../assets/images/Home/SectionThree/morocco.webp';
+import nigeriaImg from '../../../assets/images/Home/SectionThree/nigeria.webp';
+import kenyaImg from '../../../assets/images/Home/SectionThree/kenya.webp';
+import namibiaImg from '../../../assets/images/Home/SectionThree/namibia.webp';
 import styles from './SectionThree.module.css';
 import { content, morocco, nigeria, kenya, namibia } from '../../../data/countryContent';
-import map from '../../../assets/images/Home/SectionThree/map.png';
+import map from '../../../assets/images/Home/SectionThree/map.webp';
 import Cards from '../../../components/Cards/Cards';
 
 const countries = [

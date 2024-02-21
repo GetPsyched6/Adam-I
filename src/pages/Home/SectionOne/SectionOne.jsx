@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styles from './SectionOne.module.css';
-import backgroundOne from '../../../assets/images/Home/home-section-1.png';
+import backgroundOne from '../../../assets/images/Home/home-section-1.webp';
 import backgroundTwo from '../../../assets/images/Home/home-section-2.webp';
 import backgroundThree from '../../../assets/images/Home/home-section-3.webp';
 
