@@ -13,9 +13,11 @@
   justify-content: center;
   gap: 2rem;
   color: var(--clr-lyellow);
+  transition: color 300ms ease;
 }
 
-.socialmedia :hover {
+.socialmedia:hover,
+.socialmedia:focus {
   color: var(--clr-yellow);
   text-decoration: underline;
 }
@@ -60,6 +62,15 @@
   background-color: var(--clr-bg-lgray);
   border-radius: 50%;
   color: black;
+  transition:
+    background-color,
+    color 300ms ease;
+}
+
+.icon:hover,
+.icon:focus {
+  color: var(--clr-yellow);
+  background-color: black;
 }
 
 .spacing {

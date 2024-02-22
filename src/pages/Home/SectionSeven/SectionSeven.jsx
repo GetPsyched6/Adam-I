@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SectionSeven.module.css';
-import ContactUs from '../../../components/ContactUs/ContactUs';
+import ContactUs from '../../../components/Button/OutlinedButton/OutlinedButton';
 
 function SectionSeven() {
   return (

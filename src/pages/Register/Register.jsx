@@ -122,7 +122,7 @@ function Register() {
             <div className={styles.register_input}>
               <InputBox
                 id="name"
-                label="Full Name"
+                label="Username"
                 required
                 name="name"
                 type="text"

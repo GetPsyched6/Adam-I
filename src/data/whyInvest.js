@@ -9,7 +9,7 @@ const investData = [
   },
   {
     id: 2,
-    title: 'YOUTH POPULATION',
+    title: 'YOUTHFUL POPULATION',
     image:
       'https://images.unsplash.com/photo-1567789884554-0b844b597180?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'A beautiful building',
@@ -17,7 +17,7 @@ const investData = [
   },
   {
     id: 3,
-    title: 'HIGH TOTAL GDP',
+    title: 'GROWING ECONOMIES',
     image:
       'https://images.unsplash.com/photo-1629540946404-ebe133e99f49?q=80&w=2003&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'A beautiful building',
