@@ -7,19 +7,19 @@ export default function Footer() {
   return (
     <footer className={styles.wrapper}>
       <div className={styles.socialmedia}>
-        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+        <Link to="https://www.facebook.com/" className={styles.socialmedia_link}>
           <FaFacebookF className={styles.icon} />
           <p>Facebook</p>
         </Link>
-        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+        <Link to="https://www.facebook.com/" className={styles.socialmedia_link}>
           <FaInstagram className={styles.icon} />
           <p>Instagram</p>
         </Link>
-        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+        <Link to="https://www.facebook.com/" className={styles.socialmedia_link}>
           <FaTwitter className={styles.icon} />
           <p>Twitter</p>
         </Link>
-        <Link to="https://www.facebook.com/" className={styles.icon_wrapper}>
+        <Link to="https://www.facebook.com/" className={styles.socialmedia_link}>
           <FaYoutube className={styles.icon} />
           <p>Youtube</p>
         </Link>

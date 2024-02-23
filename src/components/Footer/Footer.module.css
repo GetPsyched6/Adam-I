@@ -16,21 +16,21 @@
   transition: color 300ms ease;
 }
 
-.socialmedia:hover,
-.socialmedia:focus {
-  color: var(--clr-yellow);
-  text-decoration: underline;
-}
-
-.icon_wrapper {
+.socialmedia_link {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.icon_wrapper p {
+.socialmedia_link p {
   font-size: var(--fs-smaller);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
+}
+
+.socialmedia_link:hover,
+.socialmedia_link:focus {
+  color: var(--clr-yellow);
+  text-decoration: underline;
 }
 
 .divider {
