@@ -92,7 +92,7 @@
 
 @media (max-width: 600px) {
   .content {
-    width: 75vw;
+    max-width: 100%;
   }
 
   .card {
