@@ -58,7 +58,7 @@
   line-height: 130%;
 }
 
-/* *Start for animated gradient and fade-in */
+/* *Start for animated gradient text and fade-in */
 @media (prefers-reduced-motion: no-preference) {
   .title {
     transform: translateY(25px);
@@ -116,7 +116,7 @@
     }
   }
 }
-/* *End for animated gradient and fade-in */
+/* *End for animated gradient text and fade-in */
 
 @media (max-width: 600px) {
   .content {
@@ -125,5 +125,9 @@
   }
   .text {
     text-align: center;
+  }
+  .title {
+    /* *Ensuring black area of gradient not present on text at end */
+    --bg-size: 275%; 
   }
 }
