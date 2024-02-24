@@ -40,6 +40,7 @@
   height: 100%;
   padding-block: calc(var(--height) / 4);
   padding-inline: 3rem;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 40%, transparent 80%);
 }
 
 .text {
@@ -47,6 +48,8 @@
 }
 
 .title {
+  --bg-size: 250%;
+
   font-weight: var(--fw-semibold);
   padding-block-end: 1rem;
 }
@@ -55,14 +58,72 @@
   line-height: 130%;
 }
 
-@media (max-width: 600px) {
-  .wrapper {
-    --height: 60vh;
-
-    height: var(--height);
+/* *Start for animated gradient and fade-in */
+@media (prefers-reduced-motion: no-preference) {
+  .title {
+    transform: translateY(25px);
+    opacity: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        120deg,
+        var(--clr-lyellow) 4%,
+        var(--clr-yellow) 14%,
+        var(--clr-yellow) 21%,
+        black 45%,
+        black 51%,
+        var(--clr-yellow) 59%,
+        black 68%,
+        var(--clr-lyellow) 83%,
+        var(--clr-yellow) 86%,
+        var(--clr-lyellow) 89%,
+        black 94%
+      )
+      var(--bg-size) 0 / var(--bg-size) 100%;
+    color: black;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation:
+      fade-in 500ms cubic-bezier(0, 0, 0.5, 1) forwards,
+      move-bg 3s cubic-bezier(0.29, 0.31, 0, 1.01) forwards 500ms,
+      color-to-white 500ms linear forwards 3.5s;
   }
+
+  .subtitle {
+    opacity: 0;
+    transform: translateY(25px);
+    pointer-events: none;
+    animation: fade-in 500ms cubic-bezier(0, 0, 0.5, 1) forwards 2.5s;
+  }
+
+  @keyframes fade-in {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  @keyframes move-bg {
+    100% {
+      color: transparent;
+      background-position: 0 0;
+    }
+  }
+
+  @keyframes color-to-white {
+    to {
+      color: white;
+    }
+  }
+}
+/* *End for animated gradient and fade-in */
+
+@media (max-width: 600px) {
   .content {
     padding-inline: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
+  }
+  .text {
+    text-align: center;
   }
 }

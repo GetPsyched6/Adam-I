@@ -22,11 +22,15 @@
 
 .card:hover .image_hover {
   scale: 1.2;
-  transition: scale 0.3s linear;
 }
 
 .border {
   outline: solid 6px var(--clr-green);
+  transition: outline-color 500ms ease;
+}
+
+.link:hover .border {
+  outline: solid 6px var(--clr-lgreen);
 }
 
 .link {

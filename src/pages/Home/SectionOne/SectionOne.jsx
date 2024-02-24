@@ -9,10 +9,15 @@ function SectionOne() {
   const [activeImage, setActiveImage] = useState(0);
   const backgrounds = [backgroundOne, backgroundTwo, backgroundThree];
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveImage(pastImage => (pastImage + 1) % backgrounds.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    const timer = setTimeout(() => {
+      const interval = setInterval(() => {
+        setActiveImage(pastImage => (pastImage + 1) % backgrounds.length);
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }, 1500); // * For the Heading Gradient Animation.
+
+    return () => clearTimeout(timer);
   }, [backgrounds.length]);
 
   return (
