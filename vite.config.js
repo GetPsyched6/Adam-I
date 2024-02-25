@@ -4,6 +4,10 @@ import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   base: '',
+  build: {
+    outDir: './build',
+  },
+  publicDir: './public',
   plugins: [react(), viteTsconfigPaths()],
   server: {
     open: true,
