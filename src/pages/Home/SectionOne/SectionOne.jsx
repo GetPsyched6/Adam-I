@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import FadeTransition from '../../../components/FadeTransition/FadeTransition';
 import styles from './SectionOne.module.css';
 import backgroundOne from '../../../assets/images/Home/home-section-1.webp';
 import backgroundTwo from '../../../assets/images/Home/home-section-2.webp';
@@ -24,25 +24,14 @@ function SectionOne() {
     return () => clearTimeout(timer);
   }, [backgrounds.length]);
 
-  const imageVariants = {
-    exit: { opacity: 0 },
-    enter: { opacity: 1 },
-  };
-
   return (
     <div className={styles.wrapper}>
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={activeImage}
-          initial="exit"
-          animate="enter"
-          exit="exit"
-          variants={imageVariants}
-          transition={{ duration: 0.5 }}
+      <FadeTransition keys={activeImage} variants="sync" mode="sync" duration={0.5}>
+        <div
           className={styles.background}
           style={{ backgroundImage: `url(${backgrounds[activeImage]})` }}
         />
-      </AnimatePresence>
+      </FadeTransition>
       <div className={styles.content}>
         <h1 className={`${styles.text} ${styles.title}`}>Invest in Africa</h1>
         <h4 className={`${styles.text} ${styles.subtitle}`}>
