@@ -25,6 +25,7 @@ module.exports = {
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'react/forbid-prop-types': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     indent: ['error', 2, { SwitchCase: 1 }],
