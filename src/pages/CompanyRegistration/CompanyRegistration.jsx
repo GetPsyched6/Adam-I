@@ -8,7 +8,7 @@ import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
 
 function CompanyRegistration() {
-  const REGISTRATION_URL = `${process.env.REACT_APP_BACKEND_URL}/companyregister`;
+  const REGISTRATION_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/companyregister`;
 
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Register');

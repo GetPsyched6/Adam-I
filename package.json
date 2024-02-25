@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@react-hook/media-query": "^1.1.1",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.5.1",
     "countries-list": "^3.0.6",
     "dotenv": "^16.4.1",
@@ -18,14 +15,16 @@
     "react-icons": "^4.12.0",
     "react-img-map-area": "^1.0.0",
     "react-router-dom": "^6.21.1",
-    "react-scripts": "5.0.1",
     "react-tooltip": "^5.26.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\" --fix",
     "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
@@ -50,6 +49,10 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
@@ -60,7 +63,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "vite": "^5.1.4",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "husky": {
     "hooks": {
