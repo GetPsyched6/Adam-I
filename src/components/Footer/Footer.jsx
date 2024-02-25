@@ -38,10 +38,10 @@ export default function Footer() {
           Email: <u>info@adam-i.jp</u>
           <br />
           <br className={styles.spacing} />
-          <h5 className={styles.subtitle}>
-            Copyright ©{new Date().getFullYear()} Invest Africa. All rights reserved.
-          </h5>
         </p>
+        <h5 className={styles.subtitle}>
+          Copyright ©{new Date().getFullYear()} Invest Africa. All rights reserved.
+        </h5>
       </div>
     </footer>
   );

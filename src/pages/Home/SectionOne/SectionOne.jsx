@@ -7,15 +7,19 @@ import backgroundThree from '../../../assets/images/Home/home-section-3.webp';
 function SectionOne() {
   const [activeImage, setActiveImage] = useState(0);
   const backgrounds = [backgroundOne, backgroundTwo, backgroundThree];
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const interval = setInterval(() => {
+    const startImageRotation = () => {
+      return setInterval(() => {
         setActiveImage(pastImage => (pastImage + 1) % backgrounds.length);
       }, 3000);
+    };
 
+    // * Initial delay for the Heading Gradient Animation.
+    const timer = setTimeout(() => {
+      const interval = startImageRotation();
       return () => clearInterval(interval);
-    }, 1500); // * For the Heading Gradient Animation.
-
+    }, 1500);
     return () => clearTimeout(timer);
   }, [backgrounds.length]);
 

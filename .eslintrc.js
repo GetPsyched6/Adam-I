@@ -46,6 +46,5 @@ module.exports = {
       version: 'detect',
     },
   },
-  // Add this if you're using ESLint plugins for React Hooks
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'import'],
 };

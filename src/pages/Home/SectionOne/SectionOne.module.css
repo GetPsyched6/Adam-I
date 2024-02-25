@@ -1,6 +1,7 @@
 .wrapper {
   --height: 75vh;
 
+  background-color: black;
   position: relative;
   overflow: hidden;
   width: 100%;
