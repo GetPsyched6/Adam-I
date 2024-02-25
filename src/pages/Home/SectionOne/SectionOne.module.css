@@ -14,26 +14,6 @@
   background-position: center center;
 }
 
-/* *Start CSS for react-transition-group */
-.enter {
-  opacity: 0;
-}
-
-.enterActive {
-  opacity: 1;
-  transition: opacity 500ms ease;
-}
-
-.exit {
-  opacity: 1;
-}
-
-.exitActive {
-  opacity: 0;
-  transition: opacity 500ms ease;
-}
-/* *End CSS for react-transition-group */
-
 .content {
   position: relative;
   width: 100%;
