@@ -47,6 +47,7 @@
     pointer-events: none;
     background: linear-gradient(
         120deg,
+        white 0%,
         var(--clr-lyellow) 4%,
         var(--clr-yellow) 14%,
         var(--clr-yellow) 21%,
