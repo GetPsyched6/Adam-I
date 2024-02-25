@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import useImgMapArea from 'react-img-map-area';
 import CountryDescription from '../../../components/CountryDescription/CountryDescription';
 import moroccoImg from '../../../assets/images/Home/SectionThree/morocco.webp';
@@ -22,6 +23,23 @@ function SectionThree() {
   const [activeCountry, setActiveCountry] = useState(content);
   const [countryName, setCountryName] = useState('Map of Africa');
   useImgMapArea();
+
+  const titleVariants = {
+    initial: {
+      opacity: 0,
+      translateY: 10,
+    },
+    enter: {
+      opacity: 1,
+      translateY: 0,
+      transition: { duration: 0.25, delay: 0.25 },
+    },
+    exit: {
+      opacity: 0,
+      translateY: -10,
+      transition: { duration: 0.25 },
+    },
+  };
 
   return (
     <div className={styles.wrapper} id="main-content" tabIndex="-1">
@@ -47,7 +65,18 @@ function SectionThree() {
       </div>
 
       <div className={styles.title_wrapper}>
-        <h3 className={styles.title}>{countryName}</h3>
+        <AnimatePresence mode="popLayout">
+          <motion.h3
+            key={countryName}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            variants={titleVariants}
+            className={styles.title}
+          >
+            {countryName}
+          </motion.h3>
+        </AnimatePresence>
       </div>
       <div className={styles.content_map_wrapper}>
         <div className={styles.content}>
