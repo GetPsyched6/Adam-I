@@ -26,7 +26,7 @@ function SectionOne() {
 
   return (
     <div className={styles.wrapper}>
-      <FadeTransition keys={activeImage} variants="sync" mode="sync" duration={0.5}>
+      <FadeTransition keys={activeImage}>
         <div
           className={styles.background}
           style={{ backgroundImage: `url(${backgrounds[activeImage]})` }}

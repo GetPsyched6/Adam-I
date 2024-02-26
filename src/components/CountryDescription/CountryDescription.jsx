@@ -12,13 +12,7 @@ function CountryDescription({ title, body, color }) {
   };
 
   return (
-    <FadeTransition
-      keys={title}
-      mode="popLayout"
-      variants="wait"
-      duration={0.5}
-      className={styles.wrapper}
-    >
+    <FadeTransition keys={title} mode="popLayout" variants="wait" className={styles.wrapper}>
       <div className={styles.content}>
         <div style={bulletstyles} />
         <h5 style={countryNamestyles}>{title}</h5>
