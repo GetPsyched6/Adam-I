@@ -75,7 +75,7 @@ html {
   background-color: #fff;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  scroll-padding-block-start: 3rem;
+  scroll-padding-block-start: 250px;
   max-width: 1600px;
   margin-inline: auto;
 }
