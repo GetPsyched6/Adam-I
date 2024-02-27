@@ -1,8 +1,16 @@
 .wrapper {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
+.background {
+  position: absolute;
+  inset: 20px;
   background-image: url('../../../assets/images/Home/SectionFour/sectionfour.webp');
   background-size: cover;
   background-position: 75% center;
-  width: 100%;
+  z-index: -1;
 }
 
 .content {

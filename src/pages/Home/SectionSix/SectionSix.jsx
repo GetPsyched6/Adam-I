@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './SectionSix.module.css';
 import stories from '../../../data/successStories';
+import FadeTransition from '../../../components/FadeTransition/FadeTransition';
 import useStaggered from '../../../hooks/useStaggered';
 
 function SectionSix() {
@@ -12,7 +13,9 @@ function SectionSix() {
   });
   return (
     <div className={styles.wrapper}>
-      <h2 className={`${styles.text} ${styles.title}`}>Success Stories</h2>
+      <FadeTransition bottom={-100} translate={25} scrollAnimation amount="all">
+        <h2 className={`${styles.text} ${styles.title}`}>Success Stories</h2>
+      </FadeTransition>
       <motion.div className={styles.content_wrapper} {...reducedParentMotionProps}>
         {stories.map(data => (
           <motion.div key={data.id} className={styles.stories_wrapper} {...reducedChildMotionProps}>

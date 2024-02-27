@@ -10,6 +10,7 @@ function SectionFour() {
   const { reducedParentMotionProps, reducedChildMotionProps } = useStaggered();
   return (
     <div className={styles.wrapper}>
+      <div className={styles.background} />
       <div className={styles.content}>
         <FadeTransition bottom={-100} translate={25} scrollAnimation amount="all">
           <h2 className={`${styles.text} ${styles.title}`}>
