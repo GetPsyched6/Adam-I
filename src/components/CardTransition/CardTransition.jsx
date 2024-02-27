@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Cards from '../Cards/Cards';
 
 export default function CardTransition(props) {
+  const { object, className, color, isGreen, amountList } = props;
   const shouldReduceMotion = useReducedMotion();
   const parentVariants = {
     initial: { opacity: 0 },
@@ -27,11 +28,10 @@ export default function CardTransition(props) {
   const isMobile = useMediaQuery('(max-width: 600px)');
 
   const getAmountByScreenSize = () => {
-    if (isMobile) return 'some';
-    if (isTablet) return 0.5;
-    return 0.75;
+    if (isMobile) return amountList[2];
+    if (isTablet) return amountList[1];
+    return amountList[0];
   };
-  const { object, className, color, isGreen } = props;
 
   const reducedParentMotionProps = shouldReduceMotion
     ? {}
@@ -77,10 +77,12 @@ CardTransition.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   isGreen: PropTypes.bool,
+  amountList: PropTypes.array,
 };
 
 CardTransition.defaultProps = {
   className: null,
   color: null,
   isGreen: false,
+  amountList: [0.75, 0.5, 'some'],
 };

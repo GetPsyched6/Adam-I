@@ -1,5 +1,5 @@
 .wrapper {
-  --height: 75vh;
+  --height: 85vh;
 
   background-color: black;
   position: relative;
@@ -19,7 +19,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding-block: calc(var(--height) / 4);
+  padding-block: calc(var(--height) / 3);
   padding-inline: 3rem;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 40%, transparent 80%);
 }
@@ -101,6 +101,9 @@
 /* *End for animated gradient text and fade-in */
 
 @media (max-width: 600px) {
+  .wrapper {
+    --height: 75vh;
+  }
   .content {
     padding-inline: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
@@ -110,6 +113,6 @@
   }
   .title {
     /* *Ensuring black area of gradient not present on text at end */
-    --bg-size: 275%; 
+    --bg-size: 275%;
   }
 }

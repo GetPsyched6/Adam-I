@@ -44,7 +44,12 @@ function SectionThree() {
         <h2 className={styles.title}>Choose a Country</h2>
       </FadeTransition>
 
-      <CardTransition className={styles.card_wrapper} object={countries} isGreen />
+      <CardTransition
+        className={styles.card_wrapper}
+        object={countries}
+        isGreen
+        amountList={[0.5, 0.25, 'some']}
+      />
 
       <div className={styles.horizontal_line}>
         <br />
