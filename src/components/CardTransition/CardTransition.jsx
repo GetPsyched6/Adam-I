@@ -30,7 +30,7 @@ export default function CardTransition(props) {
     if (isTablet) return 0.5;
     return 0.75;
   };
-  const { object, className, color, isGreen, linkUrl } = props;
+  const { object, className, color, isGreen } = props;
   return (
     <motion.div
       className={className}
@@ -49,7 +49,7 @@ export default function CardTransition(props) {
             color={color}
             body={data.body}
             isGreen={isGreen}
-            linkUrl={linkUrl}
+            linkUrl={data.linkUrl}
           />
         </motion.div>
       ))}
@@ -62,12 +62,10 @@ CardTransition.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   isGreen: PropTypes.bool,
-  linkUrl: PropTypes.string,
 };
 
 CardTransition.defaultProps = {
   className: null,
   color: null,
   isGreen: false,
-  linkUrl: null,
 };
