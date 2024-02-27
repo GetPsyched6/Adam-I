@@ -4,7 +4,7 @@ const useStaggered = (options = {}) => {
   const defaultAmount = 0.5;
   const defaultTranslate = 50;
   const amount = options.amount || defaultAmount;
-  const translate = options.amount || defaultTranslate;
+  const translate = options.translate || defaultTranslate;
 
   const shouldReduceMotion = useReducedMotion();
 
