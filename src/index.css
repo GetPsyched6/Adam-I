@@ -78,6 +78,7 @@ html {
   scroll-padding-block-start: 250px;
   max-width: 1600px;
   margin-inline: auto;
+  position: relative;
 }
 
 *,
