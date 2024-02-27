@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useMediaQuery } from '@react-hook/media-query';
@@ -20,7 +21,7 @@ export default function CardTransition(props) {
     },
     enter: {
       translateY: 0,
-      transition: { ease: 'easeOut' },
+      transition: { ease: [0, 0, 0.5, 1] },
     },
   };
 
@@ -45,17 +46,9 @@ export default function CardTransition(props) {
   const reducedChildMotionProps = shouldReduceMotion ? {} : { variants: childVariants };
 
   return (
-    <motion.div
-      className={className}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...reducedParentMotionProps}
-    >
+    <motion.div className={className} {...reducedParentMotionProps}>
       {object.map(data => (
-        <motion.div
-          key={data.id}
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...reducedChildMotionProps}
-        >
+        <motion.div key={data.id} {...reducedChildMotionProps}>
           <Cards
             key={data.id}
             title={data.title}

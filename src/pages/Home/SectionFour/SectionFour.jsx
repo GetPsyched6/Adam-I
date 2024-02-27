@@ -1,9 +1,13 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { motion } from 'framer-motion';
 import styles from './SectionFour.module.css';
 import oppurtunities from '../../../data/oppurtunities';
 import FadeTransition from '../../../components/FadeTransition/FadeTransition';
+import useStaggered from '../../../hooks/useStaggered';
 
 function SectionFour() {
+  const { reducedParentMotionProps, reducedChildMotionProps } = useStaggered();
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -12,14 +16,18 @@ function SectionFour() {
             Crafting Tomorrow&apos;s Success Stories Today
           </h2>
         </FadeTransition>
-        <div className={styles.body_wrapper}>
+        <motion.div className={styles.body_wrapper} {...reducedParentMotionProps}>
           {oppurtunities.map(data => (
-            <p key={data.id} className={`${styles.text} ${styles.text_wrapper}`}>
+            <motion.p
+              key={data.id}
+              className={`${styles.text} ${styles.text_wrapper}`}
+              {...reducedChildMotionProps}
+            >
               <span className={styles.mini_title}>{data.title}</span>
               {data.body}
-            </p>
+            </motion.p>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
