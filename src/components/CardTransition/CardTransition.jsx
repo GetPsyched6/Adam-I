@@ -42,7 +42,7 @@ export default function CardTransition(props) {
 }
 
 CardTransition.propTypes = {
-  object: PropTypes.object.isRequired,
+  object: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   className: PropTypes.string,
   color: PropTypes.string,
   isGreen: PropTypes.bool,

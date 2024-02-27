@@ -16,11 +16,12 @@ function OutlinedButton(props) {
 
 OutlinedButton.propTypes = {
   color: PropTypes.oneOf(['white', 'black']),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 OutlinedButton.defaultProps = {
   color: 'white',
+  onClick: null,
 };
 
 export default OutlinedButton;
