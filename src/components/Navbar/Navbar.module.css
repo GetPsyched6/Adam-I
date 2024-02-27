@@ -123,7 +123,6 @@
   transform: translate(-50%, 28px); /* ?28px to start for dropdown to start at bottom of nav */
   text-align: center;
   background-color: white;
-  transition: all 0.3s linear;
 }
 
 .dropdown_content .nav_links {

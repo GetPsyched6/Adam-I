@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 import { FaChevronDown, FaBars } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import japanFlag from '../../assets/flag-japan.png';
 import logo from '../../assets/invest_africa.webp';
 import styles from './Navbar.module.css';
@@ -24,28 +25,28 @@ function NavBar() {
     dropdownContent.classList.toggle(styles.hide);
   };
 
-  const matches = useMediaQuery('(max-width: 992px)');
+  const isNotDesktop = useMediaQuery('(max-width: 992px)');
 
   const getMainNavClasses = () => {
     let classes = `${styles.nav_links} ${styles.extra_nav_styling}`;
-    if (matches) {
+    if (isNotDesktop) {
       classes += ` ${styles.mobile_nav}`;
     }
-    if (matches && isOpen) {
+    if (isNotDesktop && isOpen) {
       classes += ` ${styles.mobile_nav_open}`;
     }
     return classes;
   };
 
   useEffect(() => {
-    // ?Function to handle the closing of the nav when clicking outside
+    // ? Function to handle the closing of the nav when clicking outside
     const handleClickOutside = event => {
       if (!event.target.closest(`.${styles.nav}`) && isOpen) {
         setIsOpen(false);
       }
     };
 
-    // ?Function to handle the change in the navbar style on scroll
+    // ? Function to handle the change in the navbar style on scroll
     const handleScroll = () => {
       const offset = window.scrollY;
       const threshold = 72;
@@ -55,10 +56,10 @@ function NavBar() {
     document.addEventListener('click', handleClickOutside);
     window.addEventListener('scroll', handleScroll);
 
-    // ?Managing the overflow style on the body based on the nav state
+    // ? Managing the overflow style on the body based on the nav state
     document.body.style.overflow = isOpen ? 'hidden' : 'visible';
 
-    // ?Setting the initial state based on the initial scroll position
+    // ? Setting the initial state based on the initial scroll position
     handleScroll();
 
     return () => {
@@ -67,6 +68,18 @@ function NavBar() {
       document.body.style.overflow = 'visible';
     };
   }, [isOpen]);
+
+  // * start - Variants to animate dropdowns
+  const dropdownVariants = {
+    initial: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+    },
+  };
+  const responsiveVariants = isNotDesktop ? {} : dropdownVariants;
+  // * end - Variants to animate dropdowns
 
   return (
     <nav className={styles.nav}>
@@ -86,7 +99,13 @@ function NavBar() {
         <li className={styles.nav_link}>
           <Link to="/">Home</Link>
         </li>
-        <li className={styles.dropdown_container}>
+        <motion.li
+          className={styles.dropdown_container}
+          initial="initial"
+          whileHover="enter"
+          whileFocus="enter"
+          transition={0.3}
+        >
           <button
             type="button"
             onMouseOver={toggleDropdown}
@@ -101,8 +120,9 @@ function NavBar() {
             About
             <FaChevronDown className={styles.icon} />
           </button>
-          <div
+          <motion.div
             className={`${styles.dropdown_content} ${isScrolled ? styles.scrolled_dropdown : ''}`}
+            variants={responsiveVariants}
           >
             <ul className={styles.nav_links}>
               <li className={styles.nav_link}>
@@ -116,15 +136,21 @@ function NavBar() {
                 </Link>
               </li>
             </ul>
-          </div>
-        </li>
+          </motion.div>
+        </motion.li>
         <li className={styles.nav_link}>
           <a href="/#whyafrica">Why Africa</a>
         </li>
         <li className={styles.nav_link}>
           <a href="/#industries">Industires</a>
         </li>
-        <li className={styles.dropdown_container}>
+        <motion.li
+          className={styles.dropdown_container}
+          initial="initial"
+          whileHover="enter"
+          whileFocus="enter"
+          transition={0.3}
+        >
           <button
             type="button"
             onMouseOver={toggleDropdown}
@@ -139,8 +165,9 @@ function NavBar() {
             Countries
             <FaChevronDown className={styles.icon} />
           </button>
-          <div
+          <motion.div
             className={`${styles.dropdown_content} ${isScrolled ? styles.scrolled_dropdown : ''}`}
+            variants={responsiveVariants}
           >
             <ul className={styles.nav_links}>
               <li className={styles.nav_link}>
@@ -164,8 +191,8 @@ function NavBar() {
                 </Link>
               </li>
             </ul>
-          </div>
-        </li>
+          </motion.div>
+        </motion.li>
         <li className={styles.nav_link}>
           <button
             type="button"
@@ -176,7 +203,13 @@ function NavBar() {
             <img src={japanFlag} alt="flag of Japan" className={styles.flag} />
           </button>
         </li>
-        <li className={styles.dropdown_container}>
+        <motion.li
+          className={styles.dropdown_container}
+          initial="initial"
+          whileHover="enter"
+          whileFocus="enter"
+          transition={0.3}
+        >
           <button
             type="button"
             onMouseOver={toggleDropdown}
@@ -191,8 +224,9 @@ function NavBar() {
             Login
             <FaChevronDown className={styles.icon} />
           </button>
-          <div
+          <motion.div
             className={`${styles.dropdown_content} ${isScrolled ? styles.scrolled_dropdown : ''}`}
+            variants={responsiveVariants}
           >
             <ul className={styles.nav_links}>
               <li className={styles.nav_link}>
@@ -211,8 +245,8 @@ function NavBar() {
                 </Link>
               </li>
             </ul>
-          </div>
-        </li>
+          </motion.div>
+        </motion.li>
       </ul>
       <FaBars
         className={styles.menu_icon}
