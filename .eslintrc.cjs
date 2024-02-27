@@ -28,7 +28,6 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-    indent: ['error', 2, { SwitchCase: 1 }],
     'prettier/prettier': [
       'error',
       {

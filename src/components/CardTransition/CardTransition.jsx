@@ -1,10 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useMediaQuery } from '@react-hook/media-query';
 import PropTypes from 'prop-types';
 import Cards from '../Cards/Cards';
 
 export default function CardTransition(props) {
+  const shouldReduceMotion = useReducedMotion();
   const parentVariants = {
     initial: { opacity: 0 },
     enter: {
@@ -31,16 +32,30 @@ export default function CardTransition(props) {
     return 0.75;
   };
   const { object, className, color, isGreen } = props;
+
+  const reducedParentMotionProps = shouldReduceMotion
+    ? {}
+    : {
+        variants: parentVariants,
+        initial: 'initial',
+        whileInView: 'enter',
+        viewport: { once: true, amount: getAmountByScreenSize() },
+      };
+
+  const reducedChildMotionProps = shouldReduceMotion ? {} : { variants: childVariants };
+
   return (
     <motion.div
       className={className}
-      variants={parentVariants}
-      initial="initial"
-      whileInView="enter"
-      viewport={{ once: true, amount: getAmountByScreenSize() }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...reducedParentMotionProps}
     >
       {object.map(data => (
-        <motion.div key={data.id} variants={childVariants}>
+        <motion.div
+          key={data.id}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...reducedChildMotionProps}
+        >
           <Cards
             key={data.id}
             title={data.title}

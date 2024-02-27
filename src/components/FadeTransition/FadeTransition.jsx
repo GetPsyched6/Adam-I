@@ -1,8 +1,9 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 export default function FadeTransition(props) {
+  const shouldReduceMotion = useReducedMotion();
   const {
     children,
     keys,
@@ -28,7 +29,7 @@ export default function FadeTransition(props) {
     enter: {
       opacity: 1,
       translateY: '0px',
-      transition: { duration: finalDuration, staggerChildren },
+      transition: { duration: finalDuration, staggerChildren, ease: [0, 0, 0.5, 1] },
     },
     exit: { opacity: 0, translateY: `${translate}px`, transition: { duration: finalDuration } },
   };
@@ -38,7 +39,12 @@ export default function FadeTransition(props) {
     enter: {
       opacity: 1,
       translateY: '0px',
-      transition: { duration: finalDuration, delay: finalDuration, staggerChildren },
+      transition: {
+        duration: finalDuration,
+        delay: finalDuration,
+        staggerChildren,
+        ease: [0, 0, 0.5, 1],
+      },
     },
     exit: { opacity: 0, translateY: `${translate}px`, transition: { duration: finalDuration } },
   };
@@ -50,14 +56,15 @@ export default function FadeTransition(props) {
     ? { whileInView: 'enter', viewport: { once, amount, margin: `${top}px 0px ${bottom}px 0px` } }
     : { animate: 'enter', exit: 'exit' };
 
+  const reducedMotionProps = shouldReduceMotion
+    ? {}
+    : { key: keys, initial: 'initial', ...animationProps, variants: chosenVariants };
+
   return (
     <AnimatePresence mode={mode}>
       <motion.div
-        key={keys}
-        initial="initial"
         // eslint-disable-next-line react/jsx-props-no-spreading
-        {...animationProps}
-        variants={chosenVariants}
+        {...reducedMotionProps}
         className={className}
         style={style}
       >
