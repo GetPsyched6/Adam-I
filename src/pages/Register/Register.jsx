@@ -6,6 +6,7 @@ import styles from './Register.module.css';
 import Button from '../../components/Button/Button';
 import Alert from '../../components/Alert/Alert';
 import InputBox from '../../components/InputBox/InputBox';
+import FadeTransition from '../../components/FadeTransition/FadeTransition';
 
 function Register() {
   const REGISTRATION_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/userregister`;
@@ -117,87 +118,88 @@ function Register() {
     <div>
       <div className={styles.wrapper}>
         <div className={styles.blur_wrapper}>
-          <form action="" className={styles.register_form} onSubmit={handleSubmit}>
-            <h2>Register</h2>
-            <div className={styles.register_input}>
-              <InputBox
-                id="name"
-                label="Full Name"
-                required
-                name="name"
-                type="text"
-                onChange={handleChange}
-                value={formData.name}
-                size="large"
-                message={errors.name}
-              />
-              <InputBox
-                id="email"
-                label="Email"
-                required
-                name="email"
-                type="email"
-                onChange={handleChange}
-                value={formData.email}
-                size="large"
-                message={errors.email}
-              />
-              <InputBox
-                id="accountPassword"
-                label="Password"
-                required
-                tooltip="password-tooltip"
-                name="accountPassword"
-                type="password"
-                onChange={handleChange}
-                value={formData.accountPassword}
-                size="large"
-                message={errors.accountPassword}
-              />
-              <InputBox
-                id="confirmPassword"
-                label="Confirm Password"
-                required
-                tooltip="password-tooltip"
-                name="confirmPassword"
-                type="password"
-                onChange={handleChange}
-                value={formData.confirmPassword}
-                size="large"
-                message={confirmPasswordTouched ? errors.confirmPassword : ''}
-              />
-              <Tooltip
-                id="password-tooltip"
-                style={{
-                  backgroundColor: 'black',
-                  color: '#fff',
-                  padding: '1rem 1.5rem 1.5rem',
-                  borderRadius: '16px',
-                }}
-                opacity={1}
-                role="tooltip"
-              >
-                <div className={styles.tooltip_wrapper}>
-                  <p className={styles.tooltip_title}>Password Requirements:</p>
-                  <ul className={styles.tooltip_list_wrapper}>
-                    <li>8-128 characters with a mix of letters and numbers</li>
-                    <li>Must include both upper and lower case letters</li>
-                  </ul>
-                </div>
-              </Tooltip>
+          <FadeTransition variants="wait">
+            <form action="" className={styles.register_form} onSubmit={handleSubmit}>
+              <h2>Register</h2>
+              <div className={styles.register_input}>
+                <InputBox
+                  id="name"
+                  label="Full Name"
+                  required
+                  name="name"
+                  type="text"
+                  onChange={handleChange}
+                  value={formData.name}
+                  size="large"
+                  message={errors.name}
+                />
+                <InputBox
+                  id="email"
+                  label="Email"
+                  required
+                  name="email"
+                  type="email"
+                  onChange={handleChange}
+                  value={formData.email}
+                  size="large"
+                  message={errors.email}
+                />
+                <InputBox
+                  id="accountPassword"
+                  label="Password"
+                  required
+                  tooltip="password-tooltip"
+                  name="accountPassword"
+                  type="password"
+                  onChange={handleChange}
+                  value={formData.accountPassword}
+                  size="large"
+                  message={errors.accountPassword}
+                />
+                <InputBox
+                  id="confirmPassword"
+                  label="Confirm Password"
+                  required
+                  tooltip="password-tooltip"
+                  name="confirmPassword"
+                  type="password"
+                  onChange={handleChange}
+                  value={formData.confirmPassword}
+                  size="large"
+                  message={confirmPasswordTouched ? errors.confirmPassword : ''}
+                />
+                <Tooltip
+                  id="password-tooltip"
+                  style={{
+                    backgroundColor: 'black',
+                    color: '#fff',
+                    padding: '1rem 1.5rem 1.5rem',
+                    borderRadius: '16px',
+                  }}
+                  opacity={1}
+                  role="tooltip"
+                >
+                  <div className={styles.tooltip_wrapper}>
+                    <p className={styles.tooltip_title}>Password Requirements:</p>
+                    <ul className={styles.tooltip_list_wrapper}>
+                      <li>8-128 characters with a mix of letters and numbers</li>
+                      <li>Must include both upper and lower case letters</li>
+                    </ul>
+                  </div>
+                </Tooltip>
+              </div>
+              <div className={styles.login_link}>
+                Have an account?{' '}
+                <Link to="/login" className={styles.link}>
+                  Login
+                </Link>
+              </div>
+              <Button isSubmit isAction text={buttonText} />
+            </form>
+            <div className={styles.aboutus}>
+              © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
             </div>
-
-            <div className={styles.login_link}>
-              Have an account?{' '}
-              <Link to="/login" className={styles.link}>
-                Login
-              </Link>
-            </div>
-            <Button isSubmit isAction text={buttonText} />
-          </form>
-          <div className={styles.aboutus}>
-            © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
-          </div>
+          </FadeTransition>
         </div>
       </div>
       <Alert message={alert.message} state={alert.state} isActive={alert.active} />

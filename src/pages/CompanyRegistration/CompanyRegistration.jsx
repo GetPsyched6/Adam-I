@@ -6,6 +6,7 @@ import { validateCompanyData } from '../../utils/validateCompany';
 import styles from './CompanyRegistration.module.css';
 import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
+import FadeTransition from '../../components/FadeTransition/FadeTransition';
 
 function CompanyRegistration() {
   const REGISTRATION_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/companyregister`;
@@ -175,40 +176,42 @@ function CompanyRegistration() {
   return (
     <form onSubmit={handleSubmit} className={styles.wrapper}>
       <div className={styles.blur_wrapper}>
-        <h2 className={styles.title}>Company Registration</h2>
-        {step === 1 && (
-          <div className={styles.basic_info_wrapper}>
-            <h5 className={styles.subtitle}>
-              Basic Information <span className={styles.page_indicator}>(1 of 2)</span>
-            </h5>
-            <BasicInformation
-              formData={formData}
-              errors={errors}
-              isTouched={isTouched}
-              handleChange={handleChange}
-            />
-            {loginLink}
-            <div className={styles.button_wrapper}>
-              <Button text="Next" onClick={goToNextStep} />
+        <FadeTransition keys={step} mode="wait" variants="wait">
+          <h2 className={styles.title}>Company Registration</h2>
+          {step === 1 && (
+            <div className={styles.basic_info_wrapper}>
+              <h5 className={styles.subtitle}>
+                Basic Information <span className={styles.page_indicator}>(1 of 2)</span>
+              </h5>
+              <BasicInformation
+                formData={formData}
+                errors={errors}
+                isTouched={isTouched}
+                handleChange={handleChange}
+              />
+              {loginLink}
+              <div className={styles.button_wrapper}>
+                <Button text="Next" onClick={goToNextStep} />
+              </div>
             </div>
-          </div>
-        )}
-        {step === 2 && (
-          <div className={styles.contact_info_wrapper}>
-            <h5 className={styles.subtitle}>
-              Contact Information <span className={styles.page_indicator}>(2 of 2)</span>
-            </h5>
-            <ContactInformation formData={formData} errors={errors} handleChange={handleChange} />
-            {loginLink}
-            <div className={styles.button_wrapper}>
-              <Button text="Back" onClick={goToPreviousStep} />
-              <Button text={buttonText} isAction isSubmit />
+          )}
+          {step === 2 && (
+            <div className={styles.contact_info_wrapper}>
+              <h5 className={styles.subtitle}>
+                Contact Information <span className={styles.page_indicator}>(2 of 2)</span>
+              </h5>
+              <ContactInformation formData={formData} errors={errors} handleChange={handleChange} />
+              {loginLink}
+              <div className={styles.button_wrapper}>
+                <Button text="Back" onClick={goToPreviousStep} />
+                <Button text={buttonText} isAction isSubmit />
+              </div>
             </div>
+          )}
+          <div className={styles.aboutus}>
+            © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
           </div>
-        )}
-        <div className={styles.aboutus}>
-          © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
-        </div>
+        </FadeTransition>
       </div>
       <Alert message={alert.message} state={alert.state} isActive={alert.active} />
     </form>
