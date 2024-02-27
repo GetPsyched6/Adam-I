@@ -20,24 +20,30 @@ export default function FadeTransition(props) {
     staggerChildren,
   } = props;
 
+  const finalDuration = scrollAnimation ? duration : duration / 2;
+
+  // * start - variants for motion element
   const syncVariants = {
     initial: { opacity: 0, translateY: `${translate}px` },
     enter: {
       opacity: 1,
       translateY: '0px',
-      transition: { duration: duration / 2, staggerChildren },
+      transition: { duration: finalDuration, staggerChildren },
     },
-    exit: { opacity: 0, translateY: `${translate}px`, transition: { duration: duration / 2 } },
+    exit: { opacity: 0, translateY: `${translate}px`, transition: { duration: finalDuration } },
   };
+
   const waitVariants = {
     initial: { opacity: 0, translateY: `${translate}px` },
     enter: {
       opacity: 1,
       translateY: '0px',
-      transition: { duration: duration / 2, delay: duration / 2, staggerChildren },
+      transition: { duration: finalDuration, delay: finalDuration, staggerChildren },
     },
-    exit: { opacity: 0, translateY: `${translate}px`, transition: { duration: duration / 2 } },
+    exit: { opacity: 0, translateY: `${translate}px`, transition: { duration: finalDuration } },
   };
+  // * end - variants for motion element
+
   const chosenVariants = variants === 'sync' ? syncVariants : waitVariants;
 
   const animationProps = scrollAnimation
@@ -80,16 +86,16 @@ FadeTransition.propTypes = {
 
 FadeTransition.defaultProps = {
   keys: null,
-  className: '',
+  className: null,
   variants: 'sync',
   mode: 'sync',
   duration: 0.5,
-  style: {},
+  style: null,
   translate: 0,
   scrollAnimation: false,
   once: true,
   amount: 'some',
-  top: '0',
-  bottom: '0',
+  top: 0,
+  bottom: 0,
   staggerChildren: 0,
 };

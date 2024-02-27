@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['airbnb', 'prettier','plugin:prettier/recommended'],
+  extends: ['airbnb', 'prettier', 'plugin:prettier/recommended'],
   overrides: [
     {
       env: {
