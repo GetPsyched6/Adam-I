@@ -1,6 +1,5 @@
 .wrapper {
-  background-color: var(--clr-green);
-  color: var(--clr-bg-lgray);
+  background: var(--clr-bg-gray);
   padding: 2rem 3rem;
   display: flex;
   flex-direction: row;
@@ -13,13 +12,13 @@
   justify-content: center;
   gap: 2rem;
   color: var(--clr-lyellow);
-  transition: color 300ms ease;
 }
 
 .socialmedia_link {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: color 300ms ease;
 }
 
 .socialmedia_link p {
@@ -60,12 +59,9 @@
   width: 2rem;
   padding: 0.2rem;
   text-align: center;
-  background-color: var(--clr-bg-lgray);
   border-radius: 50%;
-  color: black;
-  transition:
-    background-color,
-    color 300ms ease;
+  color: var(--clr-lyellow);
+  transition: color 300ms ease;
 }
 
 .icon:hover,
