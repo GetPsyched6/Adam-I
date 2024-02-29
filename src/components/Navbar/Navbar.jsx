@@ -102,6 +102,7 @@ function NavBar() {
         <motion.li
           className={styles.dropdown_container}
           initial="initial"
+          whileHover="enter"
           animate={isDropdownOpen ? 'enter' : 'initial'}
           transition={0.3}
         >
@@ -146,6 +147,7 @@ function NavBar() {
         <motion.li
           className={styles.dropdown_container}
           initial="initial"
+          whileHover="enter"
           animate={isDropdownOpen ? 'enter' : 'initial'}
           transition={0.3}
         >
@@ -203,6 +205,7 @@ function NavBar() {
         <motion.li
           className={styles.dropdown_container}
           initial="initial"
+          whileHover="enter"
           animate={isDropdownOpen ? 'enter' : 'initial'}
           transition={0.3}
         >
