@@ -4,7 +4,8 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 90vh;
+  height: 90vh;
+  overflow-y: hidden;
 }
 
 .content {
@@ -20,7 +21,7 @@
 
 @media (max-width: 992px) {
   .wrapper {
-    min-height: 75vh;
+    height: 75vh;
   }
   .content {
     padding: 3rem 2rem;

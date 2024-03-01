@@ -103,7 +103,7 @@ function NavBar() {
           className={styles.dropdown_container}
           initial="initial"
           whileHover="enter"
-          whileFocus="enter"
+          animate={isDropdownOpen ? 'enter' : 'initial'}
           transition={0.3}
         >
           <button
@@ -111,7 +111,6 @@ function NavBar() {
             onMouseOver={toggleDropdown}
             onMouseLeave={toggleDropdown}
             onFocus={toggleDropdown}
-            onBlur={toggleDropdown}
             aria-label="About Us and Investors Matching Platform"
             aria-haspopup="true"
             aria-expanded={isDropdownOpen.toString()}
@@ -130,7 +129,8 @@ function NavBar() {
                   About Us
                 </Link>
               </li>
-              <li className={styles.nav_link}>
+              {/* onBlur on last link of each dropdown for framer motion animate */}
+              <li className={styles.nav_link} onBlur={toggleDropdown}>
                 <Link to="/matching" onClick={handleDropdownLinkClick}>
                   Matching Platform
                 </Link>
@@ -148,7 +148,7 @@ function NavBar() {
           className={styles.dropdown_container}
           initial="initial"
           whileHover="enter"
-          whileFocus="enter"
+          animate={isDropdownOpen ? 'enter' : 'initial'}
           transition={0.3}
         >
           <button
@@ -156,7 +156,6 @@ function NavBar() {
             onMouseOver={toggleDropdown}
             onMouseLeave={toggleDropdown}
             onFocus={toggleDropdown}
-            onBlur={toggleDropdown}
             aria-label="Select Partner Countries"
             aria-haspopup="true"
             aria-expanded={isDropdownOpen.toString()}
@@ -185,7 +184,7 @@ function NavBar() {
                   Morocco
                 </Link>
               </li>
-              <li className={styles.nav_link}>
+              <li className={styles.nav_link} onBlur={toggleDropdown}>
                 <Link to="/namibia" onClick={handleDropdownLinkClick}>
                   Namibia
                 </Link>
@@ -207,7 +206,7 @@ function NavBar() {
           className={styles.dropdown_container}
           initial="initial"
           whileHover="enter"
-          whileFocus="enter"
+          animate={isDropdownOpen ? 'enter' : 'initial'}
           transition={0.3}
         >
           <button
@@ -215,7 +214,6 @@ function NavBar() {
             onMouseOver={toggleDropdown}
             onMouseLeave={toggleDropdown}
             onFocus={toggleDropdown}
-            onBlur={toggleDropdown}
             aria-label="Login or Register"
             aria-haspopup="true"
             aria-expanded={isDropdownOpen.toString()}
@@ -239,7 +237,7 @@ function NavBar() {
                   User Signup
                 </Link>
               </li>
-              <li className={styles.nav_link}>
+              <li className={styles.nav_link} onBlur={toggleDropdown}>
                 <Link to="/companyregister" onClick={handleDropdownLinkClick}>
                   Company Signup
                 </Link>
