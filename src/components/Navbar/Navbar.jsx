@@ -43,6 +43,7 @@ function NavBar() {
       mainContent = '#main-content';
       break;
   }
+
   const isNotDesktop = useMediaQuery('(max-width: 992px)');
 
   const getMainNavClasses = () => {
