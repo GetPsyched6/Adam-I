@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import InvestmentSupport from "../../components/Countries/InvestmentSupport/InvestmentSupport";
-import ImportExport from "../../components/Countries/ImportExport/ImportExport";
-import ImportSubstituition from "../../components/Countries/ImportSubstituition/ImportSubstituition";
+import InvestmentSupport from '../../components/Countries/InvestmentSupport/InvestmentSupport';
+import ImportExport from '../../components/Countries/ImportExport/ImportExport';
+import ImportSubstituition from '../../components/Countries/ImportSubstituition/ImportSubstituition';
 import styles from './Nigeria.module.css';
 
 function Nigeria() {

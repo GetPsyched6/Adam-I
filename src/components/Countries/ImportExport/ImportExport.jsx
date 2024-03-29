@@ -6,7 +6,7 @@ function ImportExport() {
     <div className={styles.content}>
       <div className={styles.desc}>
         <h3> Imports and Exports</h3>
-        <h2 className={styles.heading}> Nigeria's Robust Trade Growth</h2>
+        <h2 className={styles.heading}> Nigeria&aposs Robust Trade Growth</h2>
         <br />
         <p>
           In 2021, Nigeria&aposs intra-African trade surged by 21.7% to US$9.65 billion, elevating
