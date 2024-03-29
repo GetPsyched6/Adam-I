@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 import { FaChevronDown, FaBars } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import japanFlag from '../../assets/flag-japan.png';
 import logo from '../../assets/invest_africa.webp';
@@ -24,6 +24,25 @@ function NavBar() {
     const dropdownContent = document.querySelector(`.${styles.dropdown_content}`);
     dropdownContent.classList.toggle(styles.hide);
   };
+
+  let mainContent = '#main-content';
+
+  const location = useLocation();
+
+  switch (location.pathname) {
+    case '/login':
+      mainContent = '#email';
+      break;
+    case '/register':
+      mainContent = '#name';
+      break;
+    case '/companyregister':
+      mainContent = '#companyName';
+      break;
+    default:
+      mainContent = '#main-content';
+      break;
+  }
 
   const isNotDesktop = useMediaQuery('(max-width: 992px)');
 
@@ -90,7 +109,7 @@ function NavBar() {
       </div>
       <a
         className={`${styles.skip_nav} ${styles.nav_link}`}
-        href="#main-content"
+        href={mainContent}
         aria-label="Skip directly to main content"
       >
         Skip Navigation
