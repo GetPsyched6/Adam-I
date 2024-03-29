@@ -1,0 +1,27 @@
+.wrapper {
+  background-color: white;
+  padding: 3rem;
+}
+
+.card_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.title {
+  font-weight: var(--fw-semibold);
+  color: var(--clr-green);
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 2rem;
+  }
+
+  .card_wrapper {
+    gap: 2rem;
+  }
+}
