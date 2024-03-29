@@ -7,7 +7,13 @@ import styles from './Footer.module.css';
 export default function Footer() {
   return (
     <footer className={styles.wrapper}>
-      <FadeTransition className={styles.content} scrollAnimation amount={0.75} duration={1}>
+      <FadeTransition
+        className={styles.content}
+        scrollAnimation
+        amount={0.75}
+        duration={1}
+        translate={-10}
+      >
         <div className={styles.socialmedia}>
           <Link to="https://www.facebook.com/" className={styles.socialmedia_link}>
             <FaFacebookF className={styles.icon} />
