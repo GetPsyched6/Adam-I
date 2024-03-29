@@ -11,11 +11,11 @@ function InvestmentSupport() {
 
         <div className={styles.info}>
           <p>
-            Nigerian Investment Promotion Commission (NIPC): The NIPC serves as your guide to investing
-            in Nigeria. They offer valuable insights, facilitate business registration, and provide
-            investment incentives.
+            Nigerian Investment Promotion Commission (NIPC): The NIPC serves as your guide to
+            investing in Nigeria. They offer valuable insights, facilitate business registration,
+            and provide investment incentives.
           </p>
-          <img src={nipc} className={styles.logo}/>
+          <img src={nipc} alt="NIPC Logo" className={styles.logo} />
         </div>
       </div>
     </div>
