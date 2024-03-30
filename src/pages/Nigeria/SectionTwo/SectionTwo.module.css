@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: white;
+  background-color: #f4f4f4;
   padding: 3rem;
 }
 
@@ -10,10 +10,19 @@
   gap: 2.5rem;
 }
 
+.country_desc_wrapper {
+  display: flex;
+}
+
 .title {
   font-weight: var(--fw-semibold);
   color: var(--clr-green);
   margin-bottom: 3rem;
+}
+
+hr {
+  height: 0.1rem;
+  background-color: black;
 }
 
 @media (max-width: 992px) {
