@@ -1,8 +1,9 @@
 import React from 'react';
 import FadeTransition from '../../../components/FadeTransition/FadeTransition';
 import CardTransition from '../../../components/CardTransition/CardTransition';
-import styles from './SectionThree.module.css';
+import InvestmentSupport from '../../../components/InvestmentSupport/InvestmentSupport';
 import investData from '../../../data/Nigeria/whyInvestNigeria';
+import styles from './SectionThree.module.css';
 
 function SectionFour() {
   return (
@@ -11,6 +12,7 @@ function SectionFour() {
         <h2 className={`${styles.text} ${styles.title}`}>Why Invest in Nigeria?</h2>
       </FadeTransition>
       <CardTransition className={styles.card_wrapper} object={investData} color="yellow" />
+      <InvestmentSupport />
     </div>
   );
 }
