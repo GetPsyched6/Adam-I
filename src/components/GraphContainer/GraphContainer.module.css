@@ -1,0 +1,30 @@
+.graph_wrapper {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+}
+
+.graph {
+  background-color: white;
+  border-radius: 20px;
+}
+
+.title_wrapper {
+  display: flex;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.hr {
+  width: 0.5rem;
+  height: 1.5rem;
+  background-color: var(--clr-lyellow);
+  margin-right: 1rem;
+  border-color: var(--clr-lyellow);
+}
+
+.title p {
+  color: var(--clr-lyellow);
+  font-size: 30px;
+}
