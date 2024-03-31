@@ -1,6 +1,7 @@
 .wrapper {
   background-color: #f4f4f4;
   padding: 3rem;
+  margin-left: 20%;
 }
 
 .card_wrapper {
@@ -12,6 +13,10 @@
 
 .country_desc_wrapper {
   display: flex;
+}
+
+.title_wrapper {
+  margin-block-end: 4rem;
 }
 
 .title {
@@ -32,5 +37,40 @@ hr {
 
   .card_wrapper {
     gap: 2rem;
+  }
+
+  .country_desc_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map_wrapper {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .country_description_wrapper {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .country_desc_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map {
+    padding-block-start: 2rem;
+    width: 80vw;
+  }
+
+  .map_wrapper {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .country_description_wrapper {
+    order: 2;
   }
 }

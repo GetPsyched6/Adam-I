@@ -4,7 +4,12 @@
   "type": "module",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.14",
+    "@mui/x-charts": "^7.1.0",
     "@react-hook/media-query": "^1.1.1",
+    "apexcharts": "^3.48.0",
     "classnames": "^2.5.1",
     "countries-list": "^3.0.6",
     "dotenv": "^16.4.1",

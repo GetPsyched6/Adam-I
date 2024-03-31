@@ -1,0 +1,50 @@
+.pie_chart_wrapper {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-left: 20%;
+  margin-top: 2rem;
+}
+
+.pie_chart {
+  margin-left: 10rem;
+}
+
+.title {
+  font-weight: var(--fw-semibold);
+  color: var(--clr-green);
+  margin-bottom: 3rem;
+}
+
+.graphs {
+  position: relative;
+  padding: 2rem;
+}
+
+.background {
+  border-radius: 30px;
+  height: 90rem;
+  width: 100%;
+}
+
+.graph_wrapper {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  z-index: 1;
+}
+
+.graph_wrapper h2 {
+  font-weight: var(--fw-semibold);
+  color: var(--clr-yellow);
+  margin-bottom: 1rem;
+}
+
+.graph {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+}
