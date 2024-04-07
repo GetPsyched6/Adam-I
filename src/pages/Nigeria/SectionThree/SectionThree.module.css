@@ -1,27 +1,83 @@
 .wrapper {
-  background-color: white;
-  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.why_invest {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  margin-left: 20%;
+}
+.title {
+  color: var(--clr-green);
+  font-weight: var(--fw-semibold);
 }
 
 .card_wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem;
+  column-gap: 4rem;
+  row-gap: 4rem;
+  margin-top: 2rem;
 }
 
-.title {
-  font-weight: var(--fw-semibold);
-  color: var(--clr-green);
-  margin-bottom: 3rem;
+.invest_support {
+  width: 100%;
+  height: 20rem;
+  background-color: #2f2f2f;
+  padding: 2rem;
 }
 
-@media (max-width: 992px) {
-  .wrapper {
-    padding: 2rem;
+.invest_support_title {
+  color: var(--clr-yellow);
+  font-weight: var(--fw-bold);
+  transform: translateY(100%);
+  transition: transform 1s ease;
+}
+
+.invest_support_desc_wrapper {
+  margin-left: 20%;
+}
+
+.invest_support_content_image_wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 5rem;
+}
+
+.invest_support_content {
+  white-space: nowrap;
+  flex-grow: 3;
+  transform: translateX(-100%);
+  transition: transform 1s ease;
+}
+
+.invest_support_image {
+  width: 500px;
+  height: 100px;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .why_invest {
+    margin: 2rem;
   }
 
   .card_wrapper {
-    gap: 2rem;
+    column-gap: 0;
+  }
+
+  .invest_support_desc_wrapper {
+    margin-left: 1rem;
+  }
+
+  .invest_support_image {
+    display: none;
+  }
+
+  .invest_support {
+    height: 30rem;
   }
 }

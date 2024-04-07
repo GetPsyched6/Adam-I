@@ -9,6 +9,7 @@
   transition:
     border-color 0.3s linear,
     color 0.3s linear;
+  background-color: 0.3s linear;
 }
 
 .white_color {
@@ -25,11 +26,13 @@
 .button:focus-visible {
   border-color: var(--clr-lyellow);
   color: var(--clr-lyellow);
+  background-color: var(--clr-green);
 }
 
 .button:active {
   border-color: var(--clr-yellow);
   color: var(--clr-yellow);
+  background-color: var(--clr-green);
   transition-duration: 0s;
 }
 

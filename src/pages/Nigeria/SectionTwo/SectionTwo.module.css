@@ -1,76 +1,74 @@
 .wrapper {
-  background-color: #f4f4f4;
-  padding: 3rem;
   margin-left: 20%;
+  margin-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.data_map_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map {
+  height: 80%;
+  width: 80%;
+}
+
+hr {
+  height: 2px;
+  border: 0;
+  background-color: black;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.investment_opportunities {
+  margin-top: 2rem;
+}
+
+.title {
+  color: var(--clr-green);
+  font-weight: var(--fw-semibold);
 }
 
 .card_wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem;
-}
-
-.country_desc_wrapper {
-  display: flex;
-}
-
-.title_wrapper {
-  margin-block-end: 4rem;
-}
-
-.title {
-  font-weight: var(--fw-semibold);
-  color: var(--clr-green);
-  margin-bottom: 3rem;
-}
-
-hr {
-  height: 0.1rem;
-  background-color: black;
-}
-
-@media (max-width: 992px) {
-  .wrapper {
-    padding: 2rem;
-  }
-
-  .card_wrapper {
-    gap: 2rem;
-  }
-
-  .country_desc_wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .map_wrapper {
-    order: 1;
-    margin-bottom: 1rem;
-  }
-
-  .country_description_wrapper {
-    order: 2;
-  }
+  column-gap: 4rem;
+  row-gap: 4rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
-  .country_desc_wrapper {
-    display: flex;
+  .wrapper {
+    margin: 2rem;
+  }
+
+  .data_map_wrapper {
     flex-direction: column;
+    align-items: center;
   }
 
   .map {
-    padding-block-start: 2rem;
-    width: 80vw;
-  }
-
-  .map_wrapper {
     order: 1;
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
   }
 
-  .country_description_wrapper {
+  .data {
     order: 2;
+  }
+
+  .card_wrapper {
+    column-gap: 0;
   }
 }

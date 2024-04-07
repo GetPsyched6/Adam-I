@@ -1,39 +1,54 @@
-import CardTransition from '../../../components/CardTransition/CardTransition';
-import FadeTransition from '../../../components/FadeTransition/FadeTransition';
 import CountryDescription from '../../../components/CountryDescription/CountryDescription';
-import nigeriaDesc from '../../../data/Nigeria/nigeriaDesc';
+import FadeTransition from '../../../components/FadeTransition/FadeTransition';
+import CardTransition from '../../../components/CardTransition/CardTransition';
 import map from '../../../assets/images/Nigeria/SectionTwo/map.webp';
+import data from '../../../data/Nigeria/nigeriaData';
+import countryDesc from '../../../data/Nigeria/nigeriaDesc';
 import styles from './SectionTwo.module.css';
 
-import nigeriaData from '../../../data/Nigeria/nigeriaData';
-function SectionThree() {
+function SectionTwo() {
   return (
-    <div className={styles.wrapper} id="nigeria" role="main">
-      <div className={styles.country_desc_wrapper}>
-        <div className={styles.country_description_wrapper}>
-          {nigeriaDesc.map((desc, index) => (
+    <div className={styles.wrapper}>
+      {/* Container for data and map */}
+      <div className={styles.data_map_wrapper}>
+        <div className={styles.data}>
+          {data.map(item => (
             <CountryDescription
-              key={index}
-              title={desc.title}
-              body={desc.body}
-              color={desc.color}
+              key={item.id}
+              title={item.title}
+              body={item.body}
+              color={item.color}
             />
           ))}
         </div>
 
-        <div className={styles.map_wrapper}>
-          <img src={map} alt="Nigeria Map" className={styles.map} />
+        <div className={styles.map}>
+          <img src={map} alt="Nigeria map" className={styles.map} />
         </div>
       </div>
 
-      <div>
-        <FadeTransition bottom={-100} translate={25} scrollAnimation amount="all">
-          <h2 className={`${styles.text} ${styles.title}`}>Investment Oportunities</h2>
+      <hr />
+
+      {/* Container for Investment Oportunities */}
+      <div className={styles.investment_opportunities}>
+        <FadeTransition
+          bottom={-100}
+          translate={25}
+          scrollAnimation
+          amount="all"
+          className={styles.title_wrapper}
+        >
+          <h2 className={styles.title}>Investment Opportunities</h2>
         </FadeTransition>
-        <CardTransition className={styles.card_wrapper} object={nigeriaData} color="yellow" />
+
+        <CardTransition
+          className={styles.card_wrapper}
+          object={countryDesc}
+          amountList={[0.5, 0.25, 'some']}
+        />
       </div>
     </div>
   );
 }
 
-export default SectionThree;
+export default SectionTwo;

@@ -1,50 +1,130 @@
 .pie_chart_wrapper {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
   margin-left: 20%;
-  margin-top: 2rem;
-}
-
-.pie_chart {
-  margin-left: 10rem;
-}
-
-.title {
-  font-weight: var(--fw-semibold);
-  color: var(--clr-green);
   margin-bottom: 3rem;
 }
 
-.graphs {
+.title {
+  color: var(--clr-green);
+  padding-right: 20%;
+}
+
+.title h2 {
+  font-weight: var(--fw-semibold);
+}
+
+.import_and_export {
+  height: 40rem;
   position: relative;
-  padding: 2rem;
 }
 
-.background {
-  border-radius: 30px;
-  height: 90rem;
+.import_and_export img {
   width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
-.graph_wrapper {
+.import_and_export_overlay {
   position: absolute;
-  top: 5%;
-  left: 20%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-.graph_wrapper h2 {
-  font-weight: var(--fw-semibold);
-  color: var(--clr-yellow);
-  margin-bottom: 1rem;
+.import_and_export_content_wrapper {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 80%;
+  height: 90%;
+  z-index: 2;
 }
 
-.graph {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+.import_and_export_title {
+  font-weight: var(--fw-semibold);
+}
+
+.import_and_export_subheading {
+  color: var(--clr-yellow);
   margin-top: 2rem;
+}
+
+.import_and_export_content {
+  margin-top: 2rem;
+  white-space: nowrap;
+  margin-bottom: 2rem;
+}
+
+.import_pie_chart_wrapper {
+  margin-left: 20%;
+  padding-right: 20%;
+}
+
+.import_pie_chart_title {
+  color: var(--clr-green);
+  font-weight: var(--fw-semibold);
+}
+
+.major_imports_wrapper {
+  margin-left: 20%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.major_imports_title {
+  color: var(--clr-green);
+  font-weight: var(--fw-semibold);
+}
+
+.marquee_div {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.import_substitution_banner {
+  position: relative;
+  margin-top: 3rem;
+  height: 25rem;
+  width: 99vw;
+}
+
+.import_substitution_banner_image {
+  height: 100%;
+  width: 100%;
+}
+
+.import_substitution_banner_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.import_substitution_banner_content {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 80%;
+  height: 90%;
+  z-index: 2;
+}
+
+.import_substitution_banner_title {
+  font-weight: var(--fw-semibold);
+}
+
+.import_substitution_banner_subheading {
+  color: var(--clr-yellow);
+  margin-top: 2rem;
+}
+
+.import_substitution_banner_main_content {
+  margin-top: 2rem;
+  white-space: nowrap;
+  margin-bottom: 2rem;
 }

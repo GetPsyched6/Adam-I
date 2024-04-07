@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative; /* Ensure .overlay position is relative to .wrapper */
+  height: 98rem;
+  width: 98vw;
+  padding-left: 1vw;
+  margin-bottom: 3rem;
+}
+
+.background {
+  position: relative; /* Ensure stacking context */
+  width: 98vw;
+  height: 98rem;
+  border-radius: 2%;
+}
+
+.overlay {
+  position: absolute; /* Position overlay absolutely */
+  top: 0;
+  left: 1%;
+  width: 97vw;
+  height: 98rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 2%;
+  padding-left: 1vw;
+  z-index: 1; /* Ensure overlay is in front */
+}
+
+.graph_wrapper {
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.title {
+  color: var(--clr-yellow);
+  font-weight: var(--fw-semibold);
+}
+
+.graphs {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 4rem;
+  column-gap: 4rem;
+  margin-top: 4rem;
+}
