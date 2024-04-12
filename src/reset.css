@@ -164,9 +164,16 @@ sup {
  */
 
 img {
-  display: block;
+  /*PLease check this youtube video for understanding why these properties were used 
+    -> https://www.youtube.com/watch?v=345V2MU3E_w
+  */
+  border:0;
+  font-style:italic;
+  vertical-align:middle;
+  height:auto;
   border-style: none;
   max-width: 100%;
+  shape-margin:1rem;
 }
 
 /* Forms

@@ -1,19 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import FadeTransition from '../../../components/FadeTransition/FadeTransition';
 import styles from './SectionOne.module.css';
+import backgroundOne from '../../../assets/images/Home/home-section-1.webp';
+import backgroundTwo from '../../../assets/images/Home/home-section-2.webp';
+import backgroundThree from '../../../assets/images/Home/home-section-3.webp';
 
 function SectionOne() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const imageClasses = [styles.backgroundImage1, styles.backgroundImage2, styles.backgroundImage3];
+  const [activeImage, setActiveImage] = useState(0);
+  const backgrounds = [backgroundOne, backgroundTwo, backgroundThree];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex(current => (current === imageClasses.length - 1 ? 0 : current + 1));
-    }, 3000); // Change image every 3 seconds
+    const startImageRotation = () => {
+      return setInterval(() => {
+        setActiveImage(pastImage => (pastImage + 1) % backgrounds.length);
+      }, 3000);
+    };
 
-    return () => clearInterval(interval);
-  }, []);
+    // * Initial delay for the Heading Gradient Animation.
+    const timer = setTimeout(() => {
+      const interval = startImageRotation();
+      return () => clearInterval(interval);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [backgrounds.length]);
+
   return (
-    <div className={`${imageClasses[activeIndex]} ${styles.carousel} ${styles.active}`}>
+    <div className={styles.wrapper}>
+      <FadeTransition keys={activeImage} duration={1}>
+        <div
+          className={styles.background}
+          style={{ backgroundImage: `url(${backgrounds[activeImage]})` }}
+        />
+      </FadeTransition>
       <div className={styles.content}>
         <h1 className={`${styles.text} ${styles.title}`}>Invest in Africa</h1>
         <h4 className={`${styles.text} ${styles.subtitle}`}>

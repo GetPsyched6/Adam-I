@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ContactUs.module.css';
+import styles from './OutlinedButton.module.css';
 
-function ContactUs(props) {
+function OutlinedButton(props) {
   const { color, onClick } = props;
   const colorClass = color === 'white' ? styles.white_color : styles.black_color;
   return (
@@ -14,13 +14,14 @@ function ContactUs(props) {
   );
 }
 
-ContactUs.propTypes = {
+OutlinedButton.propTypes = {
   color: PropTypes.oneOf(['white', 'black']),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
-ContactUs.defaultProps = {
+OutlinedButton.defaultProps = {
   color: 'white',
+  onClick: null,
 };
 
-export default ContactUs;
+export default OutlinedButton;

@@ -7,7 +7,8 @@
   position: sticky;
   inset: 0 0 auto 0;
   height: 56px; /* !Desktop Navbar height */
-  z-index: 1;
+  z-index: 9999;
+  isolation: isolate;
 }
 
 .nav::before {
@@ -41,9 +42,9 @@
   opacity: 0;
   z-index: 5;
   background-color: var(--clr-bg-lgray);
-  border-radius: 12px;
+  border-radius: 100vw;
   font-weight: var(--fw-semibold);
-  padding: 1rem;
+  padding: 0.75rem 1.5rem;
 }
 
 .skip_nav:focus-visible {
@@ -72,10 +73,15 @@
   cursor: pointer;
 }
 
+.nav_link {
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
 .nav_link:hover,
 .nav_link:focus-within {
-  transition: 0.2s ease;
-  text-decoration: underline;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
   color: var(--clr-lgreen);
 }
 
@@ -117,13 +123,12 @@
   transform: translate(-50%, 28px); /* ?28px to start for dropdown to start at bottom of nav */
   text-align: center;
   background-color: white;
-  transition: all 0.3s linear;
 }
 
 .dropdown_content .nav_links {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .dropdown_container:hover .dropdown_content,

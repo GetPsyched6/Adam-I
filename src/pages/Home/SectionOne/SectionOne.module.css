@@ -1,50 +1,27 @@
-/* TODO please refactor this */
+.wrapper {
+  --height: 85vh;
 
-/* .wrapper { 
-  background-image: url('../../../assets/images/Home/home-section-1.png');
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: var(--height);
+}
+
+.background {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center center;
-  width: 100%;
-  height: 75vh;
-} */
-
-.backgroundImage1, .backgroundImage2, .backgroundImage3 {
-  /* Styles for background image and size */
-  background-size: cover;
-  background-position: center center;
-  transition: opacity 1s ease-in-out;
-  opacity: 0;
-}
-
-.backgroundImage1 {
-  background-image: url('../../../assets/images/Home/home-section-1.png');
-}
-
-.backgroundImage2 {
-  background-image: url('../../../assets/images/Home/home-section-2.webp');
-}
-
-.backgroundImage3 {
-  background-image: url('../../../assets/images/Home/home-section-3.webp');
-}
-
-.carousel {
-  width: 100%;
-  height: 75vh;
-  transition: opacity 1s ease-in-out; /* Ensure this is on the .carousel class */
-  opacity: 0; /* Start with the carousel hidden */
-}
-
-.carousel.active {
-  opacity: 1; /* Make the active carousel visible */
-  transition: opacity 1s ease-in-out; /* Ensure this is on the .carousel class */
-
 }
 
 .content {
+  position: relative;
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding-block: calc(var(--height) / 3);
+  padding-inline: 3rem;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 40%, transparent 80%);
 }
 
 .text {
@@ -52,6 +29,8 @@
 }
 
 .title {
+  --bg-size: 250%;
+
   font-weight: var(--fw-semibold);
   padding-block-end: 1rem;
 }
@@ -60,9 +39,80 @@
   line-height: 130%;
 }
 
+/* *Start for animated gradient text and fade-in */
+@media (prefers-reduced-motion: no-preference) {
+  .title {
+    transform: translateY(25px);
+    opacity: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        120deg,
+        white 0%,
+        var(--clr-lyellow) 4%,
+        var(--clr-yellow) 14%,
+        var(--clr-yellow) 21%,
+        black 45%,
+        black 51%,
+        var(--clr-yellow) 59%,
+        black 68%,
+        var(--clr-lyellow) 83%,
+        var(--clr-yellow) 86%,
+        var(--clr-lyellow) 89%,
+        black 94%
+      )
+      var(--bg-size) 0 / var(--bg-size) 100%;
+    color: black;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation:
+      fade-in 500ms cubic-bezier(0, 0, 0.5, 1) forwards,
+      move-bg 3s cubic-bezier(0.29, 0.31, 0, 1.01) forwards 500ms,
+      color-to-white 500ms linear forwards 3.5s;
+  }
+
+  .subtitle {
+    opacity: 0;
+    transform: translateY(25px);
+    pointer-events: none;
+    animation: fade-in 500ms cubic-bezier(0, 0, 0.5, 1) forwards 2.5s;
+  }
+
+  @keyframes fade-in {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  @keyframes move-bg {
+    100% {
+      color: transparent;
+      background-position: 0 0;
+    }
+  }
+
+  @keyframes color-to-white {
+    to {
+      color: white;
+    }
+  }
+}
+/* *End for animated gradient text and fade-in */
+
 @media (max-width: 600px) {
+  .wrapper {
+    --height: 75vh;
+  }
   .content {
-    padding: 3rem 2rem;
+    padding-inline: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
+  }
+  .text {
+    text-align: center;
+  }
+  .title {
+    /* *Ensuring black area of gradient not present on text at end */
+    --bg-size: 275%;
   }
 }

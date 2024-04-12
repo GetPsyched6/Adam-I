@@ -1,29 +1,27 @@
 .wrapper {
   position: relative;
-  background-image: url('../../../assets/images/Home/SectionSeven/home_contactus.png');
+  background-image: url('../../../assets/images/Home/SectionSeven/home_contactus.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 90vh;
+  height: 90vh;
+  overflow-y: hidden;
 }
 
 .content {
   position: absolute;
-  left: 0;
-  bottom: 0;
   padding: 3rem;
 }
 
 .title {
-  margin-block-start: 1rem;
   color: var(--clr-white90);
   font-weight: var(--fw-semibold);
-  padding-block-end: 1rem;
+  padding-block-end: 2rem;
 }
 
 @media (max-width: 992px) {
   .wrapper {
-    min-height: 75vh;
+    height: 75vh;
   }
   .content {
     padding: 3rem 2rem;

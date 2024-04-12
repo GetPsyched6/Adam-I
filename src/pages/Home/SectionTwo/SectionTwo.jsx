@@ -1,24 +1,16 @@
 import React from 'react';
+import FadeTransition from '../../../components/FadeTransition/FadeTransition';
+import CardTransition from '../../../components/CardTransition/CardTransition';
 import styles from './SectionTwo.module.css';
-import Cards from '../../../components/Cards/Cards';
 import investData from '../../../data/whyInvest';
 
 function SectionTwo() {
   return (
     <div className={styles.wrapper} id="whyafrica" role="main">
-      <h2 className={`${styles.text} ${styles.title}`}>Why Invest in Africa?</h2>
-      <div className={styles.card_wrapper}>
-        {investData.map(data => (
-          <Cards
-            key={data.id}
-            title={data.title}
-            image={data.image}
-            alt={data.alt}
-            color="yellow"
-            body={data.body}
-          />
-        ))}
-      </div>
+      <FadeTransition bottom={-100} translate={25} scrollAnimation amount={0.8}>
+        <h2 className={`${styles.text} ${styles.title}`}>Why Invest in Africa?</h2>
+      </FadeTransition>
+      <CardTransition className={styles.card_wrapper} object={investData} color="yellow" />
     </div>
   );
 }

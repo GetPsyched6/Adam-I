@@ -5,9 +5,10 @@ import styles from './Login.module.css';
 import Button from '../../components/Button/Button';
 import Alert from '../../components/Alert/Alert';
 import InputBox from '../../components/InputBox/InputBox';
+import FadeTransition from '../../components/FadeTransition/FadeTransition';
 
 function Login() {
-  const LOGIN_URL = `${process.env.REACT_APP_BACKEND_URL}/login`;
+  const LOGIN_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/login`;
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Login');
 
@@ -101,79 +102,80 @@ function Login() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.blur_wrapper}>
-        <form action="" className={styles.login_form} id="loginForm" onSubmit={handleSubmit}>
-          <div className={styles.login_input}>
-            <h2>Login</h2>
-            <InputBox
-              id="email"
-              label="Email"
-              required
-              name="email"
-              type="email"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.email}
-              size="large"
-            />
-            <InputBox
-              id="accountPassword"
-              label="Password"
-              required
-              name="accountPassword"
-              type="password"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.accountPassword}
-              size="large"
-            />
-            <InputBox
-              id="accountType"
-              label="Account Type"
-              required
-              isDropdown
-              name="accountType"
-              type="text"
-              onChange={event => {
-                handleChange(event);
-              }}
-              value={formData.accountType}
-              size="large"
-            >
-              <option value="User" title="User">
-                User
-              </option>
-              <option value="Company" title="Company">
-                Company
-              </option>
-            </InputBox>
-          </div>
-
-          <div className={styles.register_link}>
-            Don&apos;t have an account?{' '}
-            <Link to="/register" className={styles.link}>
-              Register
-            </Link>
-          </div>
-          <div className={styles.checkbox_wrapper} tabIndex="0">
-            <label htmlFor="remember" className={styles.remember}>
-              <input
-                type="checkbox"
-                name="remember"
-                id="remember"
-                onChange={handleChange}
-                checked={formData.remember}
+        <FadeTransition variants="wait">
+          <form action="" className={styles.login_form} id="loginForm" onSubmit={handleSubmit}>
+            <div className={styles.login_input}>
+              <h2>Login</h2>
+              <InputBox
+                id="email"
+                label="Email"
+                required
+                name="email"
+                type="email"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.email}
+                size="large"
               />
-              <span className={styles.checkbox_icon} />
-              Remember Me
-            </label>
+              <InputBox
+                id="accountPassword"
+                label="Password"
+                required
+                name="accountPassword"
+                type="password"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.accountPassword}
+                size="large"
+              />
+              <InputBox
+                id="accountType"
+                label="Account Type"
+                required
+                isDropdown
+                name="accountType"
+                type="text"
+                onChange={event => {
+                  handleChange(event);
+                }}
+                value={formData.accountType}
+                size="large"
+              >
+                <option value="User" title="User">
+                  User
+                </option>
+                <option value="Company" title="Company">
+                  Company
+                </option>
+              </InputBox>
+            </div>
+            <div className={styles.register_link}>
+              Don&apos;t have an account?{' '}
+              <Link to="/register" className={styles.link}>
+                Register
+              </Link>
+            </div>
+            <div className={styles.checkbox_wrapper} tabIndex="0">
+              <label htmlFor="remember" className={styles.remember}>
+                <input
+                  type="checkbox"
+                  name="remember"
+                  id="remember"
+                  onChange={handleChange}
+                  checked={formData.remember}
+                />
+                <span className={styles.checkbox_icon} />
+                Remember Me
+              </label>
+            </div>
+            <Button isSubmit text={buttonText} />
+          </form>
+          <div className={styles.aboutus}>
+            © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
           </div>
-          <Button isSubmit text={buttonText} />
-        </form>
-        <div className={styles.aboutus}>
-          © {new Date().getFullYear()} - Invest Africa :: Powered by Adam-i Japan
-        </div>
+        </FadeTransition>
       </div>
       <Alert message={alert.message} state={alert.state} isActive={alert.active} />
     </div>

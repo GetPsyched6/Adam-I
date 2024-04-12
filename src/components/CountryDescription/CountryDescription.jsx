@@ -1,4 +1,5 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import FadeTransition from '../FadeTransition/FadeTransition';
 import styles from './CountryDescription.module.css';
 
 function CountryDescription({ title, body, color }) {
@@ -11,24 +12,22 @@ function CountryDescription({ title, body, color }) {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <FadeTransition keys={title} mode="popLayout" variants="wait" className={styles.wrapper}>
       <div className={styles.content}>
         <div style={bulletstyles} />
-        <div className={styles.title}>
-          <h5 style={countryNamestyles}>{title}</h5>
-        </div>
+        <h5 style={countryNamestyles}>{title}</h5>
       </div>
       <div className={styles.description}>
         <p>{body}</p>
       </div>
-    </div>
+    </FadeTransition>
   );
 }
 
 CountryDescription.propTypes = {
-  title: propTypes.string.isRequired,
-  body: propTypes.string.isRequired,
-  color: propTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default CountryDescription;

@@ -31,7 +31,7 @@
   z-index: 1000;
   transition:
     bottom var(--bottom-transition-duration) linear var(--pill-scale-close-transition-delay),
-    transform var(--scale-transition-duration) linear var(--pill-close-transition-delay),
+    transform var(--scale-transition-duration) cubic-bezier(.25,.64,.51,.99) var(--pill-close-transition-delay),
     width var(--width-close-transition-duration) cubic-bezier(0.01, 0.8, 0.56, 1)
       var(--text-transition-delay);
 }

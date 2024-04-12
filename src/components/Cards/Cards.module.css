@@ -10,22 +10,27 @@
   position: relative;
   height: 16rem;
   overflow: hidden;
+  border-radius: 0.75rem;
 }
 
 .image {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: scale 0.3s linear;
+  transition: scale 0.5s ease-out;
 }
 
 .card:hover .image_hover {
   scale: 1.2;
-  transition: scale 0.3s linear;
 }
 
 .border {
   outline: solid 6px var(--clr-green);
+  transition: outline-color 500ms ease;
+}
+
+.link:hover .border {
+  outline: solid 6px var(--clr-lgreen);
 }
 
 .link {
@@ -41,7 +46,6 @@
 .link:focus-within .image_hover,
 .link:focus-visible .image_hover {
   scale: 1.2;
-  transition: scale 0.3s linear;
 }
 
 .title_container {
@@ -87,7 +91,7 @@
 
 @media (max-width: 600px) {
   .content {
-    width: 75vw;
+    max-width: 100%;
   }
 
   .card {

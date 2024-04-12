@@ -26,6 +26,7 @@
   height: 3px;
   background-color: black;
   margin-block: 6rem;
+  border-radius: 100vw;
 }
 
 .content_map_wrapper {

@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['airbnb', 'prettier','plugin:prettier/recommended'],
+  extends: ['airbnb', 'prettier', 'plugin:prettier/recommended'],
   overrides: [
     {
       env: {
@@ -25,9 +25,9 @@ module.exports = {
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'react/forbid-prop-types': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-    indent: ['error', 2, { SwitchCase: 1 }],
     'prettier/prettier': [
       'error',
       {
@@ -46,6 +46,5 @@ module.exports = {
       version: 'detect',
     },
   },
-  // Add this if you're using ESLint plugins for React Hooks
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'import'],
 };

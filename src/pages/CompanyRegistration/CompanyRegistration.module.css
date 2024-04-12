@@ -1,5 +1,5 @@
 .wrapper {
-  background: url('../../assets/login.jpg') no-repeat center center fixed;
+  background: url('../../assets/login.webp') no-repeat center center fixed;
   background-size: cover;
   min-height: var(--desktop-nav-fullheight);
 }
