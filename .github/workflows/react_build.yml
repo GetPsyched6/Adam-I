@@ -2,7 +2,7 @@ name: React CI/CD Pipeline
 
 on:
   pull_request:
-    branches: [ main, dev ]
+    branches: [ main, dev, azure-main ]
     types: [opened, synchronize, reopened]
 
 jobs:
