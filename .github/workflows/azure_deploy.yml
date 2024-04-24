@@ -51,6 +51,4 @@ jobs:
             git pull origin azure-main
             npm install
             npm run build
-            npm run fix-imports
-            pm2 restart all
           ENDSSH
