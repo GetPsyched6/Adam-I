@@ -23,6 +23,7 @@ jobs:
       - name: Run lint
         run: npm run lint
 
+      # * tests need to be written  
       # - name: Run tests
       #   run: npm test
 

@@ -1,0 +1,56 @@
+name: Build and Deploy to Azure
+
+on:
+  workflow_run:
+    workflows: ['React CI/CD Pipeline']
+    branches: [azure-main]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.10.0'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Build
+        run: npm run build
+
+      - name: Fix Import Extensions
+        run: npm run fix-imports
+
+      - name: Deploy to Azure
+        env:
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+        run: |
+          # Install SSH key
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" | base64 --decode > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
+
+          # SSH into the VM and execute commands
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no $USERNAME@$HOST << 'ENDSSH'
+            # Add Node.js to PATH
+            export PATH=/home/azureuser/.nvm/versions/node/v21.6.1/bin:$PATH
+            
+            # Commands to run on the VM
+            cd ~/workspace/frontend
+            git pull origin azure-main
+            npm install
+            npm run build
+            npm run fix-imports
+            pm2 restart all
+          ENDSSH
