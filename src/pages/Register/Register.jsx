@@ -10,7 +10,7 @@ import FadeTransition from '../../components/FadeTransition/FadeTransition';
 
 function Register() {
   const REGISTRATION_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/userregister`;
-  console.log(REGISTRATION_URL);
+
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Register');
 
