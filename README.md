@@ -2,7 +2,7 @@
 
 ## Development Workflow
 
-- Before making a Pull Request (PR), run `npm run postinstall` to perform eslinting and prettier checks. Do not open a PR if these checks fail.
+- Before making a Pull Request (PR), run `npm run postinstall` to perform eslinting and prettier checks. Ensure checks pass before PR.
 - PRs must only be made to the `dev` branch.
 - After completing a milestone, merge `dev` to `main`, and then `main` to `azure-main` for cloud deployment.
 - Use meaningful one-line summaries for your commit messages.
