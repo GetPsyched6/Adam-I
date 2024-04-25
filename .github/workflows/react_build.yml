@@ -2,18 +2,20 @@ name: React CI/CD Pipeline
 
 on:
   pull_request:
-    branches: [ main, dev, azure-main ]
+    branches: [main, dev, azure-main]
     types: [opened, synchronize, reopened]
+  push:
+    branches: [main, dev, azure-main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '20.10.0'
 
@@ -23,10 +25,9 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      # * tests need to be written  
+      # * tests need to be written
       # - name: Run tests
       #   run: npm test
 
       - name: Build
         run: npm run build
-     
