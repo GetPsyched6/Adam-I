@@ -1,3 +1,5 @@
+# Adam-i Frontend (Internship)
+
 ## Development Workflow
 
 - Before making a Pull Request (PR), run `npm run postinstall` to perform eslinting and prettier checks. Do not open a PR if these checks fail.
