@@ -51,9 +51,6 @@ jobs:
       - name: Run Build
         run: npm run build
 
-      - name: Fix Import Extensions
-        run: npm run fix-imports
-
       - name: Deploy to Azure
         env:
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -76,4 +73,5 @@ jobs:
             git pull origin azure-main
             npm install
             npm run build
+            npm prune --production
           ENDSSH
