@@ -1,16 +1,41 @@
-name: Build and Deploy to Azure
+name: CI/CD Pipeline
 
 on:
-  workflow_run:
-    workflows: ['React CI/CD Pipeline']
-    branches: [azure-main]
-    types:
-      - completed
+  pull_request:
+    branches: [main, dev, azure-main]
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main, dev, azure-main]
 
 jobs:
-  deploy:
+  build:
+    name: React Build
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.10.0'
+
+      - name: Install dependencies & postinstall lint
+        run: npm install
+
+      # * Tests yet to be made.
+      # - name: Run tests
+      #   run: npm test
+
+      - name: Build
+        run: npm run build
+
+  deploy:
+    name: Deploy to Azure
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/azure-main' && github.event_name == 'push'
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -40,7 +65,7 @@ jobs:
           echo "$SSH_KEY" | base64 --decode > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
-
+          
           # SSH into the VM and execute commands
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no $USERNAME@$HOST << 'ENDSSH'
             # Add Node.js to PATH
