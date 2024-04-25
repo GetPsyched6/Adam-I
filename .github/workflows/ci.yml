@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '20.10.0'
 
-      - name: Install dependencies & postinstall lint
+      - name: Install dependencies & postinstall lint/prettier
         run: npm install
 
       # * Tests yet to be made.
