@@ -17,6 +17,7 @@
     "react-img-map-area": "^1.0.0",
     "react-router-dom": "^6.21.1",
     "react-tooltip": "^5.26.0",
+    "recharts": "^2.12.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

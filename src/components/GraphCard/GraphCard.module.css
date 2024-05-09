@@ -1,0 +1,17 @@
+.title_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.bullet {
+  height: 1.9rem;
+  width: 0.625rem;
+  background-color: var(--clr-lyellow);
+}
+
+.title {
+  font-size: var(--fs-h5);
+  color: var(--clr-lyellow);
+}
