@@ -23,7 +23,7 @@ function GraphCard(props) {
   };
   return (
     <ResponsiveContainer width="95%" height="80%">
-      {graphType == 'line' && (
+      {graphType === 'line' && (
         <LineChart width={800} height={400} data={data} margin={{ bottom: 0 }}>
           <Line type="monotone" dataKey="value" stroke="#8884d8" />
           <XAxis dataKey="year" style={XAndYAxisLabelStyle} />
@@ -33,7 +33,7 @@ function GraphCard(props) {
         </LineChart>
       )}
 
-      {graphType == 'bar' && (
+      {graphType === 'bar' && (
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="1 1" />
           <XAxis dataKey="year" style={XAndYAxisLabelStyle} />
@@ -44,7 +44,7 @@ function GraphCard(props) {
         </BarChart>
       )}
 
-      {graphType == 'scatter' && (
+      {graphType === 'scatter' && (
         <ScatterChart data={data}>
           <CartesianGrid strokeDasharray="1 1" />
           <XAxis dataKey="year" style={XAndYAxisLabelStyle} />

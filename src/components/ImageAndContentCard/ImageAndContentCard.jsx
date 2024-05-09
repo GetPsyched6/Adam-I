@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import propTypes from 'prop-types';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useMediaQuery } from '@react-hook/media-query';

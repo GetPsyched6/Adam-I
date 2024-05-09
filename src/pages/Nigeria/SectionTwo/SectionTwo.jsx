@@ -26,7 +26,7 @@ function SectionTwo(props) {
             </div>
 
             <div className={styles.map}>
-              <img src={descriptionAndMap.map} className={styles.map_image} />
+              <img src={descriptionAndMap.map} alt="map of nigeria" className={styles.map_image} />
             </div>
           </div>
         </FadeTransition>
@@ -80,7 +80,7 @@ function SectionTwo(props) {
             <h2>{investmentSupportAndResources.title}</h2>
             <div className={styles.investment_support_and_resources_flexbox}>
               <p>{investmentSupportAndResources.body}</p>
-              <img src={investmentSupportAndResources.image} />
+              <img src={investmentSupportAndResources.image} alt="NPIC logo" />
             </div>
           </div>
         </FadeTransition>

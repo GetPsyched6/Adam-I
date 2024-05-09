@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import parse from 'html-react-parser';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useMediaQuery } from '@react-hook/media-query';
 import propTypes from 'prop-types';
@@ -41,7 +42,7 @@ function Commitment(props) {
               {...reducedChildMotionProps}
             >
               <span className={styles.mini_title}>{data.title}</span>
-              <span dangerouslySetInnerHTML={{ __html: data.body }} />
+              <span>{parse(data.body)}</span>
             </motion.p>
           ))}
         </motion.div>

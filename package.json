@@ -9,6 +9,7 @@
     "countries-list": "^3.0.6",
     "dotenv": "^16.4.1",
     "framer-motion": "^11.0.6",
+    "html-react-parser": "^5.1.10",
     "joi": "^17.12.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

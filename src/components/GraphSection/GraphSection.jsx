@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import propTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from '@react-hook/media-query';
@@ -5,6 +6,7 @@ import useStaggered from '../../hooks/useStaggered';
 import GraphCard from '../GraphCard/GraphCard';
 import FadeTransition from '../FadeTransition/FadeTransition';
 import styles from './GraphSection.module.css';
+
 function GraphSection(props) {
   const { title, background, graphs, amountList } = props;
 
@@ -48,8 +50,8 @@ function GraphSection(props) {
 }
 
 GraphSection.propTypes = {
-  title: propTypes.string,
-  background: propTypes.string,
+  title: propTypes.string.isRequired,
+  background: propTypes.string.isRequired,
   graphs: propTypes.arrayOf(
     propTypes.shape({
       title: propTypes.string,
@@ -62,7 +64,7 @@ GraphSection.propTypes = {
       ).isRequired,
     }).isRequired
   ).isRequired,
-  amountList: propTypes.array,
+  amountList: propTypes.array.isRequired,
 };
 
 export default GraphSection;

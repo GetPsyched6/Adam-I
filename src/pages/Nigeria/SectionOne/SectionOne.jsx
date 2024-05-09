@@ -8,7 +8,7 @@ function SectionOne(props) {
     <div>
       {/* Invest in Nigeria section */}
       <div className={styles.wrapper}>
-        <img src={mainHeading.background} className={styles.background_image} />
+        <img src={mainHeading.background} alt="" className={styles.background_image} />
         <div className={styles.content}>
           <FadeTransition bottom={-130} translate={55} scrollAnimation amount={0.8}>
             <h1 className={styles.text}>{mainHeading.title}</h1>
