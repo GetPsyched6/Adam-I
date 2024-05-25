@@ -1,0 +1,191 @@
+/* CSS for Statistics and map section */
+
+.sub_section {
+  background-color: #f4f4f4;
+  padding-bottom: 5%;
+}
+
+.statistics_and_map {
+  padding-top: 2%;
+  margin-left: 20%;
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+
+.map {
+  width: 50%;
+  height: 100%;
+}
+
+hr {
+  height: 2px;
+  background-color: #000;
+  width: 80%;
+}
+
+/* CSS for Investment Opportunites section */
+.investment_opportunities_wrapper {
+  margin-left: 20%;
+}
+
+.title_wrapper {
+  margin-block-end: 4rem;
+}
+
+.title {
+  color: var(--clr-green);
+  font-weight: var(--fw-semibold);
+}
+
+.card_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 4rem;
+}
+
+/* CSS for why invest */
+.why_invest {
+  margin-left: 20%;
+  margin-top: 2%;
+}
+
+/* CSS for investment support */
+
+.investment_support_and_resources {
+  margin-top: 2%;
+  background-color: #2f2f2f;
+  height: 25rem;
+}
+
+.investment_support_and_resources_body {
+  padding-top: 3%;
+  margin-left: 20%;
+}
+
+.investment_support_and_resources_body h2 {
+  color: var(--clr-yellow);
+  font-weight: var(--fw-semibold);
+}
+
+.investment_support_and_resources_flexbox {
+  display: flex;
+  gap: 5%;
+  margin-top: 2%;
+  align-items: center;
+}
+
+.investment_support_and_resources_flexbox p {
+  font-size: var(--fs-p);
+}
+
+.investment_support_and_resources_flexbox img {
+  width: 20%;
+}
+
+@media (width: 1024px) {
+  .card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .investment_opportunities_wrapper {
+    margin-left: 0;
+  }
+
+  .card_wrapper {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+  }
+
+  .title_wrapper {
+    margin-block-end: 4rem;
+    margin-left: 10%;
+  }
+
+  .why_invest {
+    margin-left: 0;
+    margin-top: 4%;
+  }
+
+  .title_wrapper {
+    margin-block-end: 2rem;
+  }
+
+  .investment_support_and_resources {
+    height: 28rem;
+  }
+
+  .investment_support_and_resources_body {
+    margin-left: 4%;
+  }
+
+  .investment_support_and_resources_flexbox {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+  }
+
+  .investment_support_and_resources_flexbox img {
+    order: 1;
+    width: 8rem;
+  }
+
+  .investment_support_and_resources_flexbox p {
+    order: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .statistics_and_map {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .map {
+    width: 100%;
+    order: 1;
+  }
+
+  .statistics {
+    order: 2;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  /* CSS for Statistics and map section */
+  .map {
+    width: 100%;
+  }
+
+  .investment_support_and_resources {
+    height: 35rem;
+  }
+
+  .investment_support_and_resources_body {
+    margin-left: 3rem;
+  }
+
+  .investment_support_and_resources_flexbox {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+  }
+
+  .investment_support_and_resources_flexbox img {
+    order: 1;
+    width: 8rem;
+  }
+
+  .investment_support_and_resources_flexbox p {
+    order: 2;
+  }
+}

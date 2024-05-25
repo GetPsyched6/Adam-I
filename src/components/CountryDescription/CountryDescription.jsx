@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import FadeTransition from '../FadeTransition/FadeTransition';
 import styles from './CountryDescription.module.css';
 
-function CountryDescription({ title, body, color }) {
+function CountryDescription(props) {
+  const { title, body, color } = props;
   const fwBold = '800';
   const countryNamestyles = { color, fontWeight: fwBold, textTransform: 'uppercase' };
   const bulletstyles = {
