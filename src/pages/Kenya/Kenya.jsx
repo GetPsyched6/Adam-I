@@ -1,7 +1,7 @@
 function Kenya() {
   return (
     <div>
-      <h1>Kenya</h1>
+      <h1>Kenya!</h1>
     </div>
   );
 }
